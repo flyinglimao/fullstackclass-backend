@@ -17,6 +17,6 @@ use Response;
 Route::get('/user', function (Request $request) {
   return response()->json([
     "request" => $request,
-    "message" => "Hello world",
+    "message" => "Hello world!!",
   ]);
 });
