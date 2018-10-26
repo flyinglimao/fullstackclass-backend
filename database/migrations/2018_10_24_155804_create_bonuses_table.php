@@ -16,7 +16,7 @@ class CreateBonusesTable extends Migration
     Schema::create('bonuses', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('change');
-      $table->string('message');
+      $table->string('message',100);
       $table->integer('member_id');
       $table->integer('order_id');
       $table->timestamps();

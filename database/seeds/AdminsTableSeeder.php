@@ -11,7 +11,9 @@ class AdminsTableSeeder extends Seeder
      */
     public function run()
     {
-        $total = 10;
+        $total = 3;
+//        $adminTable =['黃千玲','吳宇宸','謝維毅','洪偉捷'];
+
         //
         Admin::truncate();
         foreach (range(1,$total) as $id){
