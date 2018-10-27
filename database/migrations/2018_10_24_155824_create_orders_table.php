@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('receiver_phone',10);
             $table->string('invoice_number',10);
             $table->string('coupon',30);
+            $table->integer('member_id');
             $table->timestamps();
         });
     }
