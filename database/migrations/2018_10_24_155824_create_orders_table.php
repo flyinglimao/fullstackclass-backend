@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('state');
             $table->integer('pay_method');
-            $table->string('payment',100);
+            $table->json('payment_information');
             $table->string('message',100);
             $table->integer('ship_method');
             $table->string('ship_information',100);
@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('receiver_phone',10);
             $table->string('invoice_number',10);
             $table->string('coupon',30);
+            $table->integer('member_id');
             $table->timestamps();
         });
     }

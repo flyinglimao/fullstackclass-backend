@@ -22,10 +22,9 @@ class CreateEventsTable extends Migration
             $table->string('side_image',45);
             $table->json('filter');
             $table->string('price_operation',45);
-            $table->string('gift',45);
             $table->json('time_interval');
-            $table->string('frequency_limit',45);
-            $table->integer('priority');
+            $table->integer('frequency_limit')->default(0);
+            $table->integer('priority')->default(0);
             $table->timestamps();
         });
     }
