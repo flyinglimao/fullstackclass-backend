@@ -187,7 +187,7 @@
 
                     </i>
                 </h4>
-                <div class="dropdown-menu show" x-placement="bottom-start"style="position: absolute; transform: translate3d(42px, 45px, 0px); top: 0px; left: 0px; will-change: transform;">
+                <div class="dropdown-menu" x-placement="bottom-start">
                     <a class="dropdown-item" href="#">Message</a>
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">Log Out</a>
