@@ -86,7 +86,7 @@
                         <div class="nofity-list">
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img1.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img1.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -96,7 +96,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img2.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img2.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -106,7 +106,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img3.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img3.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -116,7 +116,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img4.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img4.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -126,7 +126,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img2.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img2.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -136,7 +136,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img1.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img1.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -146,7 +146,7 @@
                             </a>
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb">
-                                    <img src="images/author/author-img3.jpg" alt="image">
+                                    <img src="{{asset('images/author/author-img3.jpg')}}" alt="image">
                                 </div>
                                 <div class="notify-text">
                                     <p>Aglae Mayer</p>
@@ -171,20 +171,20 @@
     <div class="row align-items-center">
         <div class="col-sm-6">
             <div class="breadcrumbs-area clearfix">
-                <h4 class="page-title pull-left">Dashboard</h4>
+                <h4 class="page-title pull-left">貓咪後台</h4>
                 <ul class="breadcrumbs pull-left">
-                    <li><a href="index.html">Home</a></li>
-                    <li><span>Dashboard</span></li>
+                    <li><a href="{{route('products.index')}}">Home</a></li>
+                    <li><a href="{{route('products.index')}}">Product</a></li>
+                    <li><a href="{{route('admins.index')}}">Admin</a></li>
                 </ul>
             </div>
         </div>
         <div class="col-sm-6 clearfix">
             <div class="user-profile pull-right">
-                <img class="avatar user-thumb" src="images/author/avatar.png" alt="avatar">
+                <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown">
                     Kumkum Rai
                     <i class="fa fa-angle-down">
-
                     </i>
                 </h4>
                 <div class="dropdown-menu" x-placement="bottom-start">

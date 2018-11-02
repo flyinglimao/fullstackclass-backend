@@ -12,7 +12,7 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
 
-        $adminTable =['黃千玲','吳宇宸','謝維毅','洪偉捷'];
+        $adminTable =['黃千綾','吳宇宸','謝維毅','洪偉捷'];
 
         //
         Admin::truncate();

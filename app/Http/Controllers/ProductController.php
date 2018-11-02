@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('updated_at','DEC')->get();
         $data = [
             'products_list' => $products
         ];
@@ -29,7 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
+
     }
 
     /**
@@ -40,7 +41,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $allnull = true;
+        foreach ($request->all() as $item) {
+            if ($item !== null){
+                $allnull = false;
+                break;
+            }
+        }
+        if ($allnull === true)
+            Product::create();
+        else
+            Product::create($request->all());
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -62,7 +75,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $data = [
+            'product'=>$product
+        ];
+        return view('products.edit',$data);
     }
 
     /**
@@ -74,7 +90,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        return redirect()->route('products.index');
     }
 
     /**
@@ -83,8 +100,21 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+
+//    public function destroy(Product $product)
+//    {
+//        $product->delete();
+//
+//        return redirect()->route('products.index');
+//    }
+
+    public function destroy(Request $request)
     {
-        //
+        $target = Product::find($request->id);
+
+        $target->delete();
+        return redirect()->route('products.index');
     }
 }
+
+

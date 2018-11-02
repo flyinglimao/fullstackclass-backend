@@ -15,18 +15,18 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',40);
-            $table->string('subtitle',60);
-            $table->string('description',500);
-            $table->integer('type');
-            $table->string('author',30);
-            $table->string('publisher',30);
-            $table->string('isbn',13);
-            $table->string('category',20);
-            $table->string('tags',60);
-            $table->integer('list_price');
-            $table->integer('sale_price');
-            $table->integer('stock');
+            $table->string('title',40)->default('測試title');
+            $table->string('subtitle',60)->default('測試subtitle');
+            $table->string('description',500)->default('測試description');
+            $table->integer('type')->default(0);
+            $table->string('author',30)->default('測試author');
+            $table->string('publisher',30)->default('測試publisher');
+            $table->string('isbn',13)->default('0000000000000');
+            $table->string('category',20)->default('測試category');
+            $table->string('tags',60)->default('測試tags');
+            $table->integer('list_price')->default(100);
+            $table->integer('sale_price')->default(100);
+            $table->integer('stock')->default(10);
             $table->timestamps();
         });
     }
