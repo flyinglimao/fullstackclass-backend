@@ -28,7 +28,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admins.create');
     }
 
     /**
@@ -39,6 +39,10 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        $request['permissions'] = json_encode(['權限'=>$request->permissions]);
+        Admin::create($request->all());
+
+        return redirect()->route('admins.index');
 
     }
 
@@ -92,6 +96,7 @@ class AdminController extends Controller
      */
     public function destroy(Admin $admin)
     {
-        //
+        $admin->delete();
+        return redirect()->route('admins.index');
     }
 }

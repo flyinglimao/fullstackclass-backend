@@ -44,7 +44,7 @@
                                     <td class="sell">{{$product->updated_at}} </td>
                                     <td class="attachments">
                                         <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-xs btn-primary">編輯</a>
-                                        <button onclick="confirmDelete({{$product->id}})" class="btn btn-xs btn-danger">刪除</button>
+                                        <button onclick='confirmDelete("{{$product->id}}","{{$product->title}}")' class="btn btn-xs btn-danger">刪除</button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -57,11 +57,10 @@
     </div>
 
     <script>
-        function confirmDelete(productId) {
-            $('#confirmModalBody').text('確定刪除'+productId+'商品?');
+        function confirmDelete(productId,productTitle) {
+            $('#confirmModalBody').text('確定刪除商品'+productId+'號 '+productTitle+" 嗎?");
             $('#confirmModal').modal('toggle');
             $('input#myNumber').val(productId);
-
         }
     </script>
     <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
@@ -76,17 +75,28 @@
                 <div class="modal-body" id="confirmModalBody">
                 </div>
                 <div class="modal-footer">
-                    <form action="{{route('products.destroy')}}" method="post">
+                    <form method="post" onsubmit="isSubmit()" id="del">
                         @csrf
+                        @method('DELETE')
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                        <button type="submit" class="btn btn-primary">確認</button>
-                        <input type="hidden" id="myNumber" name="id">
+                        <button type="submit" class="btn btn-primary" id="is_submit">確認</button>
+                        <input type="hidden" id="myNumber" name="id" >
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function isSubmit() {
+            $('button#is_submit').attr('disabled',true);
+
+            let url = '{{route('products.destroy', ':product')}}';
+            url = url.replace(':product', $('#myNumber').val());
+
+            $('#del').attr('action', url);
+            $('#del').submit();
+        }
+    </script>
     <!-- market value area end -->
 </div>
 @endsection

@@ -27,7 +27,7 @@
                                         <td class="attachments">信箱</td>
                                         <td class="attachments">電話</td>
                                         <td class="attachments">
-                                            <a href="#" class="btn btn-xs btn-success">新增管理員</a>
+                                            <a href="{{route('admins.create')}}" class="btn btn-xs btn-success">新增管理員</a>
                                         </td>
                                     </tr>
                                     @foreach($admins_list as $admin)
@@ -40,13 +40,61 @@
                                             <td class="attachments">{{$admin->phone}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                             <td class="attachments">
                                                 <a href="{{route('admins.edit',['admins'=>$admin->id])}}" class="btn btn-xs btn-primary">編輯</a>
-                                                <button onclick="" class="btn btn-xs btn-danger">刪除</button>
+                                                <button type="button" onclick="confirmDelete('{{$admin->id}}','{{$admin->username}}')" class="btn btn-xs btn-danger">刪除</button>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </table>
                             </div>
                         </div>
+
+                        <!-- start跳出確認視窗-->
+                        <script>
+                            function confirmDelete(adminId,adminName) {
+                                $('#confirmModalBody').text('確定刪除管理者'+adminId+'號 '+adminName+" 嗎?");
+                                $('#confirmModal').modal('toggle');
+                                $('input#myNumber').val(adminId);
+
+                            }
+                        </script>
+                        <!-- end跳出確認視窗-->
+                        <!-- start確認視窗的內容-->
+                        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">警告</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="confirmModalBody">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form  method="post" onsubmit="isSubmit()" id="del-admin">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                                            <button type="submit" class="btn btn-primary" id="is_submit">確認</button>
+                                            <input type="hidden" id="myNumber" name="id" >
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end確認視窗的內容 -->
+                        <!-- start改變action的內容-->
+                        <script>
+                            function isSubmit() {
+                                $('button#is_submit').attr('disabled',true);
+                                let url = '{{route('admins.destroy','replace_field')}}';
+                                url = url.replace('replace_field',$('#myNumber').val());
+                                $('#del-admin').attr('action',url);
+                                $('#del-admin').submit();
+                            }
+                        </script>
+                        <!-- end改變action的內容-->
                     </div>
                 </div>
             </div>

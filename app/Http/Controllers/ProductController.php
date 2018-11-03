@@ -108,11 +108,11 @@ class ProductController extends Controller
 //        return redirect()->route('products.index');
 //    }
 
-    public function destroy(Request $request)
+    public function destroy(Product $product)
     {
-        $target = Product::find($request->id);
 
-        $target->delete();
+
+        $product->delete();
         return redirect()->route('products.index');
     }
 }
