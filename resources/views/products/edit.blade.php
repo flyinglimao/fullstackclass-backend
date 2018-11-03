@@ -18,6 +18,20 @@
                             <form action="{{route('products.update',['product'=>$product->id])}}" method="post">
                             @csrf
                             @method('PATCH')<!--  這個咚咚可以讓你委裝成patch，因為html不允許用patch傳送  -->
+                                @if ($errors->any())
+                                    <div class="alert alert-danger" role="alert">
+                                        <h4 class="alert-heading">ERROR!!</h4>
+                                        <p>請修正以下表單</p>
+                                        <hr>
+                                        <p class="mb-0">
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                                <li>{{$error}}</li>
+                                            @endforeach
+                                        </ul>
+                                        </p>
+                                    </div>
+                                @endif
                             <div class="form-group">
                                 <input class="form-control" type="submit" value="提交">
                             </div>
@@ -32,6 +46,10 @@
                             <div class="form-group">
                                 <label for="example-textarea-input" class="col-form-label">description</label>
                                 <textarea  class="form-control" cols="20" rows="4" id="example-textarea-input" name="description">{{$product->description}}</textarea>
+                            </div>
+                            <div class="form-group">
+                                 <label for="example-text-input" class="col-form-label">tag</label>
+                                 <input class="form-control" type="text" value="{{$product->tags}}" id="example-text-input" name="tags">
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input" class="col-form-label">type</label>

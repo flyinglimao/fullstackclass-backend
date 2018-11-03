@@ -41,17 +41,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $allnull = true;
-        foreach ($request->all() as $item) {
-            if ($item !== null){
-                $allnull = false;
-                break;
-            }
-        }
-        if ($allnull === true)
-            Product::create();
-        else
-            Product::create($request->all());
+        $this->validate($request,[
+            'title'=>'required',
+            'subtitle'=>'required',
+            'description'=>'required',
+            'type'=>'required|integer',
+            'author'=>'required',
+            'publisher'=>'required',
+            'isbn'=>'required',
+            'category'=>'required',
+            'tags'=>'required',
+            'list_price'=>'required|integer',
+            'sale_price'=>'required|integer',
+            'stock'=>'required|integer'
+
+        ]);
+        Product::create($request->all());
 
         return redirect()->route('products.index');
     }
@@ -75,6 +80,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+
         $data = [
             'product'=>$product
         ];
@@ -90,6 +96,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $this->validate($request,[
+            'title'=>'required',
+            'subtitle'=>'required',
+            'description'=>'required',
+            'type'=>'required|integer',
+            'author'=>'required',
+            'publisher'=>'required',
+            'isbn'=>'required',
+            'category'=>'required',
+            'tags'=>'required',
+            'list_price'=>'required|integer',
+            'sale_price'=>'required|integer',
+            'stock'=>'required|integer'
+
+        ]);
         $product->update($request->all());
         return redirect()->route('products.index');
     }

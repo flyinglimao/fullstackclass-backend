@@ -49,6 +49,6 @@ Route::delete('admins/destroy/{admin}','AdminController@destroy')->name('admins.
 
 //Users
 
-Route::get('users','MemberController@index')->name('users.index');
+Route::get('users','UserController@index')->name('users.index');
 
 //

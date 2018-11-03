@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-sm-flex justify-content-between align-items-center">
-                            <h4 class="header-title mb-0">管理者列表</h4>
+                            <h4 class="header-title mb-0">使用者列表</h4>
                             <select class="custome-select border-0 pr-3">
                                 <option selected>Last 24 Hours</option>
                                 <option value="0">01 July 2018</option>
@@ -21,26 +21,26 @@
                                 <table class="dbkit-table">
                                     <tr class="heading-td">
                                         {{--<td class="mv-icon">ID</td>--}}
-                                        <td class="coin-name">名稱</td>
-                                        <td class="coin-name">權限</td>
-                                        <td class="attachments">暱稱</td>
+                                        <td class="coin-name">使用者名稱</td>
+                                        <td class="coin-name">暱稱</td>
+                                        <td class="attachments">等級</td>
                                         <td class="attachments">信箱</td>
                                         <td class="attachments">電話</td>
                                         <td class="attachments">
-                                            <a href="{{route('admins.create')}}" class="btn btn-xs btn-success">新增管理員</a>
+                                            <a href="#" class="btn btn-xs btn-success">新增使用者</a>
                                         </td>
                                     </tr>
-                                    @foreach($admins_list as $admin)
+                                    @foreach($user_list as $user)
                                         <tr>
                                             {{--                                    <td class="mv-icon">{{$product->id}} </td>--}}
-                                            <td class="coin-name">{{$admin->username}} </td>
-                                            <td class="coin-name">{{json_decode($admin->permissions)->{'權限'} }} </td>
-                                            <td class="attachments">{{$admin->display_name}} </td>
-                                            <td class="attachments">{{$admin->email}}</td>
-                                            <td class="attachments">{{$admin->phone}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
+                                            <td class="coin-name">{{$user->realname}} </td>
+                                            <td class="attachments">{{$user->username}} </td>
+                                            <td class="coin-name">{{$user->level}} </td>
+                                            <td class="attachments">{{$user->email}}</td>
+                                            <td class="attachments">{{$user->phone}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                             <td class="attachments">
-                                                <a href="{{route('admins.edit',['admins'=>$admin->id])}}" class="btn btn-xs btn-primary">編輯</a>
-                                                <button onclick="confirmDelete('{{$admin->id}}','{{$admin->username}}')" class="btn btn-xs btn-danger">刪除</button>
+                                                <a href="#" class="btn btn-xs btn-primary">編輯</a>
+                                                <button onclick="" class="btn btn-xs btn-danger">刪除</button>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -68,7 +68,7 @@
                                     <div class="modal-body" id="confirmModalBody">
                                     </div>
                                     <div class="modal-footer">
-                                        <form action="{{route('admins.destroy',['admin'=>$admin->id])}}" method="post" onsubmit="isSubmit()">
+                                        <form action="" method="post" onsubmit="isSubmit()">
                                             @csrf
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
                                             <button type="submit" class="btn btn-primary" id="is_submit">確認</button>
