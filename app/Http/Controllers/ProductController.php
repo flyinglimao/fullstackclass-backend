@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,8 +16,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy('updated_at','DEC')->get();
+        $categories = Category::all();
         $data = [
-            'products_list' => $products
+            'products_list' => $products,
+            'categories'=>$categories
         ];
 
         return view('products.index',$data);
@@ -29,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        $data = [
+            'categories'=>$categories
+        ];
+        return view('products.create',$data);
 
     }
 
@@ -49,7 +56,7 @@ class ProductController extends Controller
             'author'=>'required',
             'publisher'=>'required',
             'isbn'=>'required',
-            'category'=>'required',
+            'category_id'=>'required',
             'tags'=>'required',
             'list_price'=>'required|integer',
             'sale_price'=>'required|integer',
@@ -80,9 +87,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-
+        $categories = Category::all();
         $data = [
-            'product'=>$product
+            'product'=>$product,
+            'categories'=>$categories
         ];
         return view('products.edit',$data);
     }
@@ -104,7 +112,7 @@ class ProductController extends Controller
             'author'=>'required',
             'publisher'=>'required',
             'isbn'=>'required',
-            'category'=>'required',
+            'category_id'=>'required',
             'tags'=>'required',
             'list_price'=>'required|integer',
             'sale_price'=>'required|integer',
@@ -122,17 +130,8 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-//    public function destroy(Product $product)
-//    {
-//        $product->delete();
-//
-//        return redirect()->route('products.index');
-//    }
-
     public function destroy(Product $product)
     {
-
-
         $product->delete();
         return redirect()->route('products.index');
     }

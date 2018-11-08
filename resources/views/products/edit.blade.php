@@ -37,51 +37,55 @@
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input" class="col-form-label">title</label>
-                                <input class="form-control" type="text" value="{{$product->title}}" id="example-text-input" name="title">
+                                <input class="form-control" type="text" value="{{old('title',$product->title)}}" id="example-text-input" name="title">
                             </div>
                             <div class="form-group">
                                 <label for="example-search-input" class="col-form-label">subtitle</label>
-                                <input class="form-control" type="text" value="{{$product->subtitle}}" id="example-search-input" name="subtitle">
+                                <input class="form-control" type="text" value="{{old('subtitle',$product->subtitle)}}" id="example-search-input" name="subtitle">
                             </div>
                             <div class="form-group">
                                 <label for="example-textarea-input" class="col-form-label">description</label>
-                                <textarea  class="form-control" cols="20" rows="4" id="example-textarea-input" name="description">{{$product->description}}</textarea>
+                                <textarea  class="form-control" cols="20" rows="4" id="example-textarea-input" name="description">{{old('description',$product->description)}}</textarea>
                             </div>
                             <div class="form-group">
                                  <label for="example-text-input" class="col-form-label">tag</label>
-                                 <input class="form-control" type="text" value="{{$product->tags}}" id="example-text-input" name="tags">
+                                 <input class="form-control" type="text" value="{{old('tags',$product->tags)}}" id="example-text-input" name="tags">
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input" class="col-form-label">type</label>
-                                <input class="form-control" type="text" value="{{$product->type}}" id="example-text-input" name="type">
+                                <input class="form-control" type="text" value="{{old('type',$product->type)}}" id="example-text-input" name="type">
                             </div>
                             <div class="form-group">
                                 <label for="example-tel-input" class="col-form-label">author</label>
-                                <input class="form-control" type="tel" value="{{$product->author}}" id="example-tel-input" name="author">
+                                <input class="form-control" type="tel" value="{{old('author',$product->author)}}" id="example-tel-input" name="author">
                             </div>
                             <div class="form-group">
                                 <label for="inputPassword" class="">publisher</label>
-                                <input class="form-control" type="text" value="{{$product->publisher}}" id="inputPassword"  name="publisher">
+                                <input class="form-control" type="text" value="{{old('publisher',$product->publisher)}}" id="inputPassword"  name="publisher">
                             </div>
                             <div class="form-group">
                                 <label for="example-number-input" class="col-form-label">isbn</label>
-                                <input class="form-control" type="text" value="{{$product->isbn}}" id="example-number-input" name="isbn">
+                                <input class="form-control" type="text" value="{{old('isbn',$product->isbn)}}" id="example-number-input" name="isbn">
                             </div>
                             <div class="form-group">
                                 <label for="example-category-input" class="col-form-label">category</label>
-                                <input class="form-control" type="text" value="{{$product->category}}" id="example-category-input" name="category">
+                                <select name="category_id" id="example-category-input" class="form-control">
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}" {{ (old('category_id',$product->category_id) == $category->id)?"selected" : ""}}>{{$category->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="example-list_price-input" class="col-form-label">list_price</label>
-                                <input class="form-control" type="text" value="{{$product->list_price}}" id="example-list_price-input" name="list_price">
+                                <input class="form-control" type="text" value="{{old('list_price',$product->list_price)}}" id="example-list_price-input" name="list_price">
                             </div>
                             <div class="form-group">
                                 <label for="example-sale_price-input" class="col-form-label">sale_price</label>
-                                <input class="form-control" type="text" value="{{$product->sale_price}}" id="example-sale_price-input" name="sale_price">
+                                <input class="form-control" type="text" value="{{old('sale_price',$product->sale_price)}}" id="example-sale_price-input" name="sale_price">
                             </div>
                             <div class="form-group">
                                 <label for="example-stock-input" class="col-form-label">stock</label>
-                                <input class="form-control" type="text" value="{{$product->stock}}" id="example-stock-input" name="stock">
+                                <input class="form-control" type="text" value="{{old('stock',$product->stock)}}" id="example-stock-input" name="stock">
                             </div>
                             <div class="form-group">
                                 <input class="form-control" type="submit" value="提交">

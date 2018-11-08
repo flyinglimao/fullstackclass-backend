@@ -15,10 +15,15 @@ class Product extends Model
         'author',
         'publisher',
         'isbn',
-        'category',
+        'category_id',
         'tags',
         'list_price',
         'sale_price',
         'stock',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

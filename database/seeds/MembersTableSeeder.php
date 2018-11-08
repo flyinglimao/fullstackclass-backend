@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
-class UsersTableSeeder extends Seeder
+use App\Member;
+class MembersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,12 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        Member::truncate();
         $total = 10;
 
         foreach (range(1,$total) as $id){
 
-            User::create([
+            Member::create([
                 'username'=>$this->randname(rand(4,14),0),
                 'password'=>$this->randname(rand(7,13),0),
                 'realname'=>$this->randname(rand(4,8), 1),

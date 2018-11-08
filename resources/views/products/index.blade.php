@@ -34,10 +34,9 @@
                                 </tr>
                                 @foreach($products_list as $product)
                                 <tr>
-{{--                                    <td class="mv-icon">{{$product->id}} </td>--}}
                                     <td class="coin-name">{{$product->title}} </td>
 
-                                    <td class="attachments">{{$product->category}} </td>
+                                    <td class="attachments">{{$product->category->name}} </td>
                                     <td class="attachments">{{$product->list_price}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>

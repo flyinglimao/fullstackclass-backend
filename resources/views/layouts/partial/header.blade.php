@@ -176,7 +176,7 @@
                     <li><a href="{{route('products.index')}}">Home</a></li>
                     <li><a href="{{route('products.index')}}">Product</a></li>
                     <li><a href="{{route('admins.index')}}">Admin</a></li>
-                    <li><a href="{{route('users.index')}}">User</a></li>
+                    <li><a href="{{route('members.index')}}">Member</a></li>
                 </ul>
             </div>
         </div>

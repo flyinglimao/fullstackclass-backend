@@ -47,8 +47,12 @@ Route::delete('admins/destroy/{admin}','AdminController@destroy')->name('admins.
 
 
 
-//Users
+//Members
 
-Route::get('users','UserController@index')->name('users.index');
+Route::get('members','MemberController@index')->name('members.index');
 
 //
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

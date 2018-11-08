@@ -70,7 +70,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="example-category-input" class="col-form-label">category</label>
-                                        <input class="form-control" type="text" placeholder="請輸入category" id="example-category-input" name="category" value="{{old('category')}}">
+                                        <select name="category_id" id="example-category-input" class="form-control">
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}" {{(old('category_id')==$category->id)?"selected":""}}>{{$category->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="example-list_price-input" class="col-form-label">list_price</label>

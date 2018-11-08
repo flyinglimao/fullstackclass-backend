@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('author',30)->default('測試author');
             $table->string('publisher',30)->default('測試publisher');
             $table->string('isbn',13)->default('0000000000000');
-            $table->string('category',20)->default('測試category');
+            $table->integer('category_id')->default(0);
             $table->string('tags',60)->default('測試tags');
             $table->integer('list_price')->default(100);
             $table->integer('sale_price')->default(100);
