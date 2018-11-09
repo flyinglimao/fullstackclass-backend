@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title','新增商品')
+@section('title','新增管理員')
 
 @section('content')
 
 
     <div class="main-content-inner"><!--不一樣的部分-->
         <div class="row">
-            <div class="col-12">               <!--    col-lg-6 col-ml-12 -->
+            <div class="col-12">               <!-    col-lg-6 col-ml-12 -->
                 <div class="row">
                     <!-- Textual inputs start -->
                     <div class="col-12 mt-5">

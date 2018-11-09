@@ -53,6 +53,8 @@ Route::get('members','MemberController@index')->name('members.index');
 
 //
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
