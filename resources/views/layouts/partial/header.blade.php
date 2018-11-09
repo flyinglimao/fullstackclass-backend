@@ -173,10 +173,11 @@
             <div class="breadcrumbs-area clearfix">
                 <h4 class="page-title pull-left">貓咪後台</h4>
                 <ul class="breadcrumbs pull-left">
-                    <li><a href="{{route('products.index')}}">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="{{route('products.index')}}">Product</a></li>
                     <li><a href="{{route('admins.index')}}">Admin</a></li>
                     <li><a href="{{route('members.index')}}">Member</a></li>
+                    <li><a href="{{route('login')}}">Login</a></li>
                 </ul>
             </div>
         </div>
