@@ -72,7 +72,6 @@
     {{--</div>--}}
 {{--</div>--}}
 <!-- end pre login-->
-
 <!-- login area start -->
 <div class="login-area">
     <div class="container">
@@ -81,10 +80,7 @@
                 @csrf
                 <div class="login-form-head">
                     <h4>Sign In</h4>
-                    <p>Hello there, Sign in and start managing your Admin Template</p>
-                    @foreach($errors->all() as $error)
-                        <p>{{$error}}</p>
-                    @endforeach
+                    <p>Hello there, Sign in and Enjoy our service</p>
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
@@ -113,8 +109,9 @@
                         <div class="col-6">
                             <div class="custom-control custom-checkbox mr-sm-2">
                                 <input type="checkbox" class="custom-control-input" name="remember"
-                                       {{ old('remember') ? 'checked' : '' }} id="customControlAutosizing">
+                                       id="customControlAutosizing" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+
                             </div>
                         </div>
                         <div class="col-6 text-right">

@@ -62,4 +62,33 @@
         </div>
     </div>
 </div>
+
+
+<!-- login area start -->
+<div class="login-area">
+    <div class="container">
+        <div class="login-box ptb--100">
+            <form method="POST" action="{{ route('password.update') }}">
+                @csrf
+                <input type="hidden" name="token" value="{{ $token }}">
+
+                <div class="login-form-head">
+                    <h4>Forgot Password</h4>
+                    <p>Hey! Forgot Password Your Password ? Reset Now</p>
+                </div>
+                <div class="login-form-body">
+                    <div class="form-gp">
+                        <label for="exampleInputEmail1">Email</label>
+                        <input type="email" id="exampleInputEmail1">
+                        <i class="ti-lock"></i>
+                    </div>
+                    <div class="submit-btn-area mt-5">
+                        <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- login area end -->
 @endsection
