@@ -29,8 +29,11 @@ Route::patch('products/update/{product}','ProductController@update')->name('prod
 
 Route::delete('products/destroy/{product}','ProductController@destroy')->name('products.destroy');
 
+Route::post('products/show','ProductController@show')->name('products.show');
 
-
+Route::get('products/test',function (){
+    return view('products.show');
+});
 //Admins
 
 Route::get('admins','AdminController@index')->name('admins.index');

@@ -53,6 +53,14 @@
                                         <input class="form-control" type="text" placeholder="請輸入type" id="example-url-input" name="type" value="{{old('type')}}">
                                     </div>
                                     <div class="form-group">
+                                         <label for="example-category-input" class="col-form-label">category</label>
+                                         <select name="category_id" id="example-category-input" class="form-control">
+                                             @foreach($categories as $category)
+                                                 <option value="{{$category->id}}" {{(old('category_id')==$category->id)?"selected":""}}>{{$category->name}}</option>
+                                             @endforeach
+                                         </select>
+                                    </div>
+                                    <div class="form-group">
                                          <label for="example-text-input" class="col-form-label">author</label>
                                          <input class="form-control" type="text" placeholder="請輸入author" id="example-url-input" name="author" value="{{old('author')}}">
                                     </div>
@@ -68,14 +76,7 @@
                                         <label for="example-number-input" class="col-form-label">isbn</label>
                                         <input class="form-control" type="text" placeholder="請輸入isbn" id="example-number-input" name="isbn" value="{{old('isbn')}}">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="example-category-input" class="col-form-label">category</label>
-                                        <select name="category_id" id="example-category-input" class="form-control">
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->id}}" {{(old('category_id')==$category->id)?"selected":""}}>{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="example-list_price-input" class="col-form-label">list_price</label>
                                         <input class="form-control" type="text" placeholder="請輸入list_price" id="example-list_price-input" name="list_price" value="{{old('list_price')}}">

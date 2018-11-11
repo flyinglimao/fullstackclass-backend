@@ -10,11 +10,35 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-sm-flex justify-content-between align-items-center">
-                        <h4 class="header-title mb-0">商品目錄</h4>
-                        <select class="custome-select border-0 pr-3">
-                            <option selected>Last 24 Hours</option>
-                            <option value="0">01 July 2018</option>
-                        </select>
+                        <h4 class="header-title mb-0">
+                            商品目錄
+                            @if(session()->has('data'))
+                                警告!此搜尋功能重整後即消失
+                            @endif
+                        </h4>
+
+                        <form  method="post" id="this_form" action="{{route('products.show')}}">
+                            @csrf
+                            <label for="cat_id" >搜尋分類</label>
+                            <select name="category_id" class="custome-select border-0 pr-3" id="cat_id" >
+
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}"
+                                        {{ (old('category_id') == $category->id)?"selected" : ""}}>
+                                         {{$category->name}}</option>
+                                @endforeach
+                             </select>
+                            <button type="submit">查詢</button>
+                        </form>
+                        <script>
+                            function selectfunc(){
+                                let target = $('select[name=category_id]').val();
+                                let urls = "{{route('products.show','replacement')}}".replace('replacement',target);
+                                $('#this_form').attr('action',urls);
+                                $('#this_form').submit();
+                            }
+                        </script>
+
                     </div>
                     <div class="market-status-table mt-4">
                         <div class="table-responsive">
@@ -55,13 +79,8 @@
         </div>
     </div>
 
-    <script>
-        function confirmDelete(productId,productTitle) {
-            $('#confirmModalBody').text('確定刪除商品'+productId+'號 '+productTitle+" 嗎?");
-            $('#confirmModal').modal('toggle');
-            $('input#myNumber').val(productId);
-        }
-    </script>
+
+    <!-- start刪除警告視窗-->
     <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -85,6 +104,7 @@
             </div>
         </div>
     </div>
+    <!-- end刪除警告視窗-->
     <script>
         function isSubmit() {
             $('button#is_submit').attr('disabled',true);
@@ -94,6 +114,13 @@
 
             $('#del').attr('action', url);
             $('#del').submit();
+        }
+    </script>
+    <script>
+        function confirmDelete(productId,productTitle) {
+            $('#confirmModalBody').text('確定刪除商品'+productId+'號 '+productTitle+" 嗎?");
+            $('#confirmModal').modal('toggle');
+            $('input#myNumber').val(productId);
         }
     </script>
     <!-- market value area end -->

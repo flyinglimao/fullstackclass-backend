@@ -17,5 +17,6 @@ Route::get('/user', function (Request $request) {
   return response()->json([
     "request" => $request,
     "message" => "Hello world!!",
+      "nijaja" => "四代火影"
   ]);
 });
