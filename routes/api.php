@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::get('/user', function (Request $request) {
   return response()->json([
     "request" => $request,
@@ -20,3 +24,6 @@ Route::get('/user', function (Request $request) {
       "nijaja" => "四代火影"
   ]);
 });
+Route::get('products','Api\ProductController@index');
+
+Route::get('products/{product}','Api\ProductController@show');
