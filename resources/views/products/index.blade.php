@@ -17,7 +17,7 @@
                             @endif
                         </h4>
 
-                        <form  method="post" id="this_form" action="{{route('products.show')}}">
+                        <form  method="post" id="this_form" action="{{route('products.index')}}">
                             @csrf
                             <label for="cat_id" >搜尋分類</label>
                             <select name="category_id" class="custome-select border-0 pr-3" id="cat_id" >
@@ -30,15 +30,6 @@
                              </select>
                             <button type="submit">查詢</button>
                         </form>
-                        <script>
-                            function selectfunc(){
-                                let target = $('select[name=category_id]').val();
-                                let urls = "{{route('products.show','replacement')}}".replace('replacement',target);
-                                $('#this_form').attr('action',urls);
-                                $('#this_form').submit();
-                            }
-                        </script>
-
                     </div>
                     <div class="market-status-table mt-4">
                         <div class="table-responsive">

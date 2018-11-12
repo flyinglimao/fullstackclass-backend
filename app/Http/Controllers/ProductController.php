@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+//        dd(Product::orderBy('updated_at','DEC')->get());
         if (!session()->has('data'))
         {
             $products = Product::orderBy('updated_at','DEC')->get();
@@ -29,6 +31,21 @@ class ProductController extends Controller
         }
         else
             return view('products.index',session('data'));
+//        if (!$request->has('category_id')){
+//            $request['category_id']=0;
+//            $data = [
+//                'products_list'=>Product::all(),
+//                'categories'=>Category::all(),
+//            ];
+//            return view('products.index',$data);
+//        }else {
+//            $data = [
+//                'products_list'=>Category::find($request->input('category_id'))
+//                ->products,
+//                'categories'=>Category::all(),
+//            ];
+//            return view('products.index',$data);
+//        }
 
     }
 
@@ -83,7 +100,8 @@ class ProductController extends Controller
      */
     public function show(Request $request)
     {
-        $cate_prod = Category::find($request->category_id)->products;
+        $cate_prod = Category::find(2)->products;
+        dd($cate_prod);
         $all_cat =  Category::all();
         $data = [
             'products_list' =>$cate_prod,
