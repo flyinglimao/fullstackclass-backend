@@ -72,20 +72,9 @@ class LoginController extends Controller
         ]);
     }
     //這個function理論上可以決定要用什麼東西登入 在AuthenticatedUsers.php有prototype
-
-
-    protected function authenticate(Request $request)
+    protected function credentials(Request $request)
     {
-        if (Auth::attempt([
-            'email'=>$request->input('email'),
-            'name'=>$request->input('name'),
-            'password'=>$request->input('password')
-            ]))
-        {
-            // Authentication passed...
-            return redirect()->intended('/products');
-        }
-        return redirect()->route('login');
+        return $request->only($this->username(), 'name','password');
     }
 
 
