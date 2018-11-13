@@ -25,6 +25,21 @@
                             <span>{{ $errors->first('email') }}</span>
                         </p>
                     @endif
+
+                    <!-- start新加的名字任認證-->
+                    <div class="form-gp">
+                        <label for="exampleInputName1">User name</label>
+                        <input type="text" id="exampleInputName1" class="{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                               name="name" value="{{ old('name') }}" required autofocus>
+                        <i class="ti-email"></i>
+                    </div>
+                    @if ($errors->has('name'))
+                        <p class="alert alert-danger" role="alert">
+                            <span>{{ $errors->first('name') }}</span>
+                        </p>
+                    @endif
+                    <!-- end新加的名字任認證-->
+
                     <div class="form-gp">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" id="exampleInputPassword1" class="{{ $errors->has('password') ? ' is-invalid' : '' }}"

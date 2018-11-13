@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 //我加的
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Auth;
-//use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
@@ -49,5 +49,45 @@ class LoginController extends Controller
 
         return $this->loggedOut($request) ?: redirect('login');
     }
+
+    //我亂搞的，這個function override RedirectsUsers.php的function
+//    public function redirectPath()
+//    {
+//        if (Auth::user()->sign_up_complete()==0){
+//            return redirect()->intended();
+//        }
+//        else{
+//            return route('login');
+//        }
+//    }
+
+
+    //這個function可以客製化 登入所需的東西，譬如說要名字
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|string',
+            'name' => 'required|string',
+            'password' => 'required|string',
+        ]);
+    }
+    //這個function理論上可以決定要用什麼東西登入 在AuthenticatedUsers.php有prototype
+
+
+    protected function authenticate(Request $request)
+    {
+        if (Auth::attempt([
+            'email'=>$request->input('email'),
+            'name'=>$request->input('name'),
+            'password'=>$request->input('password')
+            ]))
+        {
+            // Authentication passed...
+            return redirect()->intended('/products');
+        }
+        return redirect()->route('login');
+    }
+
+
 
 }

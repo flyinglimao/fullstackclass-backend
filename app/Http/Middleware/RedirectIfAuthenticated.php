@@ -23,4 +23,6 @@ class RedirectIfAuthenticated
 
         return $next($request);
     }
+
+    //上面的$next($request)可以讓我們回到原來想去的頁面
 }
