@@ -23,8 +23,8 @@ class ProductController extends Controller
     {
       $products = Category::find($request->query('category_id'))->products;
 
-//        dd(Category::where('id',$request->query('category_id'))->get());
-//        dd(Category::find($request->query('category_id')));
+//        dd(Category::where('id',$request->query('category_id'))->get());   外面多一層東西
+//        dd(Category::find($request->query('category_id')));                直接就是Category
     }
     else
         $products = Product::all();

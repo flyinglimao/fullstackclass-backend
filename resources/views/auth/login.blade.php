@@ -9,7 +9,9 @@
                 @csrf
                 <div class="login-form-head">
                     <h4>Sign In</h4>
-                    <p>Hello there, Sign in and Enjoy our service</p>
+
+                    <p>login to get more powerful function</p>
+
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">

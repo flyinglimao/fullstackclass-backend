@@ -18,13 +18,12 @@
 
                             <label for="cat_id" >搜尋分類</label>
                             <select name="category_id" class="custome-select border-0 pr-3" id="cat_id" >
-                                @if(isset($categories))
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}"
-                                          {{ (old('category_id') == $category->id)?"selected" : ""}}>
-                                             {{$category->name}}</option>
-                                    @endforeach
-                                @endif
+
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
+                                            {{$category->name}}</option>
+                                @endforeach
+
                              </select>
                             <button type="submit">查詢</button>
                         </form>
@@ -105,6 +104,7 @@
             $('#del').submit();
         }
     </script>
+
     <script>
         function confirmDelete(productId,productTitle) {
             $('#confirmModalBody').text('確定刪除商品'+productId+'號 '+productTitle+" 嗎?");
