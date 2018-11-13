@@ -34,32 +34,6 @@ Route::get('products','ProductController@index')->name('products.index');
 
 
 
-
-
-//Admins
-
-Route::get('admins','AdminController@index')->name('admins.index');
-
-Route::get('admins/create','AdminController@create')->name('admins.create');
-
-Route::post('admins/store','AdminController@store')->name('admins.store');
-
-Route::get('admins/edit/{admin}','AdminController@edit')->name('admins.edit');
-
-Route::patch('admins/update/{admin}','AdminController@update')->name('admins.update');
-
-Route::delete('admins/destroy/{admin}','AdminController@destroy')->name('admins.destroy');
-
-
-
-//Members
-
-Route::get('members','MemberController@index')->name('members.index');
-
-//
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
