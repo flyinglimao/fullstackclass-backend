@@ -17,23 +17,25 @@ Route::get('/', 'ProductController@index')->name('dashboard.index');
 
 // Products
 
+Route::middleware('auth')->group(function (){
+
+    Route::get('products/create','ProductController@create')->name('products.create');
+
+    Route::post('products/store','ProductController@store')->name('products.store');
+
+    Route::get('products/edit/{product}','ProductController@edit')->name('products.edit');
+
+    Route::patch('products/update/{product}','ProductController@update')->name('products.update');
+
+    Route::delete('products/destroy/{product}','ProductController@destroy')->name('products.destroy');
+});
+
 Route::get('products','ProductController@index')->name('products.index');
 
-Route::get('products/create','ProductController@create')->name('products.create');
 
-Route::post('products/store','ProductController@store')->name('products.store');
 
-Route::get('products/edit/{product}','ProductController@edit')->name('products.edit');
 
-Route::patch('products/update/{product}','ProductController@update')->name('products.update');
 
-Route::delete('products/destroy/{product}','ProductController@destroy')->name('products.destroy');
-
-Route::post('products/show','ProductController@show')->name('products.show');
-
-Route::get('products/test',function (){
-    return view('products.show');
-});
 //Admins
 
 Route::get('admins','AdminController@index')->name('admins.index');

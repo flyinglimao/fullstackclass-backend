@@ -184,16 +184,23 @@
         <div class="col-sm-6 clearfix">
             <div class="user-profile pull-right">
                 <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
-                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">
-                    Kumkum Rai
+                @auth
+                <h4 class="user-name dropdown-toggle" data-toggle="dropdown" >
+                    Hello, {{Auth::user()->name}}
                     <i class="fa fa-angle-down">
                     </i>
                 </h4>
                 <div class="dropdown-menu" x-placement="bottom-start">
                     <a class="dropdown-item" href="#">Message</a>
                     <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Log Out</a>
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button class="dropdown-item" type="submit">Log Out</button>
+                    </form>
                 </div>
+                @else
+                    <h4 class="user-name" ><a style="color:white" href="{{route('login')}}" >請登入</a></h4>
+                @endauth
             </div>
         </div>
     </div>

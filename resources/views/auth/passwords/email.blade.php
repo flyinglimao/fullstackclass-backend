@@ -72,12 +72,12 @@
                         <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                name="email" value="{{ $email ?? old('email') }}" required autofocus>
                         <i class="ti-lock"></i>
-                        @if ($errors->has('email'))
-                            <p class="alert alert-danger" role="alert">
-                                <span>{{ $errors->first('email') }}</span>
-                            </p>
-                        @endif
                     </div>
+                    @if ($errors->has('email'))
+                        <p class="alert alert-danger" role="alert">
+                            <span>{{ $errors->first('email') }}</span>
+                        </p>
+                    @endif
                     <div class="submit-btn-area mt-5">
                         <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
                     </div>

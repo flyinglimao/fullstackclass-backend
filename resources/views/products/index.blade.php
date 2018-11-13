@@ -12,21 +12,19 @@
                     <div class="d-sm-flex justify-content-between align-items-center">
                         <h4 class="header-title mb-0">
                             商品目錄
-                            @if(session()->has('data'))
-                                警告!此搜尋功能重整後即消失
-                            @endif
                         </h4>
 
-                        <form  method="post" id="this_form" action="{{route('products.index')}}">
-                            @csrf
+                        <form  method="get" id="this_form" action="{{route('products.index')}}">
+
                             <label for="cat_id" >搜尋分類</label>
                             <select name="category_id" class="custome-select border-0 pr-3" id="cat_id" >
-
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}"
-                                        {{ (old('category_id') == $category->id)?"selected" : ""}}>
-                                         {{$category->name}}</option>
-                                @endforeach
+                                @if(isset($categories))
+                                    @foreach($categories as $category)
+                                        <option value="{{$category->id}}"
+                                          {{ (old('category_id') == $category->id)?"selected" : ""}}>
+                                             {{$category->name}}</option>
+                                    @endforeach
+                                @endif
                              </select>
                             <button type="submit">查詢</button>
                         </form>

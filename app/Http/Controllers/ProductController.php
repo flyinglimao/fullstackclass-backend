@@ -2,173 +2,154 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ProductResource;
+
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+//use Illuminate\Auth;
 
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+
+  public function index(Request $request)
+  {
+    if ($request->query('category_id'))
     {
-//        dd(Product::orderBy('updated_at','DEC')->get());
-        if (!session()->has('data'))
-        {
-            $products = Product::orderBy('updated_at','DEC')->get();
-            $categories = Category::all();
-            $data = [
-                'products_list' => $products,
-                'categories'=>$categories
-            ];
+      $products = Category::find($request->query('category_id'))->products;
 
-            return view('products.index',$data);
-        }
-        else
-            return view('products.index',session('data'));
-//        if (!$request->has('category_id')){
-//            $request['category_id']=0;
-//            $data = [
-//                'products_list'=>Product::all(),
-//                'categories'=>Category::all(),
-//            ];
-//            return view('products.index',$data);
-//        }else {
-//            $data = [
-//                'products_list'=>Category::find($request->input('category_id'))
-//                ->products,
-//                'categories'=>Category::all(),
-//            ];
-//            return view('products.index',$data);
-//        }
-
+//        dd(Category::where('id',$request->query('category_id'))->get());
+//        dd(Category::find($request->query('category_id')));
     }
+    else
+        $products = Product::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $categories = Category::all();
-        $data = [
-            'categories'=>$categories
-        ];
-        return view('products.create',$data);
+    $categories = Category::all();
+    $data = [
+      'products_list' => $products,
+      'categories'=>$categories
+    ];
 
-    }
+    return view('products.index',$data);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request,[
-            'title'=>'required',
-            'subtitle'=>'required',
-            'description'=>'required',
-            'type'=>'required|integer',
-            'author'=>'required',
-            'publisher'=>'required',
-            'isbn'=>'required',
-            'category_id'=>'required',
-            'tags'=>'required',
-            'list_price'=>'required|integer',
-            'sale_price'=>'required|integer',
-            'stock'=>'required|integer'
+  }
 
-        ]);
-        Product::create($request->all());
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+    $categories = Category::all();
+    $data = [
+      'categories'=>$categories
+    ];
+    return view('products.create',$data);
 
-        return redirect()->route('products.index');
-    }
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request)
-    {
-        $cate_prod = Category::find(2)->products;
-        dd($cate_prod);
-        $all_cat =  Category::all();
-        $data = [
-            'products_list' =>$cate_prod,
-            'categories' => $all_cat
-        ];
-        return redirect()->route('products.index')
-            ->with('data',$data);
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+    $this->validate($request,[
+      'title'=>'required',
+      'subtitle'=>'required',
+      'description'=>'required',
+      'type'=>'required|integer',
+      'author'=>'required',
+      'publisher'=>'required',
+      'isbn'=>'required',
+      'category_id'=>'required',
+      'tags'=>'required',
+      'list_price'=>'required|integer',
+      'sale_price'=>'required|integer',
+      'stock'=>'required|integer'
 
-    }
+    ]);
+    Product::create($request->all());
+
+    return redirect()->route('products.index');
+  }
+
+  /**
+   * Display the specified resource.
+   *
+   * @param  \App\Product  $product
+   * @return \Illuminate\Http\Response
+   */
+  public function show()
+  {
+
+  }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        $categories = Category::all();
-        $data = [
-            'product'=>$product,
-            'categories'=>$categories
-        ];
-        return view('products.edit',$data);
-    }
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  \App\Product  $product
+   * @return \Illuminate\Http\Response
+   */
+  public function edit(Product $product)
+  {
+    $categories = Category::all();
+    $data = [
+      'product'=>$product,
+      'categories'=>$categories
+    ];
+    return view('products.edit',$data);
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
-    {
-        $this->validate($request,[
-            'title'=>'required',
-            'subtitle'=>'required',
-            'description'=>'required',
-            'type'=>'required|integer',
-            'author'=>'required',
-            'publisher'=>'required',
-            'isbn'=>'required',
-            'category_id'=>'required',
-            'tags'=>'required',
-            'list_price'=>'required|integer',
-            'sale_price'=>'required|integer',
-            'stock'=>'required|integer'
+  /**
+   * Update the specified resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @param  \App\Product  $product
+   * @return \Illuminate\Http\Response
+   */
+  public function update(Request $request, Product $product)
+  {
+    $this->validate($request,[
+      'title'=>'required',
+      'subtitle'=>'required',
+      'description'=>'required',
+      'type'=>'required|integer',
+      'author'=>'required',
+      'publisher'=>'required',
+      'isbn'=>'required',
+      'category_id'=>'required',
+      'tags'=>'required',
+      'list_price'=>'required|integer',
+      'sale_price'=>'required|integer',
+      'stock'=>'required|integer'
 
-        ]);
-        $product->update($request->all());
-        return redirect()->route('products.index');
-    }
+    ]);
+    $product->update($request->all());
+    return redirect()->route('products.index');
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Product  $product
-     * @return \Illuminate\Http\Response
-     */
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  \App\Product  $product
+   * @return \Illuminate\Http\Response
+   */
 
-    public function destroy(Product $product)
-    {
-        $product->delete();
-        return redirect()->route('products.index');
-    }
+  public function destroy(Product $product)
+  {
+    $product->delete();
+    return redirect()->route('products.index');
+  }
 }
 
 
