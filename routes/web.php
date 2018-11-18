@@ -34,6 +34,8 @@ Route::get('products','ProductController@index')->name('products.index');
 
 Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
 
+Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
+
 Route::get('123',function(){
     if (Auth::check())
         return 'you are login!!';

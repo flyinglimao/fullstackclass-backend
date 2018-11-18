@@ -3,7 +3,33 @@
 @section('title','商品編輯')
 
 @section('content')
-
+    <script>
+        $(document).ready(function(){
+            function presend(){
+                let target = $(".dynamic");
+                let myid = target.attr("id");                //找dynamic class的 id
+                let value = target.val();                    //獲得dynamic class的 value
+                let dependent = target.data('dependent');    //獲得dynamic class的 dependent
+                let _token=$('input[name="_token"]').val();
+                console.log(myid);
+                $.ajax({
+                    url:"{{route('dynamicdependent.prefetch')}}",
+                    method:"POST",
+                    data:{
+                        select:myid,
+                        sub_id:$('#sub_id').val(),
+                        value:value,
+                        _token:_token,
+                        dependent:dependent,
+                    },
+                    success:function (result) {
+                        $('#'+dependent).html(result);
+                    }
+                });
+            }
+            presend();
+        });
+    </script>
 
 <div class="main-content-inner"><!--不一樣的部分-->
     <div class="row">
@@ -29,7 +55,6 @@
                                                 <li>{{$error}}</li>
                                             @endforeach
                                         </ul>
-                                        </p>
                                     </div>
                                 @endif
                             <div class="form-group">
@@ -68,6 +93,7 @@
                                 <input class="form-control" type="text" value="{{old('isbn',$product->isbn)}}" id="example-number-input" name="isbn">
                             </div>
                             <div class="form-group">
+                                <input type="hidden" value="{{$product->subcategory->subcategory_id}}" id="sub_id">
                                 <label for="category_id" class="col-form-label">category</label>
                                 <select name="category_id" id="category_id" class="form-control dynamic" data-dependent="subcategory_id">
                                     @foreach($categories as $category)

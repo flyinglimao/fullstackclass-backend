@@ -98,14 +98,14 @@
 <script src="{{asset('js/scripts.js')}}"></script>
 
 <script>
+
+
     $(document).ready(function(){
-        let select =$('.dynamic');
-
-        select.one("scroll",function(){
-
-            let myid = $(this).attr("id");                //找dynamic class的 id
-            let value = $(this).val();                    //獲得dynamic class的 value
-            let dependent = $(this).data('dependent');    //獲得dynamic class的 dependent
+        function send_ajax(){
+            let target = $(".dynamic");
+            let myid = target.attr("id");                //找dynamic class的 id
+            let value = target.val();                    //獲得dynamic class的 value
+            let dependent = target.data('dependent');    //獲得dynamic class的 dependent
             let _token=$('input[name="_token"]').val();
             console.log(myid);
             $.ajax({
@@ -122,37 +122,15 @@
                 }
             })
 
-        });
+        }
 
-        select.change(function(){
-
-                let myid = $(this).attr("id");                //找dynamic class的 id
-                let value = $(this).val();                    //獲得dynamic class的 value
-                let dependent = $(this).data('dependent');    //獲得dynamic class的 dependent
-                let _token=$('input[name="_token"]').val();
-                console.log(myid);
-                $.ajax({
-                    url:"{{route('dynamicdependent.fetch')}}",
-                    method:"POST",
-                    data:{
-                        select:myid,
-                        value:value,
-                        _token:_token,
-                        dependent:dependent,
-                    },
-                    success:function (result) {
-                        $('#'+dependent).html(result);
-                    }
-                })
-
-        });
-
-
-
+        $('.dynamic').change(send_ajax);
         $('#category_id').change(function(){
             $('#subcategory_id').val('');
         });
+
     });
+
 
 </script>
 <!-- end script for dynamic select-->

@@ -29,7 +29,6 @@
                                                     <li>{{$error}}</li>
                                                 @endforeach
                                             </ul>
-                                        </p>
                                     </div>
                                     @endif
 
@@ -111,9 +110,7 @@
                             $('button#is_submit2').attr('disabled',true);
                         }
                     </script>
-                    <script>
-                        $(document)
-                    </script>
+
 
                 </div>
             </div>
