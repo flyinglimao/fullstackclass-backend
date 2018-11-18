@@ -68,11 +68,17 @@
                                 <input class="form-control" type="text" value="{{old('isbn',$product->isbn)}}" id="example-number-input" name="isbn">
                             </div>
                             <div class="form-group">
-                                <label for="example-category-input" class="col-form-label">category</label>
-                                <select name="category_id" id="example-category-input" class="form-control">
+                                <label for="category_id" class="col-form-label">category</label>
+                                <select name="category_id" id="category_id" class="form-control dynamic" data-dependent="subcategory_id">
                                     @foreach($categories as $category)
-                                        <option value="{{$category->id}}" {{ (old('category_id',$product->category_id) == $category->id)?"selected" : ""}}>{{$category->name}}</option>
+                                        <option value="{{$category->id}}" {{ (old('category_id',$product->category_id)
+                                         == $category->id)?"selected" : ""}}>{{$category->name}}</option>
                                     @endforeach
+                                </select>
+
+                                <label for="subcategory_id" class="col-form-label">subcategory</label>
+                                <select name="subcategory_id" id="subcategory_id" class="form-control">
+                                    <option value="">請選擇</option>
                                 </select>
                             </div>
                             <div class="form-group">

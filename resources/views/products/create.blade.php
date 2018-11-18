@@ -53,13 +53,20 @@
                                         <input class="form-control" type="text" placeholder="請輸入type" id="example-url-input" name="type" value="{{old('type')}}">
                                     </div>
                                     <div class="form-group">
-                                         <label for="example-category-input" class="col-form-label">category</label>
-                                         <select name="category_id" id="example-category-input" class="form-control">
+                                         <label for="category_id" class="col-form-label">category</label>
+                                         <select name="category_id" id="category_id" class="form-control dynamic" data-dependent="subcategory_id">
+                                             <option value="">請選擇</option>
                                              @foreach($categories as $category)
                                                  <option value="{{$category->id}}" {{(old('category_id')==$category->id)?"selected":""}}>{{$category->name}}</option>
                                              @endforeach
                                          </select>
+
+                                        <label for="subcategory_id" class="col-form-label">subcategory</label>
+                                        <select name="subcategory_id" id="subcategory_id" class="form-control">
+                                            <option value="">請選擇</option>
+                                        </select>
                                     </div>
+
                                     <div class="form-group">
                                          <label for="example-text-input" class="col-form-label">author</label>
                                          <input class="form-control" type="text" placeholder="請輸入author" id="example-url-input" name="author" value="{{old('author')}}">
@@ -93,6 +100,7 @@
                                         <button class="form-control" type="submit" id="is_submit2">提交</button>
                                     </div>
                                 </form>
+                                {{csrf_field()}}
                             </div>
                         </div>
                     </div>
@@ -102,6 +110,9 @@
                             $('button#is_submit1').attr('disabled',true);
                             $('button#is_submit2').attr('disabled',true);
                         }
+                    </script>
+                    <script>
+                        $(document)
                     </script>
 
                 </div>

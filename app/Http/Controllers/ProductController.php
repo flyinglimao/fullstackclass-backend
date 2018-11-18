@@ -76,7 +76,8 @@ class ProductController extends Controller
       'author'=>'required',
       'publisher'=>'required',
       'isbn'=>'required',
-      'category_id'=>'required',
+      'category_id'=>'required|integer',
+      'subcategory_id'=>'required|integer',
       'tags'=>'required',
       'list_price'=>'required|integer',
       'sale_price'=>'required|integer',
@@ -113,6 +114,7 @@ class ProductController extends Controller
       'product'=>$product,
       'categories'=>$categories
     ];
+
     return view('products.edit',$data);
   }
 
@@ -133,7 +135,8 @@ class ProductController extends Controller
       'author'=>'required',
       'publisher'=>'required',
       'isbn'=>'required',
-      'category_id'=>'required',
+      'category_id'=>'required|integer',
+      'subcategory_id'=>'required|integer',
       'tags'=>'required',
       'list_price'=>'required|integer',
       'sale_price'=>'required|integer',
