@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Subcategory;
 use Illuminate\Http\Request;
-//use Illuminate\Auth;
+
 
 
 class ProductController extends Controller
@@ -17,27 +18,32 @@ class ProductController extends Controller
    * @return \Illuminate\Http\Response
    */
 
-  public function index(Request $request)
-  {
-    if ($request->query('category_id'))
+    public function index(Request $request)
     {
-      $products = Category::find($request->query('category_id'))->products;
+        if ($request->query('category_id'))
+        {
+            if ($request->query('subcategory_id')){
+                $products = Subcategory::where('category_id',$request->query('category_id'))
+                    ->where('subcategory_id',$request->query('subcategory_id'))
+                    ->first()
+                    ->products;
+            }else{
+                $products = Category::find($request->query('category_id'))->products;
+            }
+        }
+        else
+            $products = Product::inRandomOrder()->get();
 
-//        dd(Category::where('id',$request->query('category_id'))->get());   外面多一層東西
-//        dd(Category::find($request->query('category_id')));                直接就是Category
+        $categories = Category::all();
+        $data = [
+            'products' => $products,
+            'categories'=>$categories,
+        ];
+
+
+        return view('products.index',$data);
+
     }
-    else
-        $products = Product::all();
-
-    $categories = Category::all();
-    $data = [
-      'products_list' => $products,
-      'categories'=>$categories
-    ];
-
-    return view('products.index',$data);
-
-  }
 
   /**
    * Show the form for creating a new resource.

@@ -16,17 +16,26 @@
 
                         <form  method="get" id="this_form" action="{{route('products.index')}}">
 
-                            <label for="cat_id" >搜尋分類</label>
-                            <select name="category_id" class="custome-select border-0 pr-3" id="cat_id" >
-
+                            <label for="category_id" >主分類</label>
+                            <select name="category_id" class="dynamic" id="category_id" data-dependent="subcategory_id">
+                                <option value="">請選擇</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
                                             {{$category->name}}</option>
                                 @endforeach
 
                              </select>
+
+
+                            <label for="subcategory_id">次分類</label>
+                            <select name="subcategory_id" id="subcategory_id">
+                                <option value="">請選擇</option>
+                            </select>
+
+
                             <button type="submit">查詢</button>
                         </form>
+                        {{csrf_field()}}
                     </div>
                     <div class="market-status-table mt-4">
                         <div class="table-responsive">
@@ -45,7 +54,7 @@
                                         <a href="{{route('products.create')}}" class="btn btn-xs btn-success">新增商品</a>
                                     </td>
                                 </tr>
-                                @foreach($products_list as $product)
+                                @foreach($products as $product)
                                 <tr>
                                     <td class="coin-name">{{$product->title}} </td>
 
@@ -115,5 +124,8 @@
         }
     </script>
     <!-- market value area end -->
+
+    <!-- start script for dynamic select-->
+
 </div>
 @endsection

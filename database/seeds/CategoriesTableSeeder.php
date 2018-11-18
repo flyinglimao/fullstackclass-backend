@@ -22,6 +22,7 @@ class CategoriesTableSeeder extends Seeder
             '雜誌'=>['婚紗雜誌','時尚穿搭','流行彩妝','汽車機車','男性時尚','女性時尚']
         ];
         Category::truncate();
+        Subcategory::truncate();
         $id = 0;
         foreach ($cate_array as $category=>$subcate_array){
             $id+=1;

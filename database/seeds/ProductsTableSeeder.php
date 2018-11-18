@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::truncate();
-        $total = 10;
+        $total = 30;
         $publisherArray = ['紅樹林出版','九章出版社','天下文化','天下雜誌','雄獅圖書','幼獅文化','卓著出版社'];
         $bookArray = ['唐吉軻德','雙城記','童軍警探','紅樓夢','麥田捕手','黑美人','玫瑰之名','天地一沙鷗','天使與魔鬼','安妮日記'];
 //        foreach (range(1,3) as $item){
@@ -28,11 +28,11 @@ class ProductsTableSeeder extends Seeder
             $category_id = Category::inRandomOrder()->first()->id;
             $subcategory_id=Subcategory::where('category_id',$category_id)->inRandomOrder()->first()->subcategory_id;
             Product::create([
-                'title' => $bookArray[$id-1],
+                'title' => $bookArray[($id-1)%10],
                 'subtitle' => $fake->realText(rand(10,15)),
                 'description' => $fake->realText(rand(10,15)),
                 'type' => 0,
-                'author' => "作者".$id,
+                'author' => "作者".($id-1)%10,
                 'publisher' => $publisherArray[rand(0,6)],
                 'isbn'=>$this->randISBN(),
                 'category_id' =>$category_id,

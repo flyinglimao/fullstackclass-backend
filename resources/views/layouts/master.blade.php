@@ -6,6 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- for ajax use-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="shortcut icon" type="image/png" href="{{asset('images/icon/favicon.ico')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
@@ -23,6 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- modernizr css -->
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
 </head>
 
 <body>
@@ -58,9 +63,11 @@
 
 <!-- page container area end -->
 <script src="{{asset('js/popper.min.js')}}"></script>
+
 <!-- jquery latest version -->
 <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
 <!-- bootstrap 4 js -->
+
 
 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -69,6 +76,8 @@
 <script src="{{asset('js/metisMenu.min.js')}}"></script>
 <script src="{{asset('js/jquery.slimscroll.min.js')}}"></script>
 <script src="{{asset('js/jquery.slicknav.min.js')}}"></script>
+
+
 
 <!-- start chart js -->
 {{--<script src={{asset('js/Chart.min.js')}}></script>--}}
@@ -87,6 +96,39 @@
 <!-- others plugins -->
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/scripts.js')}}"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.dynamic').change(function(){
+
+                let myid = $(this).attr("id");                //找dynamic class的 id
+                let value = $(this).val();                    //獲得dynamic class的 value
+                let dependent = $(this).data('dependent');    //獲得dynamic class的 dependent
+                let _token=$('input[name="_token"]').val();
+                console.log(myid);
+                $.ajax({
+                    url:"{{route('dynamicdependent.fetch')}}",
+                    method:"POST",
+                    data:{
+                        select:myid,
+                        value:value,
+                        _token:_token,
+                        dependent:dependent,
+                    },
+                    success:function (result) {
+                        $('#'+dependent).html(result);
+                    }
+                })
+
+        });
+        $('#category_id').change(function(){
+            $('#subcategory_id').val('');
+        });
+    });
+
+</script>
+<!-- end script for dynamic select-->
+
 </body>
 
 </html>

@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function (){
 
 Route::get('products','ProductController@index')->name('products.index');
 
+Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
+
 Route::get('123',function(){
     if (Auth::check())
         return 'you are login!!';
