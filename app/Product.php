@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Awobaz\Compoships\Database\Eloquent\Model;
 
 class Product extends Model
 {
@@ -16,14 +16,21 @@ class Product extends Model
         'publisher',
         'isbn',
         'category_id',
+        'subcategory_id',
         'tags',
         'list_price',
         'sale_price',
         'stock',
     ];
 
-    public function category()
-    {
+    public function category(){
         return $this->belongsTo(Category::class);
     }
+
+    public function subcategory(){
+        return $this->belongsTo(Subcategory::class,
+            ['category_id','subcategory_id'],
+            ['category_id','subcategory_id']);
+    }
+
 }

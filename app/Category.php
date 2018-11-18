@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Awobaz\Compoships\Database\Eloquent\Model;
 
 class Category extends Model
 {
@@ -11,8 +11,12 @@ class Category extends Model
         'name'
     ];
 
-    public function products()
-    {
-        return $this->hasMany(Product::class);
+    public function products(){
+        return $this->hasMany(Product::class,'category_id','id');
+    }
+
+
+    public function subcategories(){
+        return $this->hasMany(Subcategory::class,'category_id','id');
     }
 }

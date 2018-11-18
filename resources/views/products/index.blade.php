@@ -35,7 +35,8 @@
                                     {{--<td class="mv-icon">ID</td>--}}
                                     <td class="coin-name">書名</td>
 
-                                    <td class="attachments">種類</td>
+                                    <td class="attachments">主分類</td>
+                                    <td class="attachments">次分類</td>
                                     <td class="attachments">定價</td>
                                     <td class="attachments">特價</td>
                                     <td class="buy">庫存</td>
@@ -49,6 +50,7 @@
                                     <td class="coin-name">{{$product->title}} </td>
 
                                     <td class="attachments">{{$product->category->name}} </td>
+                                    <td class="attachments">{{$product->subcategory->name}} </td>
                                     <td class="attachments">{{$product->list_price}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>
