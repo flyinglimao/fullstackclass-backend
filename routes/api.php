@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('products','Api\ProductController@index');
-
 Route::get('products/{product}','Api\ProductController@show');
+Route::post('products','Api\ProductController@create');
+Route::patch('products/{product}','Api\ProductController@update');
+Route::delete('products/{product}','Api\ProductController@destroy');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

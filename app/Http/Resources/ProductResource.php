@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Input;
 
 class ProductResource extends JsonResource
 {
@@ -20,6 +21,7 @@ class ProductResource extends JsonResource
         return [
             'id' => $this->id,
             'title' =>$this->title,
+            'subtitle' => $this->subtitle,
             'description' =>$this->description,
             'category' =>$this->category->name,
             'publisher' =>$this->publisher,
