@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'admin' => ['required','integer']
         ]);
     }
 
@@ -63,10 +64,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        if (isset($data['profile'])){
+            $file = $data['profile'];
+            $new_id = 1;
+            if (User::all()->isNotEmpty())
+                $new_id += (int)User::OrderBy('id','DEC')->first()->id;
+            $filename = 'user'.$new_id.'.jpg';
+            $path = 'public/user/';
+
+            $file->storeAs($path,$filename);
+        }
+
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'admin' => (int)$data['admin'],
             'password' => Hash::make($data['password']),
+            'profile' => (isset($filename)?('storage/user/'.$filename):null),
+
         ]);
     }
 }

@@ -7,7 +7,7 @@
 <div class="login-area">
     <div class="container">
         <div class="login-box ptb--100">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="login-form-head">
                     <h4>Sign up</h4>
@@ -36,6 +36,21 @@
                             </p>
                         @endif
                     </div>
+                    <div class="form-gp" >
+                        <label for="isAdmin">Admin</label><br>
+
+                        <select name="admin" id="isAdmin" class="{{ $errors->has('admin') ? ' is-invalid' : '' }}" required>
+                            <option value="">請選擇</option>
+                            <option value="0">一般會員</option>
+                            <option value="1">管理員</option>
+                        </select>
+                        <i class="fa fa-user"></i>
+                        @if ($errors->has('admin'))
+                            <p class="alert alert-danger" role="alert">
+                                <span>{{ $errors->first('admin') }}</span>
+                            </p>
+                        @endif
+                    </div>
                     <div class="form-gp">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" id="exampleInputPassword1" class="{{ $errors->has('password') ? ' is-invalid' : '' }}"
@@ -51,8 +66,23 @@
                         <label for="exampleInputPassword2">Confirm Password</label>
                         <input type="password" id="exampleInputPassword2" name="password_confirmation" required>
                         <i class="ti-lock"></i>
+                    </div>
+
+
+                    <div class="form-gp">
+                        <div class="custom-file">
+                            <label for="inputGroupFile01">Choose file</label>
+                        </div>
+
+                        <div class="custom-file">
+                            <input type="file"  id="inputGroupFile01" name="profile">
+                            <i class="fa fa-file-image-o"></i>
+                        </div>
 
                     </div>
+
+
+
                     <div class="submit-btn-area">
                         <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
                         <div class="login-other row mt-4">

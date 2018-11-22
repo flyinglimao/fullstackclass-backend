@@ -181,8 +181,13 @@
         </div>
         <div class="col-sm-6 clearfix">
             <div class="user-profile pull-right">
-                <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
+
                 @auth
+                    @if(isset(Auth::user()->profile))
+                        <img class="avatar user-thumb" src="{{asset(Auth::user()->profile)}}" alt="{{Auth::user()->name}}">
+                    @else
+                        <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
+                    @endif
                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown" >
                     Hello, {{Auth::user()->name}}
                     <i class="fa fa-angle-down">
@@ -197,6 +202,7 @@
                     </form>
                 </div>
                 @else
+                    <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
                     <h4 class="user-name" ><a style="color:white" href="{{route('login')}}" >請登入</a></h4>
                 @endauth
             </div>

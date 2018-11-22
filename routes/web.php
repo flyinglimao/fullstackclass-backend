@@ -38,7 +38,7 @@ Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->na
 
 Route::get('123',function(){
     if (Auth::check())
-        return 'you are login!!';
+        return asset(Auth::user()->profile);
     else
         return 'not login';
 });

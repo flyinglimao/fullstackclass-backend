@@ -32,7 +32,7 @@ class ProductController extends Controller
             }
         }
         else
-            $products = Product::inRandomOrder()->get();
+            $products = Product::orderBy('sale_price','DEC')->get();
 
         $categories = Category::all();
         $data = [
