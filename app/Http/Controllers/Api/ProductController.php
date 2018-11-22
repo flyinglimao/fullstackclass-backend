@@ -44,6 +44,7 @@ class ProductController extends Controller
             "sale_price" => "integer|required",
             "stock" => "integer|required|gte:0",
         ]); 
+
         if ($validator->fails()) {
             return $validator->errors();
         } else {
