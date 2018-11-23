@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,30 +12,54 @@ use Illuminate\Http\Request;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
+
+//product
 Route::get('products','Api\ProductController@index');
-
 Route::get('products/{product}','Api\ProductController@show');
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::get('/user', function (Request $request) {
-  return response()->json([
-    "request" => $request,
-    "message" => "Hello world!!",
-      "nijaja" => "四代火影"
-  ]);
+Route::middleware('auth:api', 'admin')->group(function () {
+    Route::post('products','Api\ProductController@create');
+    Route::patch('products/{product}','Api\ProductController@update');
+    Route::delete('products/{product}','Api\ProductController@destroy');
 });
 
+//user
+Route::middleware('auth:api')->group(function () {
+    Route::get('me', 'Api\UserController@showself');
+    Route::patch('me', 'Api\UserController@updateself');
+    Route::middleware('admin')->group(function () {
+      Route::get('users', 'Api\UserController@index');
+      Route::get('users/{user}', 'Api\UserController@show');
+      Route::post('users', 'Api\UserController@create');
+      Route::patch('users/{user}', 'Api\UserController@update');
+      Route::delete('users/{user}', 'Api\UserController@destroy');
+    });
+});
+
+// bonus
+Route::middleware('auth:api')->group(function () {
+
+});
+
+//order
+
+
+//message
+
+
+//event
 
 
 //不用保護
-Route::get('login','Api\AuthController@login');
-Route::get('register','Api\AuthController@register');
+Route::post('login','Api\AuthController@login');
+Route::post('register','Api\AuthController@register');
+
 //要保護
 Route::middleware('auth:api')->group(function (){
     Route::post('orders','Api\OrderController@store');
     Route::post('logout','Api\AuthController@logout');
 });
 
+Route::fallback(function () {
+    return response()->json(["success" => false, "error" => "permission denied"], 403);
+});
