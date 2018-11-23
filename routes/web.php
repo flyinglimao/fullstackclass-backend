@@ -13,11 +13,14 @@
 
 
 
+
 Route::get('/', 'ProductController@index')->name('dashboard.index');
 
-// Products
+
 
 Route::middleware('auth')->group(function (){
+
+    // Products CRUD
 
     Route::get('products/create','ProductController@create')->name('products.create');
 
@@ -28,6 +31,13 @@ Route::middleware('auth')->group(function (){
     Route::patch('products/update/{product}','ProductController@update')->name('products.update');
 
     Route::delete('products/destroy/{product}','ProductController@destroy')->name('products.destroy');
+
+
+    //User CRUD
+
+    Route::get('user/edit','HomeController@edit')->name('user.edit');
+
+    Route::post('user/update/{user}','HomeController@update')->name('user.update');
 });
 
 Route::get('products','ProductController@index')->name('products.index');
@@ -36,11 +46,8 @@ Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dy
 
 Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
 
-Route::get('123',function(){
-    if (Auth::check())
-        return asset(Auth::user()->profile);
-    else
-        return 'not login';
+Route::get('123/{abc?}',function(App\Product $abc){
+    dd($abc);
 });
 
 Auth::routes();

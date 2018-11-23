@@ -194,11 +194,11 @@
                     </i>
                 </h4>
                 <div class="dropdown-menu" x-placement="bottom-start">
-                    <a class="dropdown-item" href="#">Message</a>
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">訊息</a>
+                    <a class="dropdown-item" href="{{route('user.edit')}}">使用者設定</a>
                     <form action="{{route('logout')}}" method="post">
                         @csrf
-                        <button class="dropdown-item" type="submit">Log Out</button>
+                        <button class="dropdown-item" type="submit">登出</button>
                     </form>
                 </div>
                 @else
