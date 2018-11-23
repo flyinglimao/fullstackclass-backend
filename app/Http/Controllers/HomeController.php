@@ -35,7 +35,11 @@ class HomeController extends Controller
 
     public function update(User $user,Request $request)
     {
-
+        $this->validate($request, [
+            'name'=>'required|string',
+            'email'=>'required|email',
+            'profile'=>'image'
+        ]);
         if (isset($request['profile'])){
             $file = $request['profile'];
             $filepath = 'public/user/';

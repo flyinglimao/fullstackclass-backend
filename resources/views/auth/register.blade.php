@@ -4,6 +4,7 @@
 <!-- start old register-->
 
 <!-- login area start -->
+
 <div class="login-area">
     <div class="container">
         <div class="login-box ptb--100">
@@ -75,7 +76,7 @@
                         </div>
 
                         <div class="custom-file">
-                            <input type="file"  id="inputGroupFile01" name="profile">
+                            <input type="file"  id="inputGroupFile01" name="profile" accept="image/jpeg">
                             <i class="fa fa-file-image-o"></i>
                         </div>
 
