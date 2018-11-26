@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Route;
 
 class Handler extends ExceptionHandler
 {
@@ -45,7 +47,11 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    { 
+      if ($exception instanceof ModelNotFound && $request->isApi) {
+        return response()->json(['success' => false, 'error' => 'not found']);
+      } else {
         return parent::render($request, $exception);
+      }
     }
 }

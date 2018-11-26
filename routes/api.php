@@ -36,13 +36,21 @@ Route::middleware('auth:api')->group(function () {
     });
 });
 
+Route::get('test', function(Request $request) { return ['ip' => $request->isApi]; });
+
 // bonus
 Route::middleware('auth:api')->group(function () {
-
+  Route::get('bonuses', 'Api\BonusController@show');
 });
 
 //order
-
+Route::middleware('auth:api')->group(function () {
+  Route::get('orders', 'Api\BonusController@index');
+  Route::get('orders/{order}', 'Api\BonusController@show');
+  Route::post('orders', 'Api\BonusController@store');
+  Route::patch('orders/{order}', 'Api\BonusController@update');
+  Route::delete('orders/{order}', 'Api\BonusController@order');
+});
 
 //message
 
@@ -61,5 +69,6 @@ Route::middleware('auth:api')->group(function (){
 });
 
 Route::fallback(function () {
-    return response()->json(["success" => false, "error" => "permission denied"], 403);
+    return response()->json(["success" => false, "error" => "denied"], 403);
 });
+
