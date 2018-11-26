@@ -38,6 +38,10 @@ Route::middleware('auth')->group(function (){
     Route::get('user/edit','HomeController@edit')->name('user.edit');
 
     Route::post('user/update/{user}','HomeController@update')->name('user.update');
+
+    //message CRUD
+
+
 });
 
 Route::get('products','ProductController@index')->name('products.index');

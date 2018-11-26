@@ -16,8 +16,10 @@ class AuthController extends Controller
             [
                 'name' => 'required|string',
                 'email' => 'required|string|email|unique:users',
+                'admin'=> 'required|boolean',
                 'password' => 'required|string|min:6',
-                'password_confirmation' => 'required|string|same:password'
+                'password_confirmation' => 'required|string|same:password',
+                'profile' => 'string'
             ]
         );
 
