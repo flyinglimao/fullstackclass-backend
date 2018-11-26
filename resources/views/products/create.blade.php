@@ -36,15 +36,15 @@
                                         <button class="form-control" type="submit" id="is_submit1">提交</button>
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-text-input" class="col-form-label">title</label>
+                                        <label for="example-text-input" class="col-form-label">書名</label>
                                         <input class="form-control" type="text" placeholder="請輸入title" id="example-text-input" name="title" value="{{old('title')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-search-input" class="col-form-label">subtitle</label>
+                                        <label for="example-search-input" class="col-form-label">標題</label>
                                         <input class="form-control" type="text" placeholder="請輸入subtitle" id="example-search-input" name="subtitle" value="{{old('subtitle')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-textarea-input" class="col-form-label">description</label>
+                                        <label for="example-textarea-input" class="col-form-label">敘述</label>
                                         <textarea  class="form-control" cols="20" rows="4" placeholder="請輸入description" id="example-textarea-input" name="description">{{old('description')}}</textarea>
                                     </div>
                                     <div class="form-group">
@@ -52,7 +52,7 @@
                                         <input class="form-control" type="text" placeholder="請輸入type" id="example-url-input" name="type" value="{{old('type')}}">
                                     </div>
                                     <div class="form-group">
-                                         <label for="category_id" class="col-form-label">category</label>
+                                         <label for="category_id" class="col-form-label">主分類</label>
                                          <select name="category_id" id="category_id" class="form-control dynamic" data-dependent="subcategory_id">
                                              <option value="">請選擇</option>
                                              @foreach($categories as $category)
@@ -60,14 +60,14 @@
                                              @endforeach
                                          </select>
 
-                                        <label for="subcategory_id" class="col-form-label">subcategory</label>
+                                        <label for="subcategory_id" class="col-form-label">次分類</label>
                                         <select name="subcategory_id" id="subcategory_id" class="form-control">
                                             <option value="">請選擇</option>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
-                                         <label for="example-text-input" class="col-form-label">author</label>
+                                         <label for="example-text-input" class="col-form-label">作者</label>
                                          <input class="form-control" type="text" placeholder="請輸入author" id="example-url-input" name="author" value="{{old('author')}}">
                                     </div>
                                     <div class="form-group">
@@ -75,24 +75,24 @@
                                         <input class="form-control" type="tel" placeholder="請輸入tag" id="example-tel-input" name="tags" value="{{old('tags')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputPassword" class="">publisher</label>
+                                        <label for="inputPassword" class="">出版商</label>
                                         <input class="form-control" type="text" placeholder="請輸入publisher" id="inputPassword"  name="publisher" value="{{old('publisher')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-number-input" class="col-form-label">isbn</label>
+                                        <label for="example-number-input" class="col-form-label">ISBN</label>
                                         <input class="form-control" type="text" placeholder="請輸入isbn" id="example-number-input" name="isbn" value="{{old('isbn')}}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="example-list_price-input" class="col-form-label">list_price</label>
+                                        <label for="example-list_price-input" class="col-form-label">定價</label>
                                         <input class="form-control" type="text" placeholder="請輸入list_price" id="example-list_price-input" name="list_price" value="{{old('list_price')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-sale_price-input" class="col-form-label">sale_price</label>
+                                        <label for="example-sale_price-input" class="col-form-label">售價</label>
                                         <input class="form-control" type="text" placeholder="請輸入sale_price" id="example-sale_price-input" name="sale_price" value="{{old('sale_price')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-stock-input" class="col-form-label">stock</label>
+                                        <label for="example-stock-input" class="col-form-label">庫存</label>
                                         <input class="form-control" type="text" placeholder="請輸入stock" id="example-stock-input" name="stock" value="{{old('stock')}}">
                                     </div>
                                     <div class="form-group">

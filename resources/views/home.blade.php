@@ -16,6 +16,10 @@
 
                     You are logged in!
                 </div>
+                @auth
+
+
+                @endauth
             </div>
         </div>
     </div>

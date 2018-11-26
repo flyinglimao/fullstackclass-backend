@@ -181,22 +181,28 @@
         </div>
         <div class="col-sm-6 clearfix">
             <div class="user-profile pull-right">
-                <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
+
                 @auth
+                    @if(isset(Auth::user()->profile))
+                        <img class="avatar user-thumb" src="{{asset(Auth::user()->profile)}}" alt="{{Auth::user()->name}}">
+                    @else
+                        <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
+                    @endif
                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown" >
                     Hello, {{Auth::user()->name}}
                     <i class="fa fa-angle-down">
                     </i>
                 </h4>
                 <div class="dropdown-menu" x-placement="bottom-start">
-                    <a class="dropdown-item" href="#">Message</a>
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">訊息</a>
+                    <a class="dropdown-item" href="{{route('user.edit')}}">使用者設定</a>
                     <form action="{{route('logout')}}" method="post">
                         @csrf
-                        <button class="dropdown-item" type="submit">Log Out</button>
+                        <button class="dropdown-item" type="submit">登出</button>
                     </form>
                 </div>
                 @else
+                    <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
                     <h4 class="user-name" ><a style="color:white" href="{{route('login')}}" >請登入</a></h4>
                 @endauth
             </div>

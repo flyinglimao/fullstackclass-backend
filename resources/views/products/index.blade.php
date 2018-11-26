@@ -23,7 +23,6 @@
                                     <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
                                             {{$category->name}}</option>
                                 @endforeach
-
                              </select>
 
 
@@ -110,9 +109,9 @@
 
             let url = '{{route('products.destroy', ':product')}}';
             url = url.replace(':product', $('#myNumber').val());
-
-            $('#del').attr('action', url);
-            $('#del').submit();
+            let del = $('#del');
+            del.attr('action', url);
+            del.submit();
         }
     </script>
 

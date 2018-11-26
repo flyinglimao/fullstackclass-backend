@@ -107,7 +107,6 @@
             let value = target.val();                    //獲得dynamic class的 value
             let dependent = target.data('dependent');    //獲得dynamic class的 dependent
             let _token=$('input[name="_token"]').val();
-            console.log(myid);
             $.ajax({
                 url:"{{route('dynamicdependent.fetch')}}",
                 method:"POST",
