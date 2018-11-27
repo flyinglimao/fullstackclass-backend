@@ -7,6 +7,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class ProductController extends Controller
 {
@@ -17,7 +18,14 @@ class ProductController extends Controller
      */
     public function index()
     {
+      if (Input::get('full')) {
         $products = Product::all();
+      } else if (Input::get('count') && is_numeric(Input::get('count'))){
+        $products = Product::paginate((int) Input::get('count'));
+        $products->links = $products->appends(['count' => Input::get('count')])->links();
+      } else {
+        $products = Product::paginate(30);
+      }
         ProductResource::withoutWrapping();
         return ProductResource::collection($products);
     }

@@ -38,28 +38,39 @@ Route::middleware('auth:api')->group(function () {
 
 // bonus
 Route::middleware('auth:api')->group(function () {
-
+  Route::get('bonuses', 'Api\BonusController@index');
 });
 
 //order
-
+Route::middleware('auth:api')->group(function () {
+  Route::get('orders', 'Api\BonusController@index');
+  Route::get('orders/{order}', 'Api\BonusController@show');
+  Route::post('orders', 'Api\BonusController@store');
+  Route::patch('orders/{order}', 'Api\BonusController@update');
+  Route::delete('orders/{order}', 'Api\BonusController@order');
+});
 
 //message
-
+Route::middleware('auth:api')->group(function () {
+  Route::get('messages', 'Api\MessageController@show');
+  Route::delete('messages/{message}', 'Api\MessageController@destroy');
+});
 
 //event
+Route::get('events', 'Api\EventController@index');
 
-
+//
 //不用保護
 Route::post('login','Api\AuthController@login');
 Route::post('register','Api\AuthController@register');
 
 //要保護
 Route::middleware('auth:api')->group(function (){
-    Route::post('orders','Api\OrderController@store');
-    Route::post('logout','Api\AuthController@logout');
+  Route::post('logout','Api\AuthController@logout');
+  Route::get('refresh','Api\AuthController@refresh');
 });
 
 Route::fallback(function () {
-    return response()->json(["success" => false, "error" => "permission denied"], 403);
+    return response()->json(["success" => false, "error" => "denied"], 403);
 });
+
