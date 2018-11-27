@@ -15,7 +15,8 @@
                             <div class="card-body">
                                 <h4 class="header-title">新增商品</h4>
                                 <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
-                                <form action="{{route('products.store')}}" method="post" onsubmit="isSubmit()">
+                                {{csrf_field()}}
+                                <form action="{{route('products.store')}}" method="post" id="create">
                                     @csrf
                                     <!-- 錯誤訊息 -->
                                     @if ($errors->any())
@@ -29,12 +30,44 @@
                                                     <li>{{$error}}</li>
                                                 @endforeach
                                             </ul>
+
                                     </div>
+
+                                    <script>
+                                        $(document).ready(function(){
+                                            function presend(){
+                                                let target = $(".dynamic");
+                                                let myid = target.attr("id");                //找dynamic class的 id
+                                                let cat_value = target.val();                    //獲得dynamic class的 value
+                                                let dependent = target.data('dependent');    //獲得dynamic class的 dependent
+                                                let sub_value = $('#sub_id').val()
+                                                let _token=$('input[name="_token"]').val();
+                                                console.log(myid);
+                                                console.log('|'+cat_value+'|');
+                                                console.log(dependent);
+                                                console.log(sub_value);
+                                                $.ajax({
+                                                    url:"{{route('dynamicdependent.prefetch')}}",
+                                                    method:"POST",
+                                                    data:{
+                                                        select:myid,
+                                                        sub_id:sub_value,
+                                                        cat_id:cat_value,
+                                                        _token:_token,
+                                                        dependent:dependent,
+                                                    },
+                                                    success:function (result) {
+                                                        $('#'+dependent).html(result);
+                                                    }
+                                                });
+                                            }
+                                            presend();
+                                        });
+
+                                    </script>
                                     @endif
 
-                                    <div class="form-group">
-                                        <button class="form-control" type="submit" id="is_submit1">提交</button>
-                                    </div>
+
                                     <div class="form-group">
                                         <label for="example-text-input" class="col-form-label">書名</label>
                                         <input class="form-control" type="text" placeholder="請輸入title" id="example-text-input" name="title" value="{{old('title')}}">
@@ -59,7 +92,7 @@
                                                  <option value="{{$category->id}}" {{(old('category_id')==$category->id)?"selected":""}}>{{$category->name}}</option>
                                              @endforeach
                                          </select>
-
+                                        <input type="hidden" value="{{old('subcategory_id')}}" id="sub_id">
                                         <label for="subcategory_id" class="col-form-label">次分類</label>
                                         <select name="subcategory_id" id="subcategory_id" class="form-control">
                                             <option value="">請選擇</option>
@@ -96,7 +129,7 @@
                                         <input class="form-control" type="text" placeholder="請輸入stock" id="example-stock-input" name="stock" value="{{old('stock')}}">
                                     </div>
                                     <div class="form-group">
-                                        <button class="form-control" type="submit" id="is_submit2">提交</button>
+                                        <button class="form-control" type="submit"onclick="disableButton(this,'#create')">提交</button>
                                     </div>
                                 </form>
                                 {{csrf_field()}}
@@ -104,20 +137,10 @@
                         </div>
                     </div>
                     <!-- Textual inputs end -->
-                    <script>
-                        function isSubmit() {
-                            $('button#is_submit1').attr('disabled',true);
-                            $('button#is_submit2').attr('disabled',true);
-                        }
-                    </script>
-
-
                 </div>
             </div>
         </div>
     </div>
-    <script>
 
-    </script>
 
 @endsection

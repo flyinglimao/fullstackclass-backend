@@ -7,18 +7,22 @@
         $(document).ready(function(){
             function presend(){
                 let target = $(".dynamic");
-                let myid = target.attr("id");                //找dynamic class的 id
-                let value = target.val();                    //獲得dynamic class的 value
+                let myid = target.attr("id");                //找dynamic class的 id: category_id
+                let cat_value = target.val();                    //獲得dynamic class的 value
                 let dependent = target.data('dependent');    //獲得dynamic class的 dependent
                 let _token=$('input[name="_token"]').val();
+                let sub_value = $('#sub_id').val();
                 console.log(myid);
+                console.log('|'+cat_value+'|');
+                console.log(dependent);
+                console.log(sub_value);
                 $.ajax({
                     url:"{{route('dynamicdependent.prefetch')}}",
                     method:"POST",
                     data:{
                         select:myid,
-                        sub_id:$('#sub_id').val(),
-                        value:value,
+                        sub_id:sub_value,
+                        cat_id:cat_value,
                         _token:_token,
                         dependent:dependent,
                     },
@@ -41,7 +45,7 @@
                         <div class="card-body">
                             <h4 class="header-title">編輯商品</h4>
                             <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
-                            <form action="{{route('products.update',['product'=>$product->id])}}" method="post">
+                            <form action="{{route('products.update',['product'=>$product->id])}}" method="post" id="edit">
                             @csrf
                             @method('PATCH')<!--  這個咚咚可以讓你委裝成patch，因為html不允許用patch傳送  -->
                                 @if ($errors->any())
@@ -58,7 +62,7 @@
                                     </div>
                                 @endif
                             <div class="form-group">
-                                <input class="form-control" type="submit" value="提交">
+                                <input class="form-control" type="submit" onclick="disableButton(this,'#edit')" value="提交">
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input" class="col-form-label">title</label>
@@ -93,9 +97,10 @@
                                 <input class="form-control" type="text" value="{{old('isbn',$product->isbn)}}" id="example-number-input" name="isbn">
                             </div>
                             <div class="form-group">
-                                <input type="hidden" value="{{$product->subcategory->subcategory_id}}" id="sub_id">
+                                <input type="hidden" value="{{old('subcategory_id',$product->subcategory->subcategory_id)}}" id="sub_id">
                                 <label for="category_id" class="col-form-label">category</label>
                                 <select name="category_id" id="category_id" class="form-control dynamic" data-dependent="subcategory_id">
+                                    <option value="">請選擇</option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}" {{ (old('category_id',$product->category_id)
                                          == $category->id)?"selected" : ""}}>{{$category->name}}</option>
@@ -119,10 +124,9 @@
                                 <label for="example-stock-input" class="col-form-label">stock</label>
                                 <input class="form-control" type="text" value="{{old('stock',$product->stock)}}" id="example-stock-input" name="stock">
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" type="submit" value="提交">
-                            </div>
+
                             </form>
+                            {{csrf_field()}}
                         </div>
                     </div>
                 </div>

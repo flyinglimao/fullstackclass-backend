@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\User::truncate();
+
         Product::truncate();
         $total = 30;
         $publisherArray = ['紅樹林出版','九章出版社','天下文化','天下雜誌','雄獅圖書','幼獅文化','卓著出版社'];
