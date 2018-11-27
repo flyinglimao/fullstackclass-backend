@@ -36,11 +36,9 @@ Route::middleware('auth:api')->group(function () {
     });
 });
 
-Route::get('test', function(Request $request) { return ['ip' => $request->isApi]; });
-
 // bonus
 Route::middleware('auth:api')->group(function () {
-  Route::get('bonuses', 'Api\BonusController@show');
+  Route::get('bonuses', 'Api\BonusController@index');
 });
 
 //order
@@ -53,19 +51,23 @@ Route::middleware('auth:api')->group(function () {
 });
 
 //message
-
+Route::middleware('auth:api')->group(function () {
+  Route::get('messages', 'Api\MessageController@show');
+  Route::delete('messages/{message}', 'Api\MessageController@destroy');
+});
 
 //event
+Route::get('events', 'Api\EventController@index');
 
-
+//
 //不用保護
 Route::post('login','Api\AuthController@login');
 Route::post('register','Api\AuthController@register');
 
 //要保護
 Route::middleware('auth:api')->group(function (){
-    Route::post('orders','Api\OrderController@store');
-    Route::post('logout','Api\AuthController@logout');
+  Route::post('logout','Api\AuthController@logout');
+  Route::get('refresh','Api\AuthController@refresh');
 });
 
 Route::fallback(function () {
