@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
 use App\User;
 use Illuminate\Http\Request;
 use App\Message;
 use Illuminate\Support\Facades\Validator;
-=======
-use Illuminate\Http\Request;
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
+
 
 class MessageController extends Controller
 {
@@ -20,14 +18,12 @@ class MessageController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
+
         $data = [
             'messages' =>Message::OrderBy('updated_at','DEC')->get(),
         ];
         return view('messages.index',$data);
-=======
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
+
     }
 
     /**
@@ -37,11 +33,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
         return view('messages.create');
-=======
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
     }
 
     /**
@@ -52,7 +44,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
+
         $validator = Validator::make($request->all(), [
             'sender_id' => 'required|integer',
             'receiver_id' => 'required|integer',
@@ -75,9 +67,7 @@ class MessageController extends Controller
         $validator->validate();
         Message::create($request->all());
         return redirect()->route('messages.index');
-=======
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
+
     }
 
     /**
@@ -94,7 +84,7 @@ class MessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-<<<<<<< HEAD
+
      * @param  Message $message
      * @return \Illuminate\Http\Response
      */
@@ -104,21 +94,13 @@ class MessageController extends Controller
             'message'=>$message
         ];
         return view('messages.edit',$data);
-=======
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-<<<<<<< HEAD
+
      * @param  Message $message
      * @return \Illuminate\Http\Response
      */
@@ -146,20 +128,13 @@ class MessageController extends Controller
         $validator->validate();
         $message->update($request->all());
         return redirect()->route('messages.index');
-=======
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-<<<<<<< HEAD
+
      * @param  Message $message
      * @return \Illuminate\Http\Response
      */
@@ -167,13 +142,6 @@ class MessageController extends Controller
     {
         $message->delete();
         return redirect()->route('messages.index');
-=======
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
->>>>>>> 2bfabbdf525ede825b91026121ed9740995f479a
+
     }
 }
