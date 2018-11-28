@@ -60,6 +60,8 @@ Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dy
 
 Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
 
+Route::get('mail/sendmail','MailController@sendmail')->name('sendmail');
+
 Route::get('item/destroy/{id}',function(App\Product $abc){
     dd($abc);
 })->name('item.destroy');
