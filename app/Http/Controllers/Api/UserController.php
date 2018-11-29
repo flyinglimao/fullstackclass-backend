@@ -27,6 +27,9 @@ class UserController extends Controller
     }
   }
 
+  function index(Request $request) {
+  }
+
   function show (Request $request, User $user) {
     UserResource::withoutWrapping();
     return new UserResource($user);
