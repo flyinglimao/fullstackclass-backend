@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\User;
 use Illuminate\Http\Request;
+use App\Message;
+use Illuminate\Support\Facades\Validator;
+
 
 class MessageController extends Controller
 {
@@ -13,7 +18,12 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+
+        $data = [
+            'messages' =>Message::OrderBy('updated_at','DEC')->get(),
+        ];
+        return view('messages.index',$data);
+
     }
 
     /**
@@ -23,7 +33,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        return view('messages.create');
     }
 
     /**
@@ -34,7 +44,30 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'sender_id' => 'required|integer',
+            'receiver_id' => 'required|integer',
+            'type' => 'required|integer',
+            'title' => 'required|string',
+            'message' => 'required|string'
+        ]);
+
+        $validator->after(function ($validator) use ($request) {
+
+            $sender_exist = User::where('id',$request->input('sender_id'))->first();
+            $receiver_exist = User::where('id',$request->input('receiver_id'))->first();
+
+            if ($sender_exist == null)
+                $validator->errors()->add('sender_id', 'This sender_id does not exist!');
+            if ($receiver_exist == null)
+                $validator->errors()->add('receiver_id', 'This receiver_id does not exist!');
+
+        });
+        $validator->validate();
+        Message::create($request->all());
+        return redirect()->route('messages.index');
+
     }
 
     /**
@@ -51,34 +84,64 @@ class MessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+
+     * @param  Message $message
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Message $message)
     {
-        //
+        $data = [
+            'message'=>$message
+        ];
+        return view('messages.edit',$data);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+
+     * @param  Message $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Message $message)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'sender_id' => 'required|integer',
+            'receiver_id' => 'required|integer',
+            'type' => 'required|integer',
+            'title' => 'required|string',
+            'message' => 'required|string'
+        ]);
+
+        $validator->after(function ($validator) use ($request) {
+
+            $sender_exist = User::where('id',$request->input('sender_id'))->first();
+            $receiver_exist = User::where('id',$request->input('receiver_id'))->first();
+
+            if ($sender_exist == null)
+                $validator->errors()->add('sender_id', 'This sender_id does not exist!');
+            if ($receiver_exist == null)
+                $validator->errors()->add('receiver_id', 'This receiver_id does not exist!');
+
+        });
+        $validator->validate();
+        $message->update($request->all());
+        return redirect()->route('messages.index');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+
+     * @param  Message $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return redirect()->route('messages.index');
+
     }
 }

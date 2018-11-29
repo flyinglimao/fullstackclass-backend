@@ -76,9 +76,14 @@
                         </div>
 
                         <div class="custom-file">
-                            <input type="file"  id="inputGroupFile01" name="profile" accept="image/jpeg">
+                            <input type="file"  id="inputGroupFile01" name="profile" accept="img">
                             <i class="fa fa-file-image-o"></i>
                         </div>
+                        @if ($errors->has('profile'))
+                            <p class="alert alert-danger" role="alert">
+                                <span>{{ $errors->first('profile') }}</span>
+                            </p>
+                        @endif
 
                     </div>
 

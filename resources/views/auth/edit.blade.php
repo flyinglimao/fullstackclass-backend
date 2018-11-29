@@ -17,7 +17,7 @@
                                     <h4 >目前頭貼</h4>
                                 </div>
                             </div>
-                            <img src="{{asset('storage/user/user1.jpg')}}" alt="no image">
+                            <img src="{{asset(Auth::user()->profile)}}" alt="no image" style="border:2px antiquewhite dashed;">
                         </div>
                     </div>
                     <div class="card">
@@ -27,7 +27,7 @@
                                     <h4 >預覽頭貼</h4>
                                 </div>
                             </div>
-                            <img src="#" alt="no image" id="show_image">
+                            <img src="#" alt="no image" id="show_image" style="border:2px antiquewhite dashed;">
                         </div>
                     </div>
                 </div>

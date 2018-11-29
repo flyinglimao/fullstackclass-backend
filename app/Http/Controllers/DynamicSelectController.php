@@ -27,13 +27,18 @@ class DynamicSelectController extends Controller
     }
     public function prefetch(Request $request)
     {
-
-        $value = $request->input('value');
-        $output = "";
+        $cat_id = $request->input('cat_id');
         $sub_id = $request->input('sub_id');
-        if ($value !=""){
+
+        if ($sub_id==""){
+            $output = '<option value="0" selected>'."請選擇".'</option>';
+        }else
+            $output = '<option value="0">'."請選擇".'</option>';
+
+
+        if ($cat_id !=""){
             $select = $request->input('select');
-            $subcategories = Subcategory::where($select,$value)->get();
+            $subcategories = Subcategory::where($select,$cat_id)->get();
 
             foreach ($subcategories as $id=>$subcategory){
                 if ($sub_id==$id+1)
@@ -42,6 +47,7 @@ class DynamicSelectController extends Controller
                     $output.='<option value="'.$subcategory->subcategory_id.'" >'.$subcategory->name.'</option>';
             }
         }
+
         echo $output;
     }
 

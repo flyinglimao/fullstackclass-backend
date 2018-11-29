@@ -14,18 +14,6 @@
 
                 </div>
                 <div class="login-form-body">
-                    <div class="form-gp">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                               name="email" value="{{ old('email') }}" required autofocus>
-                        <i class="ti-email"></i>
-                    </div>
-                    @if ($errors->has('email'))
-                        <p class="alert alert-danger" role="alert">
-                            <span>{{ $errors->first('email') }}</span>
-                        </p>
-                    @endif
-
                     <!-- start新加的名字任認證-->
                     <div class="form-gp">
                         <label for="exampleInputName1">User name</label>
@@ -38,7 +26,20 @@
                             <span>{{ $errors->first('name') }}</span>
                         </p>
                     @endif
-                    <!-- end新加的名字任認證-->
+                <!-- end新加的名字任認證-->
+
+                    <div class="form-gp">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                               name="email" value="{{ old('email') }}" required autofocus>
+                        <i class="ti-email"></i>
+                    </div>
+                    @if ($errors->has('email'))
+                        <p class="alert alert-danger" role="alert">
+                            <span>{{ $errors->first('email') }}</span>
+                        </p>
+                    @endif
+
 
                     <div class="form-gp">
                         <label for="exampleInputPassword1">Password</label>

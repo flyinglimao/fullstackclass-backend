@@ -65,7 +65,7 @@
                                     <td class="sell">{{$product->updated_at}} </td>
                                     <td class="attachments">
                                         <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-xs btn-primary">編輯</a>
-                                        <button onclick='confirmDelete("{{$product->id}}","{{$product->title}}")' class="btn btn-xs btn-danger">刪除</button>
+                                        <button onclick='confirmDelete("{{$product->id}}","{{$product->title}}","商品","products")' class="btn btn-xs btn-danger">刪除</button>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -77,54 +77,6 @@
         </div>
     </div>
 
-
-    <!-- start刪除警告視窗-->
-    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">警告</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="confirmModalBody">
-                </div>
-                <div class="modal-footer">
-                    <form method="post" onsubmit="isSubmit()" id="del">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                        <button type="submit" class="btn btn-primary" id="is_submit">確認</button>
-                        <input type="hidden" id="myNumber" name="id" >
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end刪除警告視窗-->
-    <script>
-        function isSubmit() {
-            $('button#is_submit').attr('disabled',true);
-
-            let url = '{{route('products.destroy', ':product')}}';
-            url = url.replace(':product', $('#myNumber').val());
-            let del = $('#del');
-            del.attr('action', url);
-            del.submit();
-        }
-    </script>
-
-    <script>
-        function confirmDelete(productId,productTitle) {
-            $('#confirmModalBody').text('確定刪除商品'+productId+'號 '+productTitle+" 嗎?");
-            $('#confirmModal').modal('toggle');
-            $('input#myNumber').val(productId);
-        }
-    </script>
-    <!-- market value area end -->
-
-    <!-- start script for dynamic select-->
 
 </div>
 @endsection

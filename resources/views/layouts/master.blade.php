@@ -67,11 +67,7 @@
 <!-- jquery latest version -->
 <script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
 <!-- bootstrap 4 js -->
-
-
-
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
 <script src="{{asset('js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('js/metisMenu.min.js')}}"></script>
 <script src="{{asset('js/jquery.slimscroll.min.js')}}"></script>
@@ -97,11 +93,12 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/scripts.js')}}"></script>
 
+
+<!-- start送ajax給DynamicSelectController-->
 <script>
-
-
     $(document).ready(function(){
         function send_ajax(){
+            console.log('use send_ajax() function!!');
             let target = $(".dynamic");
             let myid = target.attr("id");                //找dynamic class的 id
             let value = target.val();                    //獲得dynamic class的 value
@@ -120,19 +117,70 @@
                     $('#'+dependent).html(result);
                 }
             })
-
         }
-
         $('.dynamic').change(send_ajax);
         $('#category_id').change(function(){
             $('#subcategory_id').val('');
         });
 
     });
-
-
 </script>
-<!-- end script for dynamic select-->
+<!-- end送ajax給DynamicSelectController-->
+
+<!-- start刪除警告視窗-->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">警告</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="confirmModalBody">
+            </div>
+            <div class="modal-footer">
+                <form method="post"  id="del">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary" onclick="disableButton(this,'#del')">確認</button>
+                    <input type="hidden" id="myNumber" name="myNumber" >
+                    <input type="hidden" id="myModel" name="myModel">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end刪除警告視窗-->
+
+<!-- start啟動刪除視窗-->
+<script>
+    function disableButton(button_tag,form_tag) {
+        console.log('disable the button');
+        $(button_tag).attr('disabled',true);
+        $(form_tag).submit();
+
+    }
+
+    function confirmDelete(itemId,itemTitle,displayType,itemModel) {
+
+        console.log('use confirmDelete() function!!');
+        //pop out the window
+        $('#confirmModal').modal('toggle');
+        //fill in the warning text
+        $('#confirmModalBody').text('確定刪除'+displayType+itemId+'號 '+itemTitle+" 嗎?");
+        //got the right url
+        let url = '{{route('item.destroy', 'item_id')}}';
+        url = url.replace('item_id', itemId);
+        url = url.replace('item',itemModel);
+        $('#del').attr('action', url);
+        return true;
+    }
+</script>
+<!-- end啟動刪除視窗-->
+
+
 
 </body>
 
