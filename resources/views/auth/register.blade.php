@@ -40,15 +40,15 @@
                     <div class="form-gp" >
                         <label for="isAdmin">Admin</label><br>
 
-                        <select name="admin" id="isAdmin" class="{{ $errors->has('admin') ? ' is-invalid' : '' }}" required>
+                        <select name="isAdmin" id="isAdmin" class="{{ $errors->has('admin') ? ' is-invalid' : '' }}" required>
                             <option value="">請選擇</option>
                             <option value="0">一般會員</option>
                             <option value="1">管理員</option>
                         </select>
                         <i class="fa fa-user"></i>
-                        @if ($errors->has('admin'))
+                        @if ($errors->has('isAdmin'))
                             <p class="alert alert-danger" role="alert">
-                                <span>{{ $errors->first('admin') }}</span>
+                                <span>{{ $errors->first('isAdmin') }}</span>
                             </p>
                         @endif
                     </div>
