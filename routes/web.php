@@ -66,7 +66,31 @@ Route::get('item/destroy/{id}',function(App\Product $abc){
     dd($abc);
 })->name('item.destroy');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+//test set
+
+
+Route::get('a',function (){
+    dd(\App\Product::find(2));
+});
+Route::get('b',function (){
+    dd(\App\Product::where('category_id',2));
+});
+Route::get('c',function (){
+    dd(\App\Product::where('category_id',2)->where('subcategory_id',3)->get());
+});
+Route::get('d',function (){
+    dd(\App\Product::where('category_id',2)->first());
+});
+Route::get('e',function (){
+    dd(\App\Category::find(2)->products);
+});

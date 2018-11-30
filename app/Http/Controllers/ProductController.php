@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
-use App\Subcategory;
 use Illuminate\Http\Request;
 
 
@@ -20,27 +19,43 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
+
+        $products = Product::where('id','!=',-1);
+        // search by category and subcategory
         if ($request->query('category_id'))
         {
             if ($request->query('subcategory_id')){
-                $products = Subcategory::where('category_id',$request->query('category_id'))
-                    ->where('subcategory_id',$request->query('subcategory_id'))
-                    ->first()
-                    ->products;
+                $products = $products->where('category_id',$request->query('category_id'))
+                                     ->where('subcategory_id',$request->query('subcategory_id'));
             }else{
-                $products = Category::find($request->query('category_id'))->products;
+                $products = $products->where('category_id',$request->query('category_id'));
             }
         }
         else
-            $products = Product::orderBy('sale_price','DEC')->get();
+            $products = $products->orderBy('id','DEC');
+        //search by stock
+        if ($request->query('stock')){
+            $products = $products->where('stock',$request->query('stock'));
+        }
+
+        //search by string
+        if ($request->query('name')){
+            $products = $products->where('title','LIKE','%'.$request->query('name').'%')
+                                 ->orWhere('publisher','LIKE','%'.$request->query('name').'%');
+        }
+
+
+        $count = $products->count();
+        $products = $products->paginate(5);
+
 
         $categories = Category::all();
         $data = [
             'products' => $products,
             'categories'=>$categories,
+            'requests'=>$request,
+            'total'=>$count
         ];
-
-
         return view('products.index',$data);
 
     }

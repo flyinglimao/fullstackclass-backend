@@ -18,9 +18,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-
+        $messages = Message::OrderBy('updated_at','DEC')->paginate(3);
         $data = [
-            'messages' =>Message::OrderBy('updated_at','DEC')->get(),
+            'messages' =>$messages,
         ];
         return view('messages.index',$data);
 

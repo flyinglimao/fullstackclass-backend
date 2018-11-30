@@ -18,7 +18,7 @@ class CreateSalesTable extends Migration
             $table->integer('change');
             $table->string('message',45);
             $table->integer('products_id');
-            $table->integer('order_id');
+            $table->integer('order_id')->nullable();
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreateBonusesTable extends Migration
       $table->integer('change');
       $table->string('message',100);
       $table->integer('member_id');
-      $table->integer('order_id');
+      $table->integer('order_id')->nullable();
       $table->timestamps();
     });
   }

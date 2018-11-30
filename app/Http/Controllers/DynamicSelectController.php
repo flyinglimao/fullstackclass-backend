@@ -31,9 +31,9 @@ class DynamicSelectController extends Controller
         $sub_id = $request->input('sub_id');
 
         if ($sub_id==""){
-            $output = '<option value="0" selected>'."請選擇".'</option>';
+            $output = '<option value="" selected>'."請選擇".'</option>';
         }else
-            $output = '<option value="0">'."請選擇".'</option>';
+            $output = '<option value="">'."請選擇".'</option>';
 
 
         if ($cat_id !=""){

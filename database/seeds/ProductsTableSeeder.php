@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
     {
 
         Product::truncate();
-        $total = 30;
+        $total = 60;
         $publisherArray = ['紅樹林出版','九章出版社','天下文化','天下雜誌','雄獅圖書','幼獅文化','卓著出版社'];
         $bookArray = ['唐吉軻德','雙城記','童軍警探','紅樓夢','麥田捕手','黑美人','玫瑰之名','天地一沙鷗','天使與魔鬼','安妮日記'];
 //        foreach (range(1,3) as $item){

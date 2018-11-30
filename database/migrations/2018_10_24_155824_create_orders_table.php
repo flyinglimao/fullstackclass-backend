@@ -16,16 +16,16 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('state');
-            $table->integer('pay_method');
-            $table->json('payment_information');
+            $table->integer('pay_method')->nullable();
+            $table->json('payment_information')->nullable();
             $table->string('message',100);
-            $table->integer('ship_method');
-            $table->string('ship_information',100);
-            $table->string('ship_order',20);
+            $table->integer('ship_method')->nullable();
+            $table->string('ship_information',100)->nullable();
+            $table->string('ship_order',20)->nullable();
             $table->json('products');
             $table->string('receiver',30);
-            $table->string('receiver_phone',10);
-            $table->string('invoice_number',10);
+            $table->string('receiver_phone',10)->nullable();
+            $table->string('invoice_number',10)->nullable();
             $table->string('coupon',30);
             $table->integer('member_id');
             $table->timestamps();
