@@ -48,6 +48,8 @@
                                 </table>
                             </div>
                         </div>
+                        <div>{{$messages->lastpage()}}</div>
+                        <div>{{$messages->onEachSide(1)->links()}}</div>
                     </div>
                 </div>
             </div>

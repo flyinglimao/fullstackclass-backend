@@ -3,38 +3,139 @@
 @section('title','商品列表')
 
 @section('content')
+    <style>
+        .simple {
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+        .mybtn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .uniform_label_length{
+            width: 50px;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            function presend(){
+                let target = $(".dynamic");
+                let myid = target.attr("id");                //找dynamic class的 id: category_id
+                let cat_value = target.val();                    //獲得dynamic class的 value
+                let dependent = target.data('dependent');    //獲得dynamic class的 dependent
+                let _token=$('input[name="_token"]').val();
+                let sub_value = $('#sub_id').val();
+                console.log(myid);
+                console.log('|'+cat_value+'|');
+                console.log(dependent);
+                console.log(sub_value);
+                $.ajax({
+                    url:"{{route('dynamicdependent.prefetch')}}",
+                    method:"POST",
+                    data:{
+                        select:myid,
+                        sub_id:sub_value,
+                        cat_id:cat_value,
+                        _token:_token,
+                        dependent:dependent,
+                    },
+                    success:function (result) {
+                        $('#'+dependent).html(result);
+                    }
+                });
+            }
+            presend();
+        });
+    </script>
 <div class="main-content-inner">
     <!-- market value area start -->
     <div class="row mt-5 mb-5">
         <div class="col-12">
+            <!-- start 進階搜尋-->
+            <div class="card">
+                <div class="card-body">
+                    <div id="accordion1" class="according">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#accordion11">進階搜尋</a>
+                            </div>
+                            <div id="accordion11" class="collapse" data-parent="#accordion1">
+                                <div class="card-body">
+                                    <div class="d-sm-flex justify-content-between align-items-center">
+                                        <h4 class="header-title mb-0">
+                                            搜尋方式
+                                        </h4>
+                                    </div>
+                                    <div class="market-status-table mt-4">
+                                        <form  method="get" id="this_form" action="{{route('products.index')}}">
+                                            <div>
+                                                <label for="category_id" class="col-form-label uniform_label_length">主分類</label>
+                                                <select name="category_id" class="dynamic simple col-sm-3" id="category_id" data-dependent="subcategory_id" >
+                                                    <option value="">請選擇</option>
+                                                    @foreach($categories as $category)
+                                                        <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
+                                                            {{$category->name}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                                <input type="hidden" value="{{old('subcategory_id')}}" id="sub_id">
+                                                <label for="subcategory_id" class="col-form-label uniform_label_length">次分類</label>
+                                                <select name="subcategory_id" class="simple col-sm-3" id="subcategory_id">
+                                                    <option value="">請選擇</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for="stock" class="col-form-label uniform_label_length" >庫存</label>
+                                                <input type="text" name="stock" class="simple col-sm-3" id="stock" value="">
+                                                <label for="name" class="col-form-label uniform_label_length">名稱</label>
+                                                <input type="text" name="name" class="simple col-sm-3" id="name" value="">
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="mybtn btn-primary mt-4 pr-4 pl-4">查詢</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    {{csrf_field()}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end   進階搜尋-->
+
+            <!-- start 商品列表-->
             <div class="card">
                 <div class="card-body">
                     <div class="d-sm-flex justify-content-between align-items-center">
                         <h4 class="header-title mb-0">
-                            商品目錄
+                            @if(Request::url() != Request::fullurl())
+                                搜尋結果: {{$total.'筆資料'}}
+                            @else
+                                商品目錄
+                            @endif
                         </h4>
-
-                        <form  method="get" id="this_form" action="{{route('products.index')}}">
-
-                            <label for="category_id" >主分類</label>
-                            <select name="category_id" class="dynamic" id="category_id" data-dependent="subcategory_id">
-                                <option value="">請選擇</option>
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
-                                            {{$category->name}}</option>
-                                @endforeach
-                             </select>
-
-
-                            <label for="subcategory_id">次分類</label>
-                            <select name="subcategory_id" id="subcategory_id">
-                                <option value="">請選擇</option>
-                            </select>
-
-
-                            <button type="submit">查詢</button>
-                        </form>
-                        {{csrf_field()}}
                     </div>
                     <div class="market-status-table mt-4">
                         <div class="table-responsive">
@@ -72,8 +173,10 @@
                             </table>
                         </div>
                     </div>
+                    {{$products->appends(Request::except('page'))->onEachSide(1)->links()}}
                 </div>
             </div>
+            <!-- end   商品列表-->
         </div>
     </div>
 

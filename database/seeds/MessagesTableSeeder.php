@@ -17,7 +17,7 @@ class MessagesTableSeeder extends Seeder
 
 
         Message::truncate();
-        $total = 10;
+        $total = 50;
 
         $titleArray = [
             ['通知',['交易成功','物品售出','會員升級','評價上升']],
