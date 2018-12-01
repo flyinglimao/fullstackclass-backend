@@ -89,6 +89,14 @@
                                 <input class="form-control" type="tel" value="{{old('author',$product->author)}}" id="example-tel-input" name="author">
                             </div>
                             <div class="form-group">
+                                <label for="author_description" class="col-form-label">作者敘述</label>
+                                <input class="form-control" type="text" placeholder="請輸入作者敘述" id="author_description" name="author_description" value="{{old('author_description',$product->author_description)}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="interpreter" class="col-form-label">譯者</label>
+                                <input class="form-control" type="text" placeholder="請輸入譯者" id="interpreter" name="interpreter" value="{{old('interpreter',$product->interpreter)}}">
+                            </div>
+                            <div class="form-group">
                                 <label for="inputPassword" class="">publisher</label>
                                 <input class="form-control" type="text" value="{{old('publisher',$product->publisher)}}" id="inputPassword"  name="publisher">
                             </div>

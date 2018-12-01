@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Bonus;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BonusController extends Controller
 {
@@ -13,7 +16,10 @@ class BonusController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'bonuses' =>Bonus::paginate(10),
+        ];
+        return view('bonuses.index',$data);
     }
 
     /**
@@ -23,18 +29,38 @@ class BonusController extends Controller
      */
     public function create()
     {
-        //
+        return view('bonuses.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  Bonus $bonus
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'user_id'=>'required|integer',
+            'change'=>'required|integer',
+            'message'=>'required|string',
+        ]);
+        $validator->after(function ($validator) use ($request){
+            $id = $request->input('user_id');
+            $user_exist = User::where('id',$id)->first();
+            if ($user_exist==null){
+                $validator->errors()->add('user_id','user_id does not exist');
+            }
+        })->validate();
+
+
+
+        $bonus = Bonus::create($request->all());
+        $user = $bonus->user;
+        $user->bonus+=$bonus->change;
+        $user->save();
+        return redirect()->route('bonuses.index');
     }
 
     /**
@@ -51,10 +77,10 @@ class BonusController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Bonus $bonus
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Bonus $bonus)
     {
         //
     }

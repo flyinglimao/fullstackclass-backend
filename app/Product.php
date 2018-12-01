@@ -23,6 +23,8 @@ class Product extends Model
         'sale_price',
         'stock',
         'picture',
+        'interpreter',
+        'author_description'
     ];
 
     public function category(){

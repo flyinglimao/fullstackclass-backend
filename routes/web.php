@@ -66,6 +66,14 @@ Route::middleware('auth')->group(function (){
     Route::post('events/update/{event}','EventController@update')->name('events.update');
 
     Route::delete('events/destroy/{event}','EventController@destroy')->name('events.destroy');
+
+    //Bonus CRUD
+
+    Route::get('bonuses','BonusController@index')->name('bonuses.index');
+
+    Route::get('bonuses/create','BonusController@create')->name('bonuses.create');
+
+    Route::post('bonuses/store','BonusController@store')->name('bonuses.store');
 });
 
 Route::get('products','ProductController@index')->name('products.index');

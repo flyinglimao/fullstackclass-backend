@@ -22,7 +22,7 @@ class BonusesTableSeeder extends Seeder
             Bonus::create([
                 'change' => $change,
                 'message' => $messageTitle[$message],
-                'member_id' => $id,
+                'user_id' => \App\User::inRandomOrder()->first()->id,
                 'order_id' => $id
             ]);
         }

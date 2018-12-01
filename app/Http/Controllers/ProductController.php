@@ -94,7 +94,9 @@ class ProductController extends Controller
       'subtitle'=>'required',
       'description'=>'required',
       'type'=>'required|integer',
-      'author'=>'required',
+      'author'=>'required|string',
+      'author_description'=>'string',
+      'interpreter'=>'string',
       'publisher'=>'required',
       'publish_year'=>'required|integer|min:0',
       'isbn'=>'required',
@@ -169,6 +171,8 @@ class ProductController extends Controller
       'description'=>'required',
       'type'=>'required|integer',
       'author'=>'required',
+      'author_description'=>'string',
+      'interpreter'=>'string',
       'publisher'=>'required',
       'publish_year'=>'required|integer|min:0',
       'isbn'=>'required',
@@ -182,15 +186,16 @@ class ProductController extends Controller
 
     ]);
     $id = $product->id;
+    $array = $request->all();
     if(isset($request['picture'])){
         $file = $request['picture'];
         $filepath = 'public/product/';
         $filename = 'product'.$id.'.jpg';
         $file->storeAs($filepath,$filename);
-        $url = 'storage/product/'.$filename;
+        $array['picture'] = 'storage/product/'.$filename;
     }
-    $array = $request->all();
-    $array['picture'] = isset($url)?$url:null;
+
+
     $product->update($array);
     return redirect()->route('products.index');
   }

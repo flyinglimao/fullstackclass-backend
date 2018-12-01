@@ -40,7 +40,7 @@
                     <div class="form-gp" >
                         <label for="isAdmin">Admin</label><br>
 
-                        <select name="isAdmin" id="isAdmin" class="{{ $errors->has('admin') ? ' is-invalid' : '' }}" required>
+                        <select name="isAdmin" id="isAdmin" class="{{ $errors->has('isAdmin') ? ' is-invalid' : '' }}" required>
                             <option value="">請選擇</option>
                             <option value="0">一般會員</option>
                             <option value="1">管理員</option>
