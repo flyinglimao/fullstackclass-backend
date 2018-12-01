@@ -6,14 +6,14 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 
 class ProductController extends Controller
 {
   /**
    * Display a listing of the resource.
-   *
+   * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
 
@@ -49,12 +49,18 @@ class ProductController extends Controller
         $products = $products->paginate(5);
 
 
+
+        $statement = DB::select("show table status like 'products'");
+        $max =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
+        $max = json_decode($max)->max_id;
+
         $categories = Category::all();
         $data = [
             'products' => $products,
             'categories'=>$categories,
             'requests'=>$request,
-            'total'=>$count
+            'total'=>$count,
+            'max_id'=>$max,
         ];
         return view('products.index',$data);
 

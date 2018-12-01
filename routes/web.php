@@ -52,6 +52,20 @@ Route::middleware('auth')->group(function (){
     Route::patch('messages/update/{message}','MessageController@update')->name('messages.update');
 
     Route::delete('messages/destroy/{message}','MessageController@destroy')->name('messages.destroy');
+
+    //Event CRUD
+
+    Route::get('events','EventController@index')->name('events.index');
+
+    Route::get('events/create','EventController@create')->name('events.create');
+
+    Route::post('events/store','EventController@store')->name('events.store');
+
+    Route::get('events/edit/{event}','EventController@edit')->name('events.edit');
+
+    Route::post('events/update/{event}','EventController@update')->name('events.update');
+
+    Route::delete('events/destroy/{event}','EventController@destroy')->name('events.destroy');
 });
 
 Route::get('products','ProductController@index')->name('products.index');

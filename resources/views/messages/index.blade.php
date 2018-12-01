@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('title','訊息列表')
@@ -42,6 +43,7 @@
                                             <td class="attachments">
                                                 <a href="{{route('messages.edit',$message->id)}}" class="btn btn-xs btn-primary">編輯</a>
                                                 <button onclick='confirmDelete("{{$message->id}}","{{$message->title}}","訊息","messages")' class="btn btn-xs btn-danger">刪除</button>
+
                                             </td>
                                         </tr>
                                     @endforeach

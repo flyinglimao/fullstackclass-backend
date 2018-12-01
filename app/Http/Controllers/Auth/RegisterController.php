@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -68,8 +69,12 @@ class RegisterController extends Controller
         if (isset($data['profile'])){
             $file = $data['profile'];
             $new_id = 1;
-            if (User::all()->isNotEmpty())
-                $new_id += (int)User::OrderBy('id','DEC')->first()->id;
+            if (User::all()->isNotEmpty()){
+                $statement = DB::select("show table status like 'users'");
+                $max_id =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
+                $max_id = json_decode($max_id)->max_id;
+                $new_id+=$max_id;
+            }
             $filename = 'user'.$new_id.'.jpg';
             $path = 'public/user/';
 

@@ -32,7 +32,7 @@
             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         }
         .uniform_label_length{
-            width: 50px;
+            width: 60px;
         }
 
     </style>
@@ -83,7 +83,7 @@
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                         <h4 class="header-title mb-0">
-                                            搜尋方式
+                                            搜尋方式 {{'最大id'.$max_id}}
                                         </h4>
                                     </div>
                                     <div class="market-status-table mt-4">
@@ -109,6 +109,13 @@
                                                 <input type="text" name="stock" class="simple col-sm-3" id="stock" value="">
                                                 <label for="name" class="col-form-label uniform_label_length">名稱</label>
                                                 <input type="text" name="name" class="simple col-sm-3" id="name" value="">
+                                            </div>
+                                            <div>
+                                                <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
+                                                <select name="" id="orderby" class="simple col-sm-3">
+                                                    <option value="">test1</option>
+                                                    <option value="">test2</option>
+                                                </select>
                                             </div>
                                             <div>
                                                 <button type="submit" class="mybtn btn-primary mt-4 pr-4 pl-4">查詢</button>
