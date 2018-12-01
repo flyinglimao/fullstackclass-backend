@@ -45,7 +45,7 @@
                         <div class="card-body">
                             <h4 class="header-title">編輯商品</h4>
                             <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
-                            <form action="{{route('products.update',['product'=>$product->id])}}" method="post" id="edit">
+                            <form action="{{route('products.update',['product'=>$product->id])}}" method="post" id="edit" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')<!--  這個咚咚可以讓你委裝成patch，因為html不允許用patch傳送  -->
                                 @if ($errors->any())
@@ -93,6 +93,10 @@
                                 <input class="form-control" type="text" value="{{old('publisher',$product->publisher)}}" id="inputPassword"  name="publisher">
                             </div>
                             <div class="form-group">
+                                <label for="publish_year" class="">出版年份</label>
+                                <input class="form-control" type="text" value="{{old('publish_year',$product->publish_year)}}" id="publish_year"  name="publish_year">
+                            </div>
+                            <div class="form-group">
                                 <label for="example-number-input" class="col-form-label">isbn</label>
                                 <input class="form-control" type="text" value="{{old('isbn',$product->isbn)}}" id="example-number-input" name="isbn">
                             </div>
@@ -124,6 +128,11 @@
                                 <label for="example-stock-input" class="col-form-label">stock</label>
                                 <input class="form-control" type="text" value="{{old('stock',$product->stock)}}" id="example-stock-input" name="stock">
                             </div>
+                            <div class="form-group">
+                                <label for="picture" class="col-form-label">picture</label>
+                                <input class="form-control" type="file" value="{{old('picture',$product->picture)}}" id="picture" name="picture">
+                            </div>
+
 
                             </form>
                             {{csrf_field()}}

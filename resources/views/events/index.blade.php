@@ -55,7 +55,6 @@
                                 </table>
                             </div>
                         </div>
-                        <div>{{$events->lastpage()}}</div>
                         <div>{{$events->onEachSide(1)->links()}}</div>
                     </div>
                 </div>

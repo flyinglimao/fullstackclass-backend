@@ -46,7 +46,7 @@ class ProductController extends Controller
 
 
         $count = $products->count();
-        $products = $products->paginate(5);
+        $products = $products->paginate(10);
 
 
 
@@ -96,16 +96,31 @@ class ProductController extends Controller
       'type'=>'required|integer',
       'author'=>'required',
       'publisher'=>'required',
+      'publish_year'=>'required|integer|min:0',
       'isbn'=>'required',
       'category_id'=>'required|integer',
       'subcategory_id'=>'required|integer',
       'tags'=>'required',
       'list_price'=>'required|integer',
       'sale_price'=>'required|integer',
-      'stock'=>'required|integer'
+      'stock'=>'required|integer',
+      'picture'=>'image'
 
     ]);
-    Product::create($request->all());
+      $statement = DB::select("show table status like 'products'");
+      $new_id =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
+      $new_id = json_decode($new_id)->max_id;
+
+    if(isset($request['picture'])){
+        $file = $request['picture'];
+        $filepath = 'public/product/';
+        $filename = 'product'.$new_id.'.jpg';
+        $file->storeAs($filepath,$filename);
+        $url = 'storage/product/'.$filename;
+    }
+    $array = $request->all();
+    $array['picture'] = isset($url)?$url:null;
+    Product::create($array);
 
     return redirect()->route('products.index');
   }
@@ -155,16 +170,28 @@ class ProductController extends Controller
       'type'=>'required|integer',
       'author'=>'required',
       'publisher'=>'required',
+      'publish_year'=>'required|integer|min:0',
       'isbn'=>'required',
       'category_id'=>'required|integer',
       'subcategory_id'=>'required|integer',
       'tags'=>'required',
       'list_price'=>'required|integer',
       'sale_price'=>'required|integer',
-      'stock'=>'required|integer'
+      'stock'=>'required|integer',
+      'picture'=>'image',
 
     ]);
-    $product->update($request->all());
+    $id = $product->id;
+    if(isset($request['picture'])){
+        $file = $request['picture'];
+        $filepath = 'public/product/';
+        $filename = 'product'.$id.'.jpg';
+        $file->storeAs($filepath,$filename);
+        $url = 'storage/product/'.$filename;
+    }
+    $array = $request->all();
+    $array['picture'] = isset($url)?$url:null;
+    $product->update($array);
     return redirect()->route('products.index');
   }
 

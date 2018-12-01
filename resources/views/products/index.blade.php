@@ -153,10 +153,11 @@
 
                                     <td class="attachments">主分類</td>
                                     <td class="attachments">次分類</td>
-                                    <td class="attachments">定價</td>
+                                    <td class="attachments">出版時間</td>
                                     <td class="attachments">特價</td>
                                     <td class="buy">庫存</td>
                                     <td class="sell">上架時間</td>
+                                    <td class="attachments">圖片</td>
                                     <td class="attachments">
                                         <a href="{{route('products.create')}}" class="btn btn-xs btn-success">新增商品</a>
                                     </td>
@@ -167,10 +168,13 @@
 
                                     <td class="attachments">{{$product->category->name}} </td>
                                     <td class="attachments">{{$product->subcategory->name}} </td>
-                                    <td class="attachments">{{$product->list_price}}</td>
+                                    <td class="attachments">{{$product->publish_year}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>
                                     <td class="sell">{{$product->updated_at}} </td>
+                                    <td class="sell">
+                                        <img src="{{asset($product->picture)}}" alt="no picture" class="avatar user-thumb" style="width: 50px;height: 50px;"> </td>
+
                                     <td class="attachments">
                                         <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-xs btn-primary">編輯</a>
                                         <button onclick='confirmDelete("{{$product->id}}","{{$product->title}}","商品","products")' class="btn btn-xs btn-danger">刪除</button>

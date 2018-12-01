@@ -16,7 +16,7 @@
                                 <h4 class="header-title">新增商品</h4>
                                 <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
                                 {{csrf_field()}}
-                                <form action="{{route('products.store')}}" method="post" id="create">
+                                <form action="{{route('products.store')}}" method="post" id="create" enctype="multipart/form-data">
                                     @csrf
                                     <!-- 錯誤訊息 -->
                                     @if ($errors->any())
@@ -112,6 +112,10 @@
                                         <input class="form-control" type="text" placeholder="請輸入publisher" id="inputPassword"  name="publisher" value="{{old('publisher')}}">
                                     </div>
                                     <div class="form-group">
+                                        <label for="publish_year" class="col-form-label">出版年分</label>
+                                        <input class="form-control" type="text" id="publish_year" name="publish_year" value="{{old('publish_year')}}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="example-number-input" class="col-form-label">ISBN</label>
                                         <input class="form-control" type="text" placeholder="請輸入isbn" id="example-number-input" name="isbn" value="{{old('isbn')}}">
                                     </div>
@@ -128,6 +132,11 @@
                                         <label for="example-stock-input" class="col-form-label">庫存</label>
                                         <input class="form-control" type="text" placeholder="請輸入stock" id="example-stock-input" name="stock" value="{{old('stock')}}">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="picture" class="col-form-label">picture</label>
+                                        <input class="form-control" type="file"  id="picture" name="picture" value="{{old('picture')}}">
+                                    </div>
+
                                     <div class="form-group">
                                         <button class="form-control" type="submit"onclick="disableButton(this,'#create')">提交</button>
                                     </div>
