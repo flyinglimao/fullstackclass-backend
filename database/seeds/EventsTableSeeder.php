@@ -23,7 +23,7 @@ class EventsTableSeeder extends Seeder
         foreach (range(1,$total) as $id){
             $day = now()->addDay(rand(15,25));
             Event::create([
-                'url'=>"www.google.com",
+                'url'=>"http://www.google.com",
                 'title'=>$eventTable[$id-1],
                 'description'=>"裡面的書都很好看",
                 'hero_image'=>"null",

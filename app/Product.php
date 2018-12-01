@@ -14,6 +14,7 @@ class Product extends Model
         'type',
         'author',
         'publisher',
+        'publish_year',
         'isbn',
         'category_id',
         'subcategory_id',
@@ -21,6 +22,7 @@ class Product extends Model
         'list_price',
         'sale_price',
         'stock',
+        'picture',
     ];
 
     public function category(){

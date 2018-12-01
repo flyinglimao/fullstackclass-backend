@@ -35,6 +35,7 @@ class ProductsTableSeeder extends Seeder
                 'type' => 0,
                 'author' => "作者".($id-1)%10,
                 'publisher' => $publisherArray[rand(0,6)],
+                'publish_year'=>rand(1,2020),
                 'isbn'=>$this->randISBN(),
                 'category_id' =>$category_id,
                 'subcategory_id'=>$subcategory_id,

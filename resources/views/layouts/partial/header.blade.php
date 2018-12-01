@@ -177,6 +177,10 @@
                     <li><a href="{{route('login')}}">Login</a></li>
                     <li><a href="{{route('products.index')}}">Product</a></li>
                     <li><a href="{{route('messages.index')}}">Message</a></li>
+                    <li><a href="{{route('events.index')}}">Event</a></li>
+                    <li><a href="#">Bonus</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Order</a></li>
                 </ul>
             </div>
         </div>

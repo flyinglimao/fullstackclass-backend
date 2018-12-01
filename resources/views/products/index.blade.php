@@ -32,7 +32,7 @@
             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         }
         .uniform_label_length{
-            width: 50px;
+            width: 60px;
         }
 
     </style>
@@ -83,7 +83,7 @@
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                         <h4 class="header-title mb-0">
-                                            搜尋方式
+                                            搜尋方式 {{'最大id'.$max_id}}
                                         </h4>
                                     </div>
                                     <div class="market-status-table mt-4">
@@ -109,6 +109,13 @@
                                                 <input type="text" name="stock" class="simple col-sm-3" id="stock" value="">
                                                 <label for="name" class="col-form-label uniform_label_length">名稱</label>
                                                 <input type="text" name="name" class="simple col-sm-3" id="name" value="">
+                                            </div>
+                                            <div>
+                                                <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
+                                                <select name="" id="orderby" class="simple col-sm-3">
+                                                    <option value="">test1</option>
+                                                    <option value="">test2</option>
+                                                </select>
                                             </div>
                                             <div>
                                                 <button type="submit" class="mybtn btn-primary mt-4 pr-4 pl-4">查詢</button>
@@ -146,10 +153,11 @@
 
                                     <td class="attachments">主分類</td>
                                     <td class="attachments">次分類</td>
-                                    <td class="attachments">定價</td>
+                                    <td class="attachments">出版時間</td>
                                     <td class="attachments">特價</td>
                                     <td class="buy">庫存</td>
                                     <td class="sell">上架時間</td>
+                                    <td class="attachments">圖片</td>
                                     <td class="attachments">
                                         <a href="{{route('products.create')}}" class="btn btn-xs btn-success">新增商品</a>
                                     </td>
@@ -160,10 +168,13 @@
 
                                     <td class="attachments">{{$product->category->name}} </td>
                                     <td class="attachments">{{$product->subcategory->name}} </td>
-                                    <td class="attachments">{{$product->list_price}}</td>
+                                    <td class="attachments">{{$product->publish_year}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>
                                     <td class="sell">{{$product->updated_at}} </td>
+                                    <td class="sell">
+                                        <img src="{{asset($product->picture)}}" alt="no picture" class="avatar user-thumb" style="width: 50px;height: 50px;"> </td>
+
                                     <td class="attachments">
                                         <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-xs btn-primary">編輯</a>
                                         <button onclick='confirmDelete("{{$product->id}}","{{$product->title}}","商品","products")' class="btn btn-xs btn-danger">刪除</button>
