@@ -36,7 +36,6 @@ class OrdersTableSeeder extends Seeder
         'receiver'=>$this->randname(rand(6,10),1),
         'receiver_phone'=>$this->phoneGenerator(),
         'invoice_number'=>$this->randname(10,2),
-        'coupon'=>"null",
         'member_id'=>$id
       ]);
     }

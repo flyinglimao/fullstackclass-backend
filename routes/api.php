@@ -43,11 +43,9 @@ Route::middleware('auth:api')->group(function () {
 
 //order
 Route::middleware('auth:api')->group(function () {
-  Route::get('orders', 'Api\BonusController@index');
-  Route::get('orders/{order}', 'Api\BonusController@show');
-  Route::post('orders', 'Api\BonusController@store');
-  Route::patch('orders/{order}', 'Api\BonusController@update');
-  Route::delete('orders/{order}', 'Api\BonusController@order');
+  Route::get('orders', 'Api\OrderController@index');
+  Route::get('orders/{order}', 'Api\OrderController@show');
+  Route::patch('orders', 'Api\OrderController@update');
 });
 
 //message

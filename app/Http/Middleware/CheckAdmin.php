@@ -16,7 +16,7 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user()->isAdmin) {
+        if (Auth::user()->admin) {
             return $next($request);
         } else {
             return response()->json(["success" => false, "error" => "this token cannot do this action"], 401);
