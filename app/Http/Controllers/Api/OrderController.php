@@ -26,11 +26,24 @@ class OrderController extends Controller
     }
   }
 
+  public function cart (Reqeust $requesr) {
+    $order = Order::where('member_id', Auth::id())->where('state', 0)->first();
+    OrderResource::withoutWrapping();
+    return new OrderResource($order);
+  }
+
   public function update (Request $request) {
     $input = $request->only([
       'state', 'pay_method', 'message', 'ship_method', 
       'products', 'receiver', 'receiver_phone', 'coupon',
     ]);
+
+    $order = Order::where('member_id', Auth::id())->where('state', 0)->first();
+
+    if (Input::get('state') == 1) { // Submit Order
+      $order += $input;
+      dd($order);
+    }
     $validator = Validator::make($input, [
       'state' => 'integer|in:1',
       'pay_method' => 'integer',
@@ -38,7 +51,6 @@ class OrderController extends Controller
       'products' => 'json',
       'receiver_phone' => 'string|size:10',
     ]);
-    $order = Order::where('member_id', Auth::id())->where('state', 0)->first();
     if ($order) {
       foreach ($input as $key => $value) {
         $order->$key = $value;
