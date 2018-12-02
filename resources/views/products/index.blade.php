@@ -93,12 +93,12 @@
                                                 <select name="category_id" class="dynamic simple col-sm-3" id="category_id" data-dependent="subcategory_id" >
                                                     <option value="">請選擇</option>
                                                     @foreach($categories as $category)
-                                                        <option value="{{$category->id}}"{{ (old('category_id') == $category->id)?"selected" : ""}}>
+                                                        <option value="{{$category->id}}"{{ (request('category_id') == $category->id)?"selected" : ""}}>
                                                             {{$category->name}}</option>
                                                     @endforeach
                                                 </select>
 
-                                                <input type="hidden" value="{{old('subcategory_id')}}" id="sub_id">
+                                                <input type="hidden" value="{{request('subcategory_id')}}" id="sub_id">
                                                 <label for="subcategory_id" class="col-form-label uniform_label_length">次分類</label>
                                                 <select name="subcategory_id" class="simple col-sm-3" id="subcategory_id">
                                                     <option value="">請選擇</option>
@@ -106,9 +106,9 @@
                                             </div>
                                             <div>
                                                 <label for="stock" class="col-form-label uniform_label_length" >庫存</label>
-                                                <input type="text" name="stock" class="simple col-sm-3" id="stock" value="">
+                                                <input type="text" name="stock" class="simple col-sm-3" id="stock" value="{{request('stock')}}">
                                                 <label for="name" class="col-form-label uniform_label_length">名稱</label>
-                                                <input type="text" name="name" class="simple col-sm-3" id="name" value="">
+                                                <input type="text" name="name" class="simple col-sm-3" id="name" value="{{request('name')}}">
                                             </div>
                                             <div>
                                                 <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>

@@ -179,7 +179,7 @@
                     <li><a href="{{route('messages.index')}}">Message</a></li>
                     <li><a href="{{route('events.index')}}">Event</a></li>
                     <li><a href="{{route('bonuses.index')}}">Bonus</a></li>
-                    <li><a href="#">Sale</a></li>
+                    <li><a href="{{route('sales.index')}}">Sale</a></li>
                     <li><a href="#">Order</a></li>
                 </ul>
             </div>
