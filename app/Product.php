@@ -23,6 +23,8 @@ class Product extends Model
         'sale_price',
         'stock',
         'picture',
+        'interpreter',
+        'author_description'
     ];
 
     public function category(){
@@ -33,6 +35,9 @@ class Product extends Model
         return $this->belongsTo(Subcategory::class,
             ['category_id','subcategory_id'],
             ['category_id','subcategory_id']);
+    }
+    public function sales(){
+        return $this->hasMany(Sale::class);
     }
 
 }

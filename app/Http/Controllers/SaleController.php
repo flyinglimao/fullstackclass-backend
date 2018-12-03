@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Bonus;
-use App\User;
+use App\Order;
+use App\Product;
+use App\Sale;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class BonusController extends Controller
+class SaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +18,10 @@ class BonusController extends Controller
      */
     public function index()
     {
-        $data = [
-            'bonuses' =>Bonus::orderBy('updated_at','DEC')->paginate(10),
+        $date = [
+            'sales' => Sale::orderBy('updated_at','DEC')->paginate(10),
         ];
-        return view('bonuses.index',$data);
+        return view('sales.index',$date);
     }
 
     /**
@@ -29,38 +31,46 @@ class BonusController extends Controller
      */
     public function create()
     {
-        return view('bonuses.create');
+        return view('sales.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Bonus $bonus
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'user_id'=>'required|integer',
-            'change'=>'required|integer',
-            'message'=>'required|string',
+            'change' => 'required|integer',
+            'message' => 'required|string',
+            'products_id' => 'required|integer',
+            'order_id' => 'nullable|integer',
         ]);
         $validator->after(function ($validator) use ($request){
-            $id = $request->input('user_id');
-            $user_exist = User::where('id',$id)->first();
-            if ($user_exist==null){
-                $validator->errors()->add('user_id','user_id does not exist');
+            $product_exist = Product::where('id',$request['products_id'])->first();
+            if ($product_exist == null){
+                $validator->errors()->add('product_id','product id does not exist!!');
             }
+            if ($request->query('order_id')){
+                $order_exist = Order::where('id',$request['order_id'])->first();
+                if ($order_exist == null){
+                    $validator->errors()->add('order_id','order id does not exist!!');
+                }
+            }
+
+            //不知道要不要加 確認product->stock的數量是否會少於0 的validation
+
+
+
         })->validate();
+        $sale = Sale::create($request->all());
+        $product = $sale->product;
+        $product->stock +=$sale->change;
+        $product->save();
 
-
-
-        $bonus = Bonus::create($request->all());
-        $user = $bonus->user;
-        $user->bonus+=$bonus->change;
-        $user->save();
-        return redirect()->route('bonuses.index');
+        return redirect()->route('sales.index');
     }
 
     /**
@@ -77,10 +87,10 @@ class BonusController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Bonus $bonus
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bonus $bonus)
+    public function edit($id)
     {
         //
     }

@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Awobaz\Compoships\Database\Eloquent\Model;
 
 class Order extends Model
 {
@@ -22,4 +22,9 @@ class Order extends Model
         'coupon',
         'member_id'
     ];
+
+    public function sale()
+    {
+        return $this->hasOne(Sale::class);
+    }
 }

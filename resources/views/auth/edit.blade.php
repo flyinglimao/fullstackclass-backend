@@ -61,7 +61,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="example-admin-input" class="col-form-label">權限</label>
-                                    <input class="form-control" type="text" value="{{(int)Auth::user()->admin?'管理員':'會員'}}" disabled id="example-admin-input">
+                                    <input class="form-control" type="text" value="{{(int)Auth::user()->isAdmin?'管理員':'會員'}}" disabled id="example-admin-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-bonus-input" class="col-form-label">紅利點數</label>
+                                    <input class="form-control" type="text" value="{{(int)Auth::user()->bonus}}" disabled id="example-bonus-input">
                                 </div>
                                 <div class="form-group">
                                     <label for="preview_file" class="col-form-label">上傳圖片</label>

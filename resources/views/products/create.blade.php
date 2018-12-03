@@ -104,6 +104,14 @@
                                          <input class="form-control" type="text" placeholder="請輸入author" id="example-url-input" name="author" value="{{old('author')}}">
                                     </div>
                                     <div class="form-group">
+                                        <label for="author_description" class="col-form-label">作者敘述</label>
+                                        <input class="form-control" type="text" placeholder="請輸入作者敘述" id="author_description" name="author_description" value="{{old('author_description')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="interpreter" class="col-form-label">譯者</label>
+                                        <input class="form-control" type="text" placeholder="請輸入譯者" id="interpreter" name="interpreter" value="{{old('interpreter')}}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="example-tel-input" class="col-form-label">tag</label>
                                         <input class="form-control" type="tel" placeholder="請輸入tag" id="example-tel-input" name="tags" value="{{old('tags')}}">
                                     </div>

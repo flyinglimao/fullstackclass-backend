@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','新增紅利訊息')
+@section('title','新增庫存變化')
 
 @section('content')
 
@@ -14,9 +14,9 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">新增紅利訊息</h4>
+                                <h4 class="header-title">新增庫存變化</h4>
                                 <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
-                                <form action="{{route('bonuses.store')}}" method="post" id ="create">
+                                <form action="{{route('sales.store')}}" method="post" id="create">
                                 @csrf
                                 <!-- 錯誤訊息 -->
                                     @if ($errors->any())
@@ -32,26 +32,32 @@
                                             </ul>
                                         </div>
                                     @endif
+
                                     <div class="form-group">
-                                        <button class="form-control" type="button"  onclick="disableButton(this,'#create')">提交</button>
+                                        <label for="change" class="col-form-label">變化量</label>
+                                        <input class="form-control" type="text" placeholder="請輸入id" id="change" name="change" value="{{old('change')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="user_id" class="col-form-label">使用者id</label>
-                                        <input class="form-control" type="text" placeholder="請輸入id" id="user_id" name="user_id" value="{{old('user_id')}}">
+                                        <label for="products_id" class="col-form-label">商品id</label>
+                                        <input class="form-control" type="text" placeholder="請輸入id" id="products_id" name="products_id" value="{{old('products_id')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="change" class="col-form-label">改變量</label>
-                                        <input class="form-control" type="text" placeholder="改變量" id="change" name="change" value="{{old('change')}}">
+                                        <label for="order_id" class="col-form-label">訂單id</label>
+                                        <input class="form-control" type="text" placeholder="請輸入訂單id" id="order_id" name="order_id" value="{{old('order_id')}}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="example-textarea-input" class="col-form-label">內容</label>
-                                        <textarea  class="form-control" cols="20" rows="4" placeholder="請輸入內容" id="message" name="message">{{old('message')}}</textarea>
+                                        <label for="message" class="col-form-label">訊息</label>
+                                        <input class="form-control" type="text" placeholder="請輸入訊息" id="message" name="message" value="{{old('message')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="form-control" type="submit" onclick="disableButton(this,'#create')">提交</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                     <!-- Textual inputs end -->
+
                 </div>
             </div>
         </div>

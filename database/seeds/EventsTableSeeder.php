@@ -28,11 +28,7 @@ class EventsTableSeeder extends Seeder
                 'description'=>"裡面的書都很好看",
                 'hero_image'=>"null",
                 'side_image'=>"null",
-                'filter'=>json_encode(['keyword'=>"null"]),
-                'price_operation'=>"null",
                 'time_interval'=>json_encode(['start'=>$day,'end'=>$day->addDay(10)]),
-                'frequency_limit'=>0,
-                'priority'=>0
             ]);
         }
 
