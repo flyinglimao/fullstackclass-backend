@@ -44,6 +44,7 @@ Route::middleware('auth:api')->group(function () {
 //order
 Route::middleware('auth:api')->group(function () {
   Route::get('orders', 'Api\OrderController@index');
+  Route::get('orders/cart', 'Api\OrderController@cart');
   Route::get('orders/{order}', 'Api\OrderController@show');
   Route::patch('orders', 'Api\OrderController@update');
 });
@@ -61,6 +62,9 @@ Route::get('events', 'Api\EventController@index');
 //不用保護
 Route::post('login','Api\AuthController@login');
 Route::post('register','Api\AuthController@register');
+Route::get('login', function () {
+  return ['message' => 'post email and password to login'];
+})->name('api_login');
 
 //要保護
 Route::middleware('auth:api')->group(function (){
@@ -70,5 +74,5 @@ Route::middleware('auth:api')->group(function (){
 
 Route::fallback(function () {
     return response()->json(["success" => false, "error" => "denied"], 403);
-});
+})->name('api_fall');
 
