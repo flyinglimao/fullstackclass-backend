@@ -93,7 +93,31 @@ Route::middleware('auth')->group(function (){
 
     Route::patch('orders/update/{order}','OrderController@update')->name('orders.update');
 
+    //Category
 
+    Route::get('categories','CategoryController@index')->name('categories.index');
+
+    Route::delete('categories/destroy/{category}','CategoryController@destroy')->name('categories.destroy');
+
+    Route::get('categories/create','CategoryController@create')->name('categories.create');
+
+    Route::post('categories/store','CategoryController@store')->name('categories.store');
+
+    Route::get('categories/edit/{category}','CategoryController@edit')->name('categories.edit');
+
+    Route::patch('categories/update/{category}','CategoryController@update')->name('categories.update');
+
+    //Subcategory
+
+    Route::get('categories/subcategories/create/{category}','SubcategoryController@create')->name('subcategories.create');
+
+    Route::post('categories/subcategories/store','SubcategoryController@store')->name('subcategories.store');
+
+    Route::get('categories/subcategories/edit/{subcategory}','SubcategoryController@edit')->name('subcategories.edit');
+
+    Route::patch('categories/subcategories/update/{subcategory}','SubcategoryController@update')->name('subcategories.update');
+
+    Route::delete('subcategories/destroy/{subcategory}','SubcategoryController@destroy')->name('subcategories.destroy');
 });
 
 Route::get('products','ProductController@index')->name('products.index');

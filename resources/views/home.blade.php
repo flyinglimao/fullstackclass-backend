@@ -106,6 +106,7 @@
                                 </div>
                             </div>
                             <hr>
+
                             <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#accordion12">商品購買紀錄</a>
                             </div>

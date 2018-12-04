@@ -3,6 +3,7 @@
 @section('title','商品列表')
 
 @section('content')
+
 <div class="main-content-inner">
     <!-- market value area start -->
     <div class="row mt-5 mb-5">
