@@ -137,7 +137,7 @@ Route::get('json/pay_information',function (){
        'pay_information'=>json_decode($a->payment_information),
        'products'=>json_decode($a->products)
    ]);
-});
+})->middleware('verified');
 
 Auth::routes();
 

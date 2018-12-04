@@ -71,5 +71,8 @@ class User extends Authenticatable implements JWTSubject,MustVerifyEmail
         return $this->hasMany(Message::class,'receiver_id','id');
     }
 
-
+//    public function sendEmailVerificationNotification()
+//    {
+//        $this->notify(new App\Notifications\CustomVerifyEmail);
+//    }
 }
