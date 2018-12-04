@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Awobaz\Compoships\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
@@ -10,6 +10,7 @@ class Order extends Model
     protected $fillable = [
         'state',
         'pay_method',
+        'payment_information',
         'payment',
         'message',
         'ship_information',
@@ -26,5 +27,10 @@ class Order extends Model
     public function sale()
     {
         return $this->hasOne(Sale::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'member_id','id');
     }
 }

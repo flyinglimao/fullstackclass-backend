@@ -64,6 +64,9 @@
                                     <input class="form-control" type="text" value="{{(int)Auth::user()->isAdmin?'管理員':'會員'}}" disabled id="example-admin-input">
                                 </div>
                                 <div class="form-group">
+                                    <a href="{{route('password.request')}}">重設密碼</a>
+                                </div>
+                                <div class="form-group">
                                     <label for="example-bonus-input" class="col-form-label">紅利點數</label>
                                     <input class="form-control" type="text" value="{{(int)Auth::user()->bonus}}" disabled id="example-bonus-input">
                                 </div>

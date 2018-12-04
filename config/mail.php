@@ -60,7 +60,7 @@ return [
 
     'from' => [
         'address' =>'fullstackgroup7@gmail.com',
-        'name' => 'test'
+        'name' => '貓咪書店'
     ],
 //        [
 //        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),

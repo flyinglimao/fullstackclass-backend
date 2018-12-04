@@ -18,25 +18,31 @@ class OrdersTableSeeder extends Seeder
 
     $fake = \Faker\Factory::create('zh_TW');
     foreach (range(1,$total) as $id){
-      $price =rand(100,500);
-      $num = rand(1,6);
+      $product_id = rand(1,30);
+      $product =  \App\Product::find($product_id);
+      $price = $product->sale_price;
+      $num = floor($product->stock/3);
       Order::create([
         'state'=>0,
         'pay_method'=>0,
         'payment_information'=>json_encode([
-          '時間'=>now(),
-          '總金額'=>$price*$num,
-          '編號'=>$this->randname(20,0),
+          'time'=>now(),
+          'total'=>$price*$num,
+          'id'=>$this->randname(20,0),
         ]),
         'message'=>$fake->realText(rand(10,15)),
         'ship_method'=>0,
         'ship_information'=>'快樂物流',
         'ship_order'=>'FIFO',
-        'products'=>json_encode(['單價'=>$price,'數量'=>$num]),
+        'products'=>json_encode([
+            'product_id'=>$product_id,
+            'unit_price'=>$price,
+            'quantity'=>$num,
+        ]),
         'receiver'=>$this->randname(rand(6,10),1),
         'receiver_phone'=>$this->phoneGenerator(),
         'invoice_number'=>$this->randname(10,2),
-        'member_id'=>$id
+        'member_id'=>\App\User::inRandomOrder()->first()->id,
       ]);
     }
   }

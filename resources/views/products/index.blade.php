@@ -3,70 +3,6 @@
 @section('title','商品列表')
 
 @section('content')
-    <style>
-        .simple {
-            width: 100%;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #495057;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            border-radius: .25rem;
-        }
-        .mybtn {
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-        .uniform_label_length{
-            width: 60px;
-        }
-
-    </style>
-    <script>
-        $(document).ready(function(){
-            function presend(){
-                let target = $(".dynamic");
-                let myid = target.attr("id");                //找dynamic class的 id: category_id
-                let cat_value = target.val();                    //獲得dynamic class的 value
-                let dependent = target.data('dependent');    //獲得dynamic class的 dependent
-                let _token=$('input[name="_token"]').val();
-                let sub_value = $('#sub_id').val();
-                console.log(myid);
-                console.log('|'+cat_value+'|');
-                console.log(dependent);
-                console.log(sub_value);
-                $.ajax({
-                    url:"{{route('dynamicdependent.prefetch')}}",
-                    method:"POST",
-                    data:{
-                        select:myid,
-                        sub_id:sub_value,
-                        cat_id:cat_value,
-                        _token:_token,
-                        dependent:dependent,
-                    },
-                    success:function (result) {
-                        $('#'+dependent).html(result);
-                    }
-                });
-            }
-            presend();
-        });
-    </script>
 <div class="main-content-inner">
     <!-- market value area start -->
     <div class="row mt-5 mb-5">
@@ -79,7 +15,7 @@
                             <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#accordion11">進階搜尋</a>
                             </div>
-                            <div id="accordion11" class="collapse" data-parent="#accordion1">
+                            <div id="accordion11" class="collapse " data-parent="#accordion1">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                         <h4 class="header-title mb-0">
@@ -190,7 +126,70 @@
             <!-- end   商品列表-->
         </div>
     </div>
+    <style>
+        .simple {
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+        }
+        .mybtn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .uniform_label_length{
+            width: 60px;
+        }
 
+    </style>
+    <script>
+        $(document).ready(function(){
+            function presend(){
+                let target = $(".dynamic");
+                let myid = target.attr("id");                //找dynamic class的 id: category_id
+                let cat_value = target.val();                    //獲得dynamic class的 value
+                let dependent = target.data('dependent');    //獲得dynamic class的 dependent
+                let _token=$('input[name="_token"]').val();
+                let sub_value = $('#sub_id').val();
+                console.log(myid);
+                console.log('|'+cat_value+'|');
+                console.log(dependent);
+                console.log(sub_value);
+                $.ajax({
+                    url:"{{route('dynamicdependent.prefetch')}}",
+                    method:"POST",
+                    data:{
+                        select:myid,
+                        sub_id:sub_value,
+                        cat_id:cat_value,
+                        _token:_token,
+                        dependent:dependent,
+                    },
+                    success:function (result) {
+                        $('#'+dependent).html(result);
+                    }
+                });
+            }
+            presend();
+        });
+    </script>
 
 </div>
 @endsection

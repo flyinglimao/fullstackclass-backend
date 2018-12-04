@@ -4,9 +4,7 @@
         <!-- nav and search button -->
         <div class="col-md-6 col-sm-8 clearfix">
             <div class="nav-btn pull-left">
-                <span></span>
-                <span></span>
-                <span></span>
+                <button type="button" class="btn btn-rounded btn-primary">主選單</button>
             </div>
             <div class="search-box pull-left">
                 <form action="#">
@@ -18,142 +16,75 @@
         <!-- profile info & task notification -->
         <div class="col-md-6 col-sm-4 clearfix">
             <ul class="notification-area pull-right">
+                <!-- 全螢幕圖案-->
                 <li id="full-view"><i class="ti-fullscreen"></i></li>
+                <!-- 小螢幕圖案-->
                 <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
+
+
                 <li class="dropdown">
                     <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-                        <span>2</span>
+                        <span>
+                            @auth
+                                {{Auth::user()->im_sender->count()}}
+                            @else 0
+                            @endauth
+                        </span>
                     </i>
                     <div class="dropdown-menu bell-notify-box notify-box">
-                        <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+
+                        <span class="notify-title">You have
+                            @auth
+                            {{Auth::user()->im_sender->count()}}
+                            @else 0
+                            @endauth
+                            sent to others  <a href="#">view all</a></span>
                         <div class="nofity-list">
-                            <a href="#" class="notify-item">
+                            @auth
+                            @foreach(Auth::user()->im_sender as $message)
+                            <a href="{{route('messages.edit',$message->id)}}" class="notify-item">
                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
                                 <div class="notify-text">
-                                    <p>You have Changed Your Password</p>
-                                    <span>Just Now</span>
+                                    <p>{{$message->title}}</p>
+                                    <span>{{$message->message}}</span>
                                 </div>
                             </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                <div class="notify-text">
-                                    <p>New Commetns On Post</p>
-                                    <span>30 Seconds ago</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                                <div class="notify-text">
-                                    <p>Some special like you</p>
-                                    <span>Just Now</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
-                                <div class="notify-text">
-                                    <p>New Commetns On Post</p>
-                                    <span>30 Seconds ago</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-key btn-primary"></i></div>
-                                <div class="notify-text">
-                                    <p>Some special like you</p>
-                                    <span>Just Now</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                                <div class="notify-text">
-                                    <p>You have Changed Your Password</p>
-                                    <span>Just Now</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                                <div class="notify-text">
-                                    <p>You have Changed Your Password</p>
-                                    <span>Just Now</span>
-                                </div>
-                            </a>
+                            @endforeach
+                            @endauth
+
                         </div>
                     </div>
                 </li>
                 <li class="dropdown">
-                    <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>3</span></i>
+                    <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>
+                            @auth
+                                {{Auth::user()->im_receiver->count()}}
+                            @else 0
+                            @endauth
+                        </span></i>
                     <div class="dropdown-menu notify-box nt-enveloper-box">
-                        <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                        <span class="notify-title">You have
+                            @auth
+                                {{Auth::user()->im_receiver->count()}}
+                            @else 0
+                            @endauth
+                            mails in your mail box <a href="#">view all</a></span>
                         <div class="nofity-list">
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img1.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">Hey I am waiting for you...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img2.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">When you can connect with me...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img3.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">I missed you so much...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img4.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">Your product is completely Ready...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img2.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">Hey I am waiting for you...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img1.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">Hey I am waiting for you...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
-                            <a href="#" class="notify-item">
-                                <div class="notify-thumb">
-                                    <img src="{{asset('images/author/author-img3.jpg')}}" alt="image">
-                                </div>
-                                <div class="notify-text">
-                                    <p>Aglae Mayer</p>
-                                    <span class="msg">Hey I am waiting for you...</span>
-                                    <span>3:15 PM</span>
-                                </div>
-                            </a>
+                            @auth
+                                @foreach(Auth::user()->im_receiver as $message)
+                                    <a href="{{route('messages.edit',$message->id)}}" class="notify-item">
+                                        <div class="notify-thumb">
+                                            <img src="{{asset('images/author/author-img1.jpg')}}" alt="image">
+                                        </div>
+                                        <div class="notify-text">
+                                            <p>{{$message->sender->name}}</p>
+                                            <span>{{$message->message}}</span>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            @endauth
+
+
                         </div>
                     </div>
                 </li>
@@ -172,20 +103,11 @@
         <div class="col-sm-6">
             <div class="breadcrumbs-area clearfix">
                 <h4 class="page-title pull-left">貓咪後台</h4>
-                <ul class="breadcrumbs pull-left">
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="{{route('login')}}">Login</a></li>
-                    <li><a href="{{route('products.index')}}">Product</a></li>
-                    <li><a href="{{route('messages.index')}}">Message</a></li>
-                    <li><a href="{{route('events.index')}}">Event</a></li>
-                    <li><a href="{{route('bonuses.index')}}">Bonus</a></li>
-                    <li><a href="{{route('sales.index')}}">Sale</a></li>
-                    <li><a href="#">Order</a></li>
-                </ul>
+                主選單移到side bar去了
             </div>
         </div>
         <div class="col-sm-6 clearfix">
-            <div class="user-profile pull-right">
+            <div class="user-profile pull-right" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.29) 0%, #007bff 100%);">
 
                 @auth
                     @if(isset(Auth::user()->profile))
@@ -199,7 +121,7 @@
                     </i>
                 </h4>
                 <div class="dropdown-menu" x-placement="bottom-start">
-                    <a class="dropdown-item" href="#">訊息</a>
+                    <a class="dropdown-item" href="{{route('home')}}">使用者資料</a>
                     <a class="dropdown-item" href="{{route('user.edit')}}">使用者設定</a>
                     <form action="{{route('logout')}}" method="post">
                         @csrf

@@ -2,14 +2,16 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\CanResetPassword;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject,MustVerifyEmail
 {
     use Notifiable;
-
     protected $table = 'users';
 
     /**
@@ -48,5 +50,26 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function bonuses()
+    {
+        return $this->hasMany(Bonus::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'member_id','id');
+    }
+
+    public function im_sender()
+    {
+        return $this->hasMany(Message::class,'sender_id','id');
+    }
+
+    public function im_receiver()
+    {
+        return $this->hasMany(Message::class,'receiver_id','id');
+    }
+
 
 }

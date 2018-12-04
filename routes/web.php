@@ -16,7 +16,9 @@
 
 Route::get('/', 'ProductController@index')->name('dashboard.index');
 
+Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
 
+Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
 
 Route::middleware('auth')->group(function (){
 
@@ -67,7 +69,7 @@ Route::middleware('auth')->group(function (){
 
     Route::delete('events/destroy/{event}','EventController@destroy')->name('events.destroy');
 
-    //Bonus CRUD
+    //Bonus CR
 
     Route::get('bonuses','BonusController@index')->name('bonuses.index');
 
@@ -82,22 +84,40 @@ Route::middleware('auth')->group(function (){
     Route::get('sales/create','SaleController@create')->name('sales.create');
 
     Route::post('sales/store','SaleController@store')->name('sales.store');
+
+    //Order CRU
+
+    Route::get('orders','OrderController@index')->name('orders.index');
+
+    Route::get('orders/edit/{order}','OrderController@edit')->name('orders.edit');
+
+    Route::patch('orders/update/{order}','OrderController@update')->name('orders.update');
+
+
 });
 
 Route::get('products','ProductController@index')->name('products.index');
 
-Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
-
-Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
-
 Route::get('mail/sendmail','MailController@sendmail')->name('sendmail');
+
+
+
 
 Route::get('item/destroy/{id}',function(App\Product $abc){
     dd($abc);
 })->name('item.destroy');
 
+Route::get('json/pay_information',function (){
+   $a = \App\Order::find(1);
+   dd([
+       'pay_information'=>json_decode($a->payment_information),
+       'products'=>json_decode($a->products)
+   ]);
+});
 
 Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -105,22 +125,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-
-//test set
-
-
-Route::get('a',function (){
-    dd(\App\Product::find(2));
-});
-Route::get('b',function (){
-    dd(\App\Product::where('category_id',2));
-});
-Route::get('c',function (){
-    dd(\App\Product::where('category_id',2)->where('subcategory_id',3)->get());
-});
-Route::get('d',function (){
-    dd(\App\Product::where('category_id',2)->first());
-});
-Route::get('e',function (){
-    dd(\App\Category::find(2)->products);
-});

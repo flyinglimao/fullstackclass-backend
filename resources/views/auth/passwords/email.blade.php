@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- this is to send email to your own mail box before reset your email-->
+<!-- 套樣板了 -->
+
 <!-- start old email-->
 {{--<div class="container">--}}
     {{--<div class="row justify-content-center">--}}
@@ -53,11 +57,7 @@
 <div class="login-area">
     <div class="container">
         <div class="login-box ptb--100">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
+
 
             <form method="POST" action="{{ route('password.email') }}">
                 @csrf
@@ -65,6 +65,11 @@
                 <div class="login-form-head">
                     <h4>Forgot Password</h4>
                     <p>Hey! Forgot Password Your Password ? Reset Now</p>
+                    @if (session('status'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
