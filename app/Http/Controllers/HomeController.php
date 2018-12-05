@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(['auth', 'verified']);
+//        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -67,11 +67,11 @@ class HomeController extends Controller
         }else
             $profile = $user->profile;
 
-        //當電子郵件遭到改變，email_verified_at 會被改成null
+//        當電子郵件遭到改變，email_verified_at 會被改成null
 
-//        if ($request->input('email')!=$user->email){
-//            $user->email_verified_at = null;
-//        }
+        if ($request->input('email')!=$user->email){
+            $user->email_verified_at = null;
+        }
         $user->update([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),

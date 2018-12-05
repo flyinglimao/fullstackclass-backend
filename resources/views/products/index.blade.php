@@ -49,9 +49,15 @@
                                             </div>
                                             <div>
                                                 <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
-                                                <select name="" id="orderby" class="simple col-sm-3">
-                                                    <option value="">test1</option>
-                                                    <option value="">test2</option>
+                                                <select name="item" id="orderby" class="simple col-sm-3" >
+                                                    <option value="sale_price" {{ (request('item') == 'sale_price'?'selected':'') }}>售價</option>
+                                                    <option value="stock"{{ (request('item') == 'stock'?'selected':'') }}>庫存</option>
+                                                    <option value="created_at"{{ (request('item') == 'created_at'?'selected':'') }}>建立時間</option>
+                                                    <option value="isbn"{{ (request('item') == 'isbn'?'selected':'') }}>ISBN</option>
+                                                </select>
+                                                <select name="order" id="ASFS" class="simple col-sm-3">
+                                                    <option value="desc">由高至低(以前到現在)</option>
+                                                    <option value="asc">由低至高(現在到以前)</option>
                                                 </select>
                                             </div>
                                             <div>

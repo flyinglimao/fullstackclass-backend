@@ -137,7 +137,7 @@ Route::get('json/pay_information',function (){
        'pay_information'=>json_decode($a->payment_information),
        'products'=>json_decode($a->products)
    ]);
-});
+})->middleware('verified');
 
 Auth::routes();
 
@@ -145,7 +145,13 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('products/{product}/tags',function (\App\Product $product){
+    dd($product->tags());
+});
 
+Route::get('tags/{tag}/products',function (\App\Tag $tag){
+    dd($tag->products());
+});
 
 
 

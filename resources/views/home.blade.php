@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title','使用者資料')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -140,7 +142,6 @@
                                             </table>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
