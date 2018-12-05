@@ -145,7 +145,13 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('products/{product}/tags',function (\App\Product $product){
+    dd($product->tags());
+});
 
+Route::get('tags/{tag}/products',function (\App\Tag $tag){
+    dd($tag->products());
+});
 
 
 
