@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\CustomEmailVerified;
 
 class User extends Authenticatable implements JWTSubject,MustVerifyEmail
 {
@@ -71,8 +72,8 @@ class User extends Authenticatable implements JWTSubject,MustVerifyEmail
         return $this->hasMany(Message::class,'receiver_id','id');
     }
 
-//    public function sendEmailVerificationNotification()
-//    {
-//        $this->notify(new App\Notifications\CustomVerifyEmail);
-//    }
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new CustomEmailVerified);
+    }
 }

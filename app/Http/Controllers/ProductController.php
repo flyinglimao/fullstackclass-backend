@@ -20,7 +20,13 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $products = Product::where('id','!=',-1);
+        if ($request->query('item')){
+            if ($request->query('order')){
+                $products= Product::orderBy($request->query('item'),$request->query('order'));
+            }else
+                $products= Product::orderBy($request->query('item'),'desc');
+        }else
+            $products = Product::where('id','!=',-1);
         // search by category and subcategory
         if ($request->query('category_id'))
         {
@@ -31,8 +37,6 @@ class ProductController extends Controller
                 $products = $products->where('category_id',$request->query('category_id'));
             }
         }
-        else
-            $products = $products->orderBy('id','DEC');
         //search by stock
         if ($request->query('stock')){
             $products = $products->where('stock',$request->query('stock'));
@@ -47,9 +51,7 @@ class ProductController extends Controller
 
         $count = $products->count();
         $products = $products->paginate(10);
-
-
-
+        //尋找曾出現過最大的id
         $statement = DB::select("show table status like 'products'");
         $max =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
         $max = json_decode($max)->max_id;
@@ -58,7 +60,6 @@ class ProductController extends Controller
         $data = [
             'products' => $products,
             'categories'=>$categories,
-            'requests'=>$request,
             'total'=>$count,
             'max_id'=>$max,
         ];
