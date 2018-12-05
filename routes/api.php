@@ -17,23 +17,11 @@ use Illuminate\Http\Response;
 //product
 Route::get('products','Api\ProductController@index');
 Route::get('products/{product}','Api\ProductController@show');
-Route::middleware('auth:api', 'admin')->group(function () {
-    Route::post('products','Api\ProductController@create');
-    Route::patch('products/{product}','Api\ProductController@update');
-    Route::delete('products/{product}','Api\ProductController@destroy');
-});
 
 //user
 Route::middleware('auth:api')->group(function () {
     Route::get('me', 'Api\UserController@showself');
     Route::patch('me', 'Api\UserController@updateself');
-    Route::middleware('admin')->group(function () {
-      Route::get('users', 'Api\UserController@index');
-      Route::get('users/{user}', 'Api\UserController@show');
-      Route::post('users', 'Api\UserController@create');
-      Route::patch('users/{user}', 'Api\UserController@update');
-      Route::delete('users/{user}', 'Api\UserController@destroy');
-    });
 });
 
 // bonus
@@ -47,16 +35,22 @@ Route::middleware('auth:api')->group(function () {
   Route::get('orders/cart', 'Api\OrderController@cart');
   Route::get('orders/{order}', 'Api\OrderController@show');
   Route::patch('orders', 'Api\OrderController@update');
+  Route::patch('orders/cart', 'Api\OrderController@update');
 });
 
 //message
 Route::middleware('auth:api')->group(function () {
-  Route::get('messages', 'Api\MessageController@show');
+  Route::get('messages', 'Api\MessageController@index');
+  Route::get('messages/{message}', 'Api\MessageController@show');
   Route::delete('messages/{message}', 'Api\MessageController@destroy');
 });
 
 //event
 Route::get('events', 'Api\EventController@index');
+
+//category
+Route::get('categories', 'Api\CategoryController@index');
+Route::get('categories/{category}', 'Api\CategoryController@show');
 
 //
 //不用保護

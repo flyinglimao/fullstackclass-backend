@@ -19,15 +19,27 @@ class ProductController extends Controller
   public function index()
   {
     $products = new Product;
-    if (Input::get('category_id')) {
-      $products = $products->where('category_id', Input::get('category_id'));
-      if (Input::get('subcategory_id')) {
-        $products = $products->where('subcategory_id', Input::get('subcategory_id'));
+
+    if (Input::get('search')) {
+      $search = json_decode(Input::get('search'));
+      if (isset($search->category) && is_numeric($search->category)) {
+        $products = $products->where('category_id', $search->category);
+        if (isset($search->subcategory) && is_numeric($search->category)) {
+          $products = $products->where('subcategory_id', $search->subcategory);
+        }
+      }
+      if (isset($search->ISBN) && strlen($search->ISBN) === 13) {
+        $products = $products->where('ISBN', $search->ISBN);
+      }
+      foreach ($search as $key => $value) {
+        if (in_array($key, ['publisher', 'title', 'author', 'interpreter']) && strlen($value)) {
+          $products = $products->where($key, 'LIKE', '%' . $value . '%');
+        }
       }
     }
 
-    if (Input::get('publisher')) {
-      $products = $products->where('publisher', Input::get('publisher'));
+    if (Input::get('publish_year')) {
+      $products = $products->where('publish_year', Input::get('publish_year'));
     }
 
     if (Input::get('price_range')) {
@@ -35,13 +47,16 @@ class ProductController extends Controller
       $products = $products->where('sale_price', '>=', $range[0])->where('sale_price', '<=', $range[1]);
     }
 
-    if (Input::get('available')) {
-      $products = $products->where('stock', '>', '0');
+    if (Input::get('sort')) {
+      $sort = explode(':', Input::get('sort'));
+      if (in_array($sort[0], ['sale_price', 'publish_year'])) {
+        if (isset($sort[1])) $acd = 'desc';
+        else $acd = 'asc';
+        $products = $products->orderBy($sort[0], $acd);
+      }
     }
 
-    if (Input::get('full')) {
-      $data = $products->get();
-    } else if (Input::get('count') && is_numeric(Input::get('count'))){
+    if (Input::get('count') && is_numeric(Input::get('count'))){
       $data = $products->paginate((int) Input::get('count'));
       $data->links = $data->appends(request()->query())->links();
     } else {

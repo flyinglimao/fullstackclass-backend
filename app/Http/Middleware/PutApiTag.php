@@ -15,6 +15,7 @@ class PutApiTag
      */
     public function handle($request, Closure $next)
     {
+   
       $request->isApi = true;
         return $next($request);
     }

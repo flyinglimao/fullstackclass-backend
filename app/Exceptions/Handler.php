@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     { 
-      if ($exception instanceof ModelNotFound && $request->isApi) {
+      if ($exception instanceof ModelNotFoundException  && $request->isApi) {
         return response()->json(['success' => false, 'error' => 'not found']);
       } else {
         return parent::render($request, $exception);

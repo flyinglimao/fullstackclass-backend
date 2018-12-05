@@ -24,6 +24,8 @@ class ProductResource extends JsonResource
             'subtitle' => $this->subtitle,
             'description' =>$this->description,
             'author' => $this->author,
+            'author_description' => $this->author_description,
+            'interpreter' => $this->interpreter,
             'category_id' =>$this->category_id,
             'subcategory_id' =>$this->subcategory_id,
             'publisher' =>$this->publisher,

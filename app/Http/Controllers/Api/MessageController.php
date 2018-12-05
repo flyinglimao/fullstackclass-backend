@@ -10,13 +10,22 @@ use App\Http\Resources\MessageResource;
 
 class MessageController extends Controller
 {
-  public function show(Request $request) {
+  public function index(Request $request) {
     MessageResource::withoutWrapping();
-    return MessageResource::collection(Message::where('member_id', Auth::id())->get());
+    return MessageResource::collection(Message::where('receiver_id', Auth::id())->paginate(15));
+  }
+
+  public function show(Request $request, Message $message) {
+    if ($message->receiver_id === Auth::id()) {
+      MessageResource::withoutWrapping();
+      return new MessageResource($message);
+    } else {
+      return ['success' => false, 'error' => 'no permission'];
+    }
   }
 
   public function destroy(Request $request, Message $message) {
-    if ($message->member_id === Auth::id()) {
+    if ($message->receiver_id === Auth::id()) {
       if ($message->delete()) {
         return ['success' => true];
       } else {

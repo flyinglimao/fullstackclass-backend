@@ -11,8 +11,7 @@ use App\Http\Resources\BonusResource;
 class BonusController extends Controller
 {
   public function index(Request $request) {
-    BonusResource::withoutWrapping();
-    return BonusResource::collection(Bonus::where('member_id', Auth::id())->get());
+    return BonusResource::collection(Bonus::where('user_id', Auth::id())->get())->additional(['bonus' => Auth::user()->bonus]);
   }
 
   public function show(Request $request) {
