@@ -2,6 +2,10 @@
 
 @section('title','使用者資料')
 
+@section('index',route('home'))
+
+@section('type','Home')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

@@ -2,6 +2,10 @@
 
 @section('title','活動列表')
 
+@section('index',route('events.index'))
+
+@section('type','Event')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

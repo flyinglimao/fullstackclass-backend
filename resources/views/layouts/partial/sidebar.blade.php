@@ -39,6 +39,9 @@
                     <li>
                         <a href="{{route('categories.index')}}"><i class="ti-receipt"></i> <span>Category</span></a>
                     </li>
+                    <li>
+                        <a href="{{route('tags.index')}}"><i class="ti-receipt"></i> <span>Tag</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>

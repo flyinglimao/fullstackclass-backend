@@ -3,6 +3,10 @@
 
 @section('title','庫存變化列表')
 
+@section('index',route('sales.index'))
+
+@section('type','Sale')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

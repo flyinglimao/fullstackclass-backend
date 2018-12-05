@@ -2,6 +2,10 @@
 
 @section('title','商品列表')
 
+@section('index',route('products.index'))
+
+@section('type','Product')
+
 @section('content')
 
 <div class="main-content-inner">
@@ -20,7 +24,8 @@
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                         <h4 class="header-title mb-0">
-                                            搜尋方式 {{'最大id'.$max_id}}
+                                            搜尋方式
+                                            {{--{{'最大id'.$max_id}}--}}
                                         </h4>
                                     </div>
                                     <div class="market-status-table mt-4">
@@ -50,15 +55,31 @@
                                             <div>
                                                 <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
                                                 <select name="item" id="orderby" class="simple col-sm-3" >
+                                                    <option value="">請選擇</option>
                                                     <option value="sale_price" {{ (request('item') == 'sale_price'?'selected':'') }}>售價</option>
                                                     <option value="stock"{{ (request('item') == 'stock'?'selected':'') }}>庫存</option>
                                                     <option value="created_at"{{ (request('item') == 'created_at'?'selected':'') }}>建立時間</option>
                                                     <option value="isbn"{{ (request('item') == 'isbn'?'selected':'') }}>ISBN</option>
+                                                    <option value="publish_year" {{ (request('item') == 'publish_year'?'selected':'') }}>出版時間</option>
                                                 </select>
-                                                <select name="order" id="ASFS" class="simple col-sm-3">
-                                                    <option value="desc">由高至低(以前到現在)</option>
-                                                    <option value="asc">由低至高(現在到以前)</option>
+                                                <select name="order" class="simple col-sm-3">
+                                                    <option value="">請選擇</option>
+                                                    <option value="desc" {{ (request('order') == 'desc'?'selected':'') }}>由高至低(以前到現在)</option>
+                                                    <option value="asc"  {{ (request('order') == 'asc'?'selected':'') }}>由低至高(現在到以前)</option>
                                                 </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="text-muted mb-3 d-block">標籤:</span>
+                                                @foreach($tags as $id => $tag)
+                                                    @if($id!=0 && $id%4==0)
+                                                        <div class="mb-3"></div>
+                                                    @endif
+                                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                                        <input type="checkbox" name="tagss[]" value="{{$tag->id}}" class="custom-control-input"
+                                                               {{ in_array($tag->id,request('tagss',[]))?'checked':'' }} id="customCheck{{$id}}">
+                                                        <label class="custom-control-label" for="customCheck{{$id}}" style="width:100px">#{{$tag->name}}</label>
+                                                    </div>
+                                                @endforeach
                                             </div>
                                             <div>
                                                 <button type="submit" class="mybtn btn-primary mt-4 pr-4 pl-4">查詢</button>
@@ -128,6 +149,8 @@
                         </div>
                     </div>
                     {{$products->appends(Request::except('page'))->onEachSide(1)->links()}}
+
+
                 </div>
             </div>
             <!-- end   商品列表-->

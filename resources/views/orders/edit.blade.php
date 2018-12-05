@@ -2,6 +2,10 @@
 
 @section('title','編輯訂單')
 
+@section('index',route('orders.index'))
+
+@section('type','Order')
+
 @section('content')
 
 

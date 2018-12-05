@@ -3,7 +3,12 @@
 
 @section('title','分類列表')
 
+@section('index',route('categories.index'))
+
+@section('type','Category')
+
 @section('content')
+
     @if (session('alert'))
         <div class="alert alert-danger">
             {{ session('alert') }}

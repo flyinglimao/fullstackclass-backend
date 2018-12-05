@@ -2,6 +2,10 @@
 
 @section('title','商品編輯')
 
+@section('index',route('products.index'))
+
+@section('type','Product')
+
 @section('content')
     <script>
         $(document).ready(function(){
@@ -76,10 +80,27 @@
                                 <label for="example-textarea-input" class="col-form-label">description</label>
                                 <textarea  class="form-control" cols="20" rows="4" id="example-textarea-input" name="description">{{old('description',$product->description)}}</textarea>
                             </div>
+                            <!-- tag!!-->
                             <div class="form-group">
-                                 <label for="example-text-input" class="col-form-label">tag</label>
-                                 <input class="form-control" type="text" value="{{old('tags',$product->tags)}}" id="example-text-input" name="tags">
+                                <span class="text-muted mb-3 d-block">標籤:</span>
+                                @foreach($tags as $id => $tag)
+                                    @if($id!=0 && $id%4==0)
+                                        <div class="mb-3"></div>
+                                    @endif
+                                    <div class="custom-control custom-checkbox custom-control-inline">
+                                        <input type="checkbox" name="{{$tag->id}}" value="{{$tag->id}}" class="custom-control-input"
+                                               @if(session('old'))
+                                               {{ (old($tag->id) ==$tag->id)?'checked':''}}
+                                               @else
+                                               {{$product->tags->contains($tag->id)?'checked':''}}
+                                               @endif
+                                               id="customCheck{{$id}}">
+                                        <label class="custom-control-label" for="customCheck{{$id}}" style="width:100px">#{{$tag->name}}</label>
+                                    </div>
+                                @endforeach
                             </div>
+
+
                             <div class="form-group">
                                 <label for="example-text-input" class="col-form-label">type</label>
                                 <input class="form-control" type="text" value="{{old('type',$product->type)}}" id="example-text-input" name="type">

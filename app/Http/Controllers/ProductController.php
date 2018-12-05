@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 
 class ProductController extends Controller
@@ -20,13 +22,26 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
+        $tags = Tag::all();
+        $products = Product::where('id','!=',-1);
+        if ($request->query('tagss')){
+            $tagss = $request->input('tagss');
+            foreach ($tagss as $tag_id){
+                $products = $products->whereHas('tags',function ($q)use($tag_id){
+                    $q->where('tag_id',$tag_id);
+                });
+            }
+        }
+
+//        dd([$products->get(),$request->all()]);
+
         if ($request->query('item')){
             if ($request->query('order')){
-                $products= Product::orderBy($request->query('item'),$request->query('order'));
+                $products= $products->orderBy($request->query('item'),$request->query('order'));
             }else
-                $products= Product::orderBy($request->query('item'),'desc');
-        }else
-            $products = Product::where('id','!=',-1);
+                $products= $products->orderBy($request->query('item'),'desc');
+        }
+
         // search by category and subcategory
         if ($request->query('category_id'))
         {
@@ -45,23 +60,28 @@ class ProductController extends Controller
         //search by string
         if ($request->query('name')){
             $products = $products->where('title','LIKE','%'.$request->query('name').'%')
-                                 ->orWhere('publisher','LIKE','%'.$request->query('name').'%');
+                                 ->orWhere('publisher','LIKE','%'.$request->query('name').'%')
+                                 ->orWhere('author','LIKE','%'.$request->query('name').'%')
+                                 ->orWhere('interpreter','LIKE','%'.$request->query('name').'%');
         }
+        //search by tags
+
 
 
         $count = $products->count();
         $products = $products->paginate(10);
         //尋找曾出現過最大的id
-        $statement = DB::select("show table status like 'products'");
-        $max =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
-        $max = json_decode($max)->max_id;
-
+//        $statement = DB::select("show table status like 'products'");
+//        $max =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
+//        $max = json_decode($max)->max_id;
+        $tags = Tag::all();
         $categories = Category::all();
         $data = [
             'products' => $products,
             'categories'=>$categories,
             'total'=>$count,
-            'max_id'=>$max,
+            'tags' => $tags,
+//            'max_id'=>$max,
         ];
         return view('products.index',$data);
 
@@ -74,9 +94,11 @@ class ProductController extends Controller
    */
   public function create()
   {
+    $tags = Tag::all();
     $categories = Category::all();
     $data = [
-      'categories'=>$categories
+      'categories'=>$categories,
+      'tags' => $tags
     ];
     return view('products.create',$data);
 
@@ -103,18 +125,18 @@ class ProductController extends Controller
       'isbn'=>'required',
       'category_id'=>'required|integer',
       'subcategory_id'=>'required|integer',
-      'tags'=>'required',
+
       'list_price'=>'required|integer',
       'sale_price'=>'required|integer',
       'stock'=>'required|integer',
       'picture'=>'image'
 
     ]);
-      $statement = DB::select("show table status like 'products'");
-      $new_id =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
-      $new_id = json_decode($new_id)->max_id;
-
+    //處理圖片
     if(isset($request['picture'])){
+        $statement = DB::select("show table status like 'products'");
+        $new_id =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
+        $new_id = json_decode($new_id)->max_id;
         $file = $request['picture'];
         $filepath = 'public/product/';
         $filename = 'product'.$new_id.'.jpg';
@@ -123,7 +145,15 @@ class ProductController extends Controller
     }
     $array = $request->all();
     $array['picture'] = isset($url)?$url:null;
-    Product::create($array);
+    //新增商品
+    $product = Product::create($array);
+    //增加商品tag
+    $tags = Tag::orderBy('id','asc')->get();
+    foreach ($tags as $tag){
+        if ($request->query($tag->id)){
+              $product->tags->attach($tag->id);
+        }
+    }
 
     return redirect()->route('products.index');
   }
@@ -148,10 +178,12 @@ class ProductController extends Controller
    */
   public function edit(Product $product)
   {
+    $tags = Tag::all();
     $categories = Category::all();
     $data = [
       'product'=>$product,
-      'categories'=>$categories
+      'categories'=>$categories,
+        'tags' => $tags
     ];
 
     return view('products.edit',$data);
@@ -166,26 +198,33 @@ class ProductController extends Controller
    */
   public function update(Request $request, Product $product)
   {
-    $this->validate($request,[
-      'title'=>'required',
-      'subtitle'=>'required',
-      'description'=>'required',
-      'type'=>'required|integer',
-      'author'=>'required',
-      'author_description'=>'string',
-      'interpreter'=>'string',
-      'publisher'=>'required',
-      'publish_year'=>'required|integer|min:0',
-      'isbn'=>'required',
-      'category_id'=>'required|integer',
-      'subcategory_id'=>'required|integer',
-      'tags'=>'required',
-      'list_price'=>'required|integer',
-      'sale_price'=>'required|integer',
-      'stock'=>'required|integer',
-      'picture'=>'image',
+    $validator = Validator::make($request->all(),[
+        'title'=>'required',
+        'subtitle'=>'required',
+        'description'=>'required',
+        'type'=>'required|integer',
+        'author'=>'required',
+        'author_description'=>'string',
+        'interpreter'=>'string',
+        'publisher'=>'required',
+        'publish_year'=>'required|integer|min:0',
+        'isbn'=>'required',
+        'category_id'=>'required|integer',
+        'subcategory_id'=>'required|integer',
 
+        'list_price'=>'required|integer',
+        'sale_price'=>'required|integer',
+        'stock'=>'required|integer',
+        'picture'=>'image',
     ]);
+    //處理 check box 的 old value
+    if ($validator->fails()) {
+      return redirect()->back()
+          ->withErrors($validator)
+          ->withInput()
+          ->with(['old'=>'old']);
+    }
+    //處理picture
     $id = $product->id;
     $array = $request->all();
     if(isset($request['picture'])){
@@ -195,7 +234,16 @@ class ProductController extends Controller
         $file->storeAs($filepath,$filename);
         $array['picture'] = 'storage/product/'.$filename;
     }
-
+    //處理tag
+    $tags = Tag::all();
+    $attachArray = [];
+    foreach ($tags as $tag){
+        if ($request->query($tag->id)) {
+            $attachArray+=[$tag->id];
+        }
+    }
+    $product->tags()->detach();
+    $product->tags()->attach($attachArray);
 
     $product->update($array);
     return redirect()->route('products.index');

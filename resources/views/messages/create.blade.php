@@ -2,6 +2,10 @@
 
 @section('title','新增訊息')
 
+@section('index',route('messages.index'))
+
+@section('type','Message')
+
 @section('content')
 
 

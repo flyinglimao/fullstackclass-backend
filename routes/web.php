@@ -118,6 +118,22 @@ Route::middleware('auth')->group(function (){
     Route::patch('categories/subcategories/update/{subcategory}','SubcategoryController@update')->name('subcategories.update');
 
     Route::delete('subcategories/destroy/{subcategory}','SubcategoryController@destroy')->name('subcategories.destroy');
+
+    //Tag
+
+    Route::get('tags','TagController@index')->name('tags.index');
+
+    Route::get('tags/create','TagController@create')->name('tags.create');
+
+    Route::get('tags/edit/{tag}','TagController@edit')->name('tags.edit');
+
+    Route::post('tags/store','TagController@store')->name('tags.store');
+
+    Route::patch('tags/update/{tag}','TagController@update')->name('tags.update');
+
+    Route::delete('tags/destroy/{tag}','TagController@destroy')->name('tags.destroy');
+
+
 });
 
 Route::get('products','ProductController@index')->name('products.index');
@@ -146,7 +162,11 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('products/{product}/tags',function (\App\Product $product){
-    dd($product->tags());
+    $array = [];
+    foreach ($product->tags as $id=>$tag){
+        $array[$id] = $tag->name;
+    }
+    dd([$array]);
 });
 
 Route::get('tags/{tag}/products',function (\App\Tag $tag){

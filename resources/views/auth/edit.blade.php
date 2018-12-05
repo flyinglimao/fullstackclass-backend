@@ -2,6 +2,10 @@
 
 @section('title','使用者設定')
 
+@section('index',route('home'))
+
+@section('type','Home')
+
 @section('content')
 
 

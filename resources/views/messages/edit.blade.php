@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
-@section('title','新增訊息')
+@section('title','編輯訊息')
+
+@section('index',route('messages.index'))
+
+@section('type','Message')
 
 @section('content')
 
@@ -14,7 +18,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">新增訊息</h4>
+                                <h4 class="header-title">編輯訊息</h4>
                                 <p class="text-muted font-14 mb-4">Here are examples of <code>.form-control</code> applied to each textual HTML5 <code>&lt;input&gt;</code> <code>type</code>.</p>
                                 <form action="{{route('messages.update',$message->id)}}" method="post" id ="edit">
                                 @csrf

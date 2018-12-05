@@ -3,6 +3,10 @@
 
 @section('title','訂單列表')
 
+@section('index',route('orders.index'))
+
+@section('type','Order')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

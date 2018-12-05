@@ -2,6 +2,10 @@
 
 @section('title','活動編輯')
 
+@section('index',route('events.index'))
+
+@section('type','Event')
+
 @section('content')
 
 

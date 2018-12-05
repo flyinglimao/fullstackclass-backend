@@ -3,6 +3,10 @@
 
 @section('title','紅利列表')
 
+@section('index',route('bonuses.index'))
+
+@section('type','Bonus')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->
