@@ -25,11 +25,14 @@
                                     <div class="d-sm-flex justify-content-between align-items-center">
                                         <h4 class="header-title mb-0">
                                             搜尋方式
-                                            {{--{{'最大id'.$max_id}}--}}
                                         </h4>
                                     </div>
                                     <div class="market-status-table mt-4">
                                         <form  method="get" id="this_form" action="{{route('products.index')}}">
+                                            <div>
+                                                <label for="id" class="col-form-label uniform_label_length">ID</label>
+                                                <input type="text" class="simple col-sm-3"id="id" name="id" value="{{request('id')}}">
+                                            </div>
                                             <div>
                                                 <label for="category_id" class="col-form-label uniform_label_length">主分類</label>
                                                 <select name="category_id" class="dynamic simple col-sm-3" id="category_id" data-dependent="subcategory_id" >
@@ -113,8 +116,9 @@
                             <table class="dbkit-table">
                                 <tr class="heading-td">
                                     {{--<td class="mv-icon">ID</td>--}}
-                                    <td class="coin-name">書名</td>
 
+                                    <td class="coin-name">ID</td>
+                                    <td class="attachments">書名</td>
                                     <td class="attachments">主分類</td>
                                     <td class="attachments">次分類</td>
                                     <td class="attachments">出版時間</td>
@@ -128,14 +132,15 @@
                                 </tr>
                                 @foreach($products as $product)
                                 <tr>
-                                    <td class="coin-name">{{$product->title}} </td>
+                                    <td class="coin-name">{{$product->id}} </td>
+                                    <td class="attachments">{{$product->title}} </td>
 
                                     <td class="attachments">{{$product->category->name}} </td>
                                     <td class="attachments">{{$product->subcategory->name}} </td>
                                     <td class="attachments">{{$product->publish_year}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>
-                                    <td class="sell">{{$product->updated_at}} </td>
+                                    <td class="sell">{{$product->created_at}} </td>
                                     <td class="sell">
                                         <img src="{{asset($product->picture)}}" alt="no picture" class="avatar user-thumb" style="width: 50px;height: 50px;"> </td>
 
@@ -156,39 +161,7 @@
             <!-- end   商品列表-->
         </div>
     </div>
-    <style>
-        .simple {
-            width: 100%;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #495057;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            border-radius: .25rem;
-        }
-        .mybtn {
-            display: inline-block;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            border: 1px solid transparent;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-        .uniform_label_length{
-            width: 60px;
-        }
 
-    </style>
     <script>
         $(document).ready(function(){
             function presend(){

@@ -16,8 +16,9 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $orders = Order::where('id','!=',-1);
         $data = [
-            'orders' => Order::orderBy('updated_at','DEC')->paginate(10),
+            'orders' => $orders->paginate(10),
         ];
         return view('orders.index',$data);
     }

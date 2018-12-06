@@ -20,6 +20,10 @@ Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dy
 
 Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
 
+Route::get('item/destroy/{id}',function(App\Product $abc){
+    dd($abc);
+})->name('item.destroy');
+
 Route::middleware('auth')->group(function (){
 
     // Products CRUD
@@ -136,30 +140,28 @@ Route::middleware('auth')->group(function (){
 
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('products','ProductController@index')->name('products.index');
 
 Route::get('mail/sendmail','MailController@sendmail')->name('sendmail');
-
-
-
-
-Route::get('item/destroy/{id}',function(App\Product $abc){
-    dd($abc);
-})->name('item.destroy');
-
-Route::get('json/pay_information',function (){
-   $a = \App\Order::find(1);
-   dd([
-       'pay_information'=>json_decode($a->payment_information),
-       'products'=>json_decode($a->products)
-   ]);
-})->middleware('verified');
 
 Auth::routes();
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+Route::get('json/pay_information',function (){
+    $a = \App\Order::find(1);
+    dd([
+        'pay_information'=>json_decode($a->payment_information),
+        'products'=>json_decode($a->products)
+    ]);
+})->middleware('verified');
 
 Route::get('products/{product}/tags',function (\App\Product $product){
     $array = [];
@@ -171,6 +173,10 @@ Route::get('products/{product}/tags',function (\App\Product $product){
 
 Route::get('tags/{tag}/products',function (\App\Tag $tag){
     dd($tag->products());
+});
+
+Route::get('123',function (){
+    dd(\App\Tag::where('id',0)->get());
 });
 
 

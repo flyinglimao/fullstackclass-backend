@@ -10,14 +10,47 @@ class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tags = Tag::orderBy('updated_at','dec')->paginate(10);
+        //取出全部的Tag，不要用all()
+        $tags =Tag::where('id','!=',-1);
+
+
+        //        dd([
+//            $request->query('id'),
+//            Tag::where('id',$request->input('id'))->get(),
+//            Tag::where('id',$request->query('id'))->get()
+//        ]);
+
+
+        //search by name
+        if ($request->query('name')!=null){
+            $tags = $tags->where('name','LIKE','%'.$request->input('name').'%');
+        }
+
+
+        //search by id
+
+        if ($request->query('id')!=null){
+            $tags = $tags->where('id',intval($request->query('id')));
+        }
+
+        //order
+        if ($request->query('item') != null){
+            if ($request->query('order') != null){
+                $tags = $tags->orderBy($request->input('item'), $request->input('order'));
+            }
+        }else $tags = $tags->orderBy('id','asc');
+
+
+
+        $total = $tags->count();
         $data = [
-            'tags' => $tags
+            'tags' => $tags->paginate(10),
+            'total' => $total
         ];
         return view('tags.index',$data);
     }

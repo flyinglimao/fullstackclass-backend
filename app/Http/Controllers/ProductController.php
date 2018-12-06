@@ -22,8 +22,11 @@ class ProductController extends Controller
     public function index(Request $request)
     {
 
-        $tags = Tag::all();
+
         $products = Product::where('id','!=',-1);
+        if ($request->query('id')!=null){
+            $products->where('id',$request->input('id'));
+        }
         if ($request->query('tagss')){
             $tagss = $request->input('tagss');
             foreach ($tagss as $tag_id){
@@ -32,15 +35,12 @@ class ProductController extends Controller
                 });
             }
         }
-
-//        dd([$products->get(),$request->all()]);
+        //search by order
 
         if ($request->query('item')){
-            if ($request->query('order')){
-                $products= $products->orderBy($request->query('item'),$request->query('order'));
-            }else
-                $products= $products->orderBy($request->query('item'),'desc');
-        }
+            $products= $products->orderBy($request->query('item'),$request->query('order'));
+        }else
+            $products = $products->orderBy('id','asc');
 
         // search by category and subcategory
         if ($request->query('category_id'))
@@ -53,12 +53,12 @@ class ProductController extends Controller
             }
         }
         //search by stock
-        if ($request->query('stock')){
+        if ($request->query('stock')!=null){
             $products = $products->where('stock',$request->query('stock'));
         }
 
         //search by string
-        if ($request->query('name')){
+        if ($request->query('name')!=null){
             $products = $products->where('title','LIKE','%'.$request->query('name').'%')
                                  ->orWhere('publisher','LIKE','%'.$request->query('name').'%')
                                  ->orWhere('author','LIKE','%'.$request->query('name').'%')
