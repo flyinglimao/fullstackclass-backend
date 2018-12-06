@@ -137,14 +137,19 @@ Route::middleware('auth')->group(function (){
 
     Route::delete('tags/destroy/{tag}','TagController@destroy')->name('tags.destroy');
 
+    //Test mail
 
+    Route::get('mail','MailController@index')->name('mails.index');
+
+    Route::get('mail/notify/order2','MailController@index2')->name('mails.index2');
+
+    Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('products','ProductController@index')->name('products.index');
 
-Route::get('mail/sendmail','MailController@sendmail')->name('sendmail');
 
 Auth::routes();
 
