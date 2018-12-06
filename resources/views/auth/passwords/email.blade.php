@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','重設密碼')
+
 @section('content')
 
 <!-- this is to send email to your own mail box before reset your email-->
@@ -63,8 +65,8 @@
                 @csrf
 
                 <div class="login-form-head">
-                    <h4>Forgot Password</h4>
-                    <p>Hey! Forgot Password Your Password ? Reset Now</p>
+                    <h4>忘記密碼</h4>
+                    <p>請填寫您的電子郵件，以便我們發送重設密碼表格</p>
                     @if (session('status'))
                         <div class="alert alert-danger" role="alert">
                             {{ session('status') }}
@@ -73,7 +75,7 @@
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
-                        <label for="exampleInputEmail1">Email</label>
+                        <label for="exampleInputEmail1">電子郵件</label>
                         <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                name="email" value="{{ $email ?? old('email') }}" required autofocus>
                         <i class="ti-lock"></i>
@@ -84,7 +86,7 @@
                         </p>
                     @endif
                     <div class="submit-btn-area mt-5">
-                        <button id="form_submit" type="submit">Reset <i class="ti-arrow-right"></i></button>
+                        <button id="form_submit" type="submit">發送 <i class="ti-arrow-right"></i></button>
                     </div>
                 </div>
             </form>

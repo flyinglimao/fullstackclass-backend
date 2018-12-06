@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Foundation\Auth\ResetsPasswords;
+
 
 class ResetPasswordController extends Controller
 {
@@ -34,6 +36,15 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('guest');
+        $this->middleware('guest');
+    }
+
+    public function validationErrorMessages()
+    {
+        return [
+            'email.email' => '請輸入合法的電子郵件信箱格式',
+            'password.confirmed' => '密碼確認錯誤',
+            'password.min' => '密碼最小要6碼'
+        ];
     }
 }

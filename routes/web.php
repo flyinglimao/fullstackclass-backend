@@ -180,4 +180,8 @@ Route::get('123',function (){
 });
 
 
+Route::get('1',function(){
+    dd(\App\Order::find(1)->user);
+});
+
 

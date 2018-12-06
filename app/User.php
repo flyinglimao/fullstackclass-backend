@@ -9,8 +9,9 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Notifications\CustomEmailVerified;
+use App\Notifications\CustomResetEmail;
 
-class User extends Authenticatable implements JWTSubject,MustVerifyEmail
+class User extends Authenticatable implements JWTSubject,MustVerifyEmail,CanResetPassword
 {
     use Notifiable;
     protected $table = 'users';
@@ -75,5 +76,10 @@ class User extends Authenticatable implements JWTSubject,MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new CustomEmailVerified);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomResetEmail($token));
     }
 }

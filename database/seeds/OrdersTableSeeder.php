@@ -11,33 +11,31 @@ class OrdersTableSeeder extends Seeder
    *
    * @return void
    */
+
   public function run()
   {
     Order::truncate();
-    $total = 10;
+    $total = 20;
 
     $fake = \Faker\Factory::create('zh_TW');
     foreach (range(1,$total) as $id){
       $product_id = rand(1,30);
       $product =  \App\Product::find($product_id);
       $price = $product->sale_price;
-      $num = floor($product->stock/3);
+      $num = rand(1,4);
       Order::create([
         'state'=>0,
         'pay_method'=>0,
         'payment_information'=>json_encode([
           'time'=>now(),
           'total'=>$price*$num,
-          'id'=>$this->randname(20,0),
         ]),
         'message'=>$fake->realText(rand(10,15)),
         'ship_method'=>0,
         'ship_information'=>'快樂物流',
         'ship_order'=>'FIFO',
         'products'=>json_encode([
-            'product_id'=>$product_id,
-            'unit_price'=>$price,
-            'quantity'=>$num,
+            $product_id=>$num
         ]),
         'receiver'=>$this->randname(rand(6,10),1),
         'receiver_phone'=>$this->phoneGenerator(),

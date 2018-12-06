@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','貓咪後台登入')
+
 @section('content')
 <!-- login area start -->
 <div class="login-area">
@@ -8,15 +10,15 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="login-form-head">
-                    <h4>Sign In</h4>
+                    <h4>貓咪後台</h4>
 
-                    <p>login to get more powerful function</p>
+                    <p>請登入以獲得更多功能</p>
 
                 </div>
                 <div class="login-form-body">
                     <!-- start新加的名字任認證-->
                     <div class="form-gp">
-                        <label for="exampleInputName1">User name</label>
+                        <label for="exampleInputName1">使用者名稱</label>
                         <input type="text" id="exampleInputName1" class="{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                name="name" value="{{ old('name') }}" required autofocus>
                         <i class="ti-email"></i>
@@ -29,9 +31,9 @@
                 <!-- end新加的名字任認證-->
 
                     <div class="form-gp">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">電子郵件</label>
                         <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                               name="email" value="{{ old('email') }}" required autofocus>
+                               name="email" value="{{ old('email') }}" required>
                         <i class="ti-email"></i>
                     </div>
                     @if ($errors->has('email'))
@@ -42,7 +44,7 @@
 
 
                     <div class="form-gp">
-                        <label for="exampleInputPassword1">Password</label>
+                        <label for="exampleInputPassword1">密碼</label>
                         <input type="password" id="exampleInputPassword1" class="{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                name="password" required>
                         <i class="ti-lock"></i>
@@ -56,29 +58,29 @@
                     <div class="row mb-4 rmber-area">
                         <div class="col-6">
                             <div class="custom-control custom-checkbox mr-sm-2">
-                                <input type="checkbox" class="custom-control-input" name="remember"
+                                <input type="checkbox" class="custom-control-input"  name="remember"
                                        id="customControlAutosizing" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                <label class="custom-control-label"  style="position:static;" for="customControlAutosizing">記住我</label>
 
                             </div>
                         </div>
                         <div class="col-6 text-right">
-                            <a href="{{ route('password.request') }}">Forgot Password?</a>
+                            <a href="{{ route('password.request') }}">忘記密碼?</a>
                         </div>
                     </div>
                     <div class="submit-btn-area">
-                        <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        <button id="form_submit" type="submit">登入 <i class="ti-arrow-right"></i></button>
                         <div class="login-other row mt-4">
                             <div class="col-6">
-                                <a class="fb-login" href="#">Log in with <i class="fa fa-facebook"></i></a>
+                                <a class="fb-login" href="#">以facebook登入 <i class="fa fa-facebook"></i></a>
                             </div>
                             <div class="col-6">
-                                <a class="google-login" href="#">Log in with <i class="fa fa-google"></i></a>
+                                <a class="google-login" href="#">以google登入 <i class="fa fa-google"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="form-footer text-center mt-5">
-                        <p class="text-muted">Don't have an account? <a href="{{route('register')}}">Sign up</a></p>
+                        <p class="text-muted">沒有帳戶? 註冊獲得新帳戶! <a href="{{route('register')}}">立即註冊</a></p>
                     </div>
                 </div>
             </form>

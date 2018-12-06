@@ -11,9 +11,6 @@ use Illuminate\Auth\Notifications\VerifyEmail;
 
 class CustomEmailVerified extends VerifyEmail
 {
-
-    public $view="";
-    public $markdown='';
     public function toMail($notifiable)
     {
         if (static::$toMailCallback) {

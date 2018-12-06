@@ -44,6 +44,7 @@
                             </p>
                         </div>
                     @endif
+                    <h4><a href="{{route('verification.resend')}}">email認證測試</a></h4>
                     <input type="hidden" value="{{Auth::user()->id}}">
                     <div class="form-group">
                         <label for="example-text-input" class="col-form-label">使用者名稱</label>
@@ -94,14 +95,16 @@
                                                 <table class="dbkit-table">
                                                     <tr class="heading-td">
                                                         <td class="attachments">id</td>
-                                                        <td class="attachments">change</td>
-                                                        <td class="attachments">message</td>
+                                                        <td class="attachments">變化量</td>
+                                                        <td class="attachments">訊息</td>
+                                                        <td class="attachments">日期</td>
                                                     </tr>
                                                     @foreach($bonuses as $bonus)
                                                         <tr class="heading-td">
                                                             <td class="attachments">{{$bonus->id}}</td>
                                                             <td class="attachments">{{$bonus->change}}</td>
                                                             <td class="attachments">{{$bonus->message}}</td>
+                                                            <td class="attachments">{{$bonus->created_at}}</td>
                                                         </tr>
                                                     @endforeach
                                                 </table>
@@ -132,15 +135,16 @@
                                                     <td class="attachments">單價</td>
                                                     <td class="attachments">數量</td>
                                                     <td class="attachments">總金額</td>
+                                                    <td class="attachments">日期</td>
                                                 </tr>
                                                 @foreach($orders as $order)
                                                     <tr class="heading-td">
                                                         <td class="attachments">{{$order->id}}</td>
-                                                        <td class="attachments">{{\App\Product::find(json_decode($order->products)->product_id)->title}}</td>
-                                                        <td class="attachments">{{json_decode($order->products)->unit_price}}</td>
-                                                        <td class="attachments">{{json_decode($order->products)->quantity}}</td>
-
+                                                        <td class="attachments">{{\App\Product::find(array_keys(json_decode($order->products,true)))[0]->title}}</td>
+                                                        <td class="attachments">{{\App\Product::find(array_keys(json_decode($order->products,true)))[0]->sale_price}}</td>
+                                                        <td class="attachments">{{array_values(json_decode($order->products,true))[0]}}</td>
                                                         <td class="attachments">{{json_decode($order->payment_information)->total}}</td>
+                                                        <td class="attachments">{{$order->created_at}}</td>
                                                     </tr>
                                                 @endforeach
                                             </table>

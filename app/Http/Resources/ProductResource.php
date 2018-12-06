@@ -31,7 +31,7 @@ class ProductResource extends JsonResource
             'list_price' => $this->list_price,
             'sale_price' =>$this->sale_price,
             'stock' =>$this->stock,
-           'picture' => $this->picture,
+            'picture' => $this->picture,
             'publish_year' => $this->publish_year
         ];
     }
