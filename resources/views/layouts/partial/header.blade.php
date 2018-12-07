@@ -21,7 +21,7 @@
                 <!-- 小螢幕圖案-->
                 <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
 
-
+                <!-- 鈴鐺圖案-->
                 <li class="dropdown">
                     <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
                         <span>
@@ -55,6 +55,7 @@
                         </div>
                     </div>
                 </li>
+                <!-- 電郵圖案-->
                 <li class="dropdown">
                     <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>
                             @auth
@@ -63,12 +64,12 @@
                             @endauth
                         </span></i>
                     <div class="dropdown-menu notify-box nt-enveloper-box">
-                        <span class="notify-title">You have
+                        <span class="notify-title">目前有
                             @auth
                                 {{Auth::user()->im_receiver->count()}}
                             @else 0
                             @endauth
-                            mails in your mail box <a href="#">view all</a></span>
+                            個訊息<a href="#">看全部</a></span>
                         <div class="nofity-list">
                             @auth
                                 @foreach(Auth::user()->im_receiver as $message)
@@ -88,9 +89,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="settings-btn">
-                    <i class="ti-settings"></i>
-                </li>
+                {{--<li class="settings-btn">--}}
+                    {{--<i class="ti-settings"></i>--}}
+                {{--</li>--}}
             </ul>
         </div>
     </div>
@@ -116,7 +117,7 @@
                         <img class="avatar user-thumb" src="{{asset('images/author/avatar.png')}}" alt="avatar">
                     @endif
                 <h4 class="user-name dropdown-toggle" data-toggle="dropdown" >
-                    Hello, {{Auth::user()->name}}
+                    您好, {{Auth::user()->name}}
                     <i class="fa fa-angle-down">
                     </i>
                 </h4>

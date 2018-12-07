@@ -4,7 +4,7 @@
 
 @section('index',route('events.index'))
 
-@section('type','Event')
+@section('type','Event Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -18,7 +18,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    活動列表
+                                    活動列表: {{$total.'筆資料'}}
                                 @endif
                             </h4>
                         </div>

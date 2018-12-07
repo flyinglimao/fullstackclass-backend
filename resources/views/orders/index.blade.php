@@ -5,7 +5,7 @@
 
 @section('index',route('orders.index'))
 
-@section('type','Order')
+@section('type','Order Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -83,7 +83,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    訂單目錄
+                                    訂單列表: {{$total.'筆資料'}}
                                 @endif
                             </h4>
                         </div>
@@ -116,7 +116,6 @@
                                             <td class="attachments">{{$order->user->name}} </td>
                                             <td class="attachments">{{$order->receiver}} </td>
                                             <td class="attachments">{{$order->receiver_phone}} </td>
-                                            <td class="attachments">{{json_decode($order->payment_information)->total }} </td>
                                             <td class="attachments">{{$order->state}} </td>
                                             <td class="attachments">{{$order->pay_method}} </td>
 
@@ -126,7 +125,6 @@
 
 
 
-                                            <td class="attachments">{{json_decode($order->payment_information)->time->date }} </td>
 
                                             <td class="attachments">
                                                 <a href="{{route('orders.edit',$order->id)}}" class="btn btn-xs btn-primary" style="width:120px">編輯</a>

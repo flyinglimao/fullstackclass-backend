@@ -5,7 +5,7 @@
 
 @section('index',route('bonuses.index'))
 
-@section('type','Bonus')
+@section('type','Bonus Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -72,7 +72,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    紅利列表
+                                    紅利列表: {{$total.'筆資料'}}
                                 @endif
                             </h4>
                         </div>

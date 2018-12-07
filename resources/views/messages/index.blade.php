@@ -5,7 +5,7 @@
 
 @section('index',route('messages.index'))
 
-@section('type','Message')
+@section('type','Message Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <div class="d-sm-flex justify-content-between align-items-center">
                             <h4 class="header-title mb-0">
-                                訊息列表
+                                商品目錄: {{$total.'筆資料'}}
                             </h4>
                         </div>
                         <div class="market-status-table mt-4">

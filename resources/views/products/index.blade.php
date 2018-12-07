@@ -4,7 +4,7 @@
 
 @section('index',route('products.index'))
 
-@section('type','Product')
+@section('type','Product Index')
 
 @section('content')
 
@@ -107,7 +107,7 @@
                             @if(Request::url() != Request::fullurl())
                                 搜尋結果: {{$total.'筆資料'}}
                             @else
-                                商品目錄
+                                商品目錄: {{$total.'筆資料'}}
                             @endif
                         </h4>
                     </div>

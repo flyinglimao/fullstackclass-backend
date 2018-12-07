@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Awobaz\Compoships\Compoships;
 class Bonus extends Model
 {
+    use Compoships;
     protected $table = "bonuses";
     protected $fillable = [
         'change',

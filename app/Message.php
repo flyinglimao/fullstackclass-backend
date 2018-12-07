@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Awobaz\Compoships\Compoships;
 
 class Message extends Model
 {
     //
-
+    use Compoships;
 
     protected $table = 'messages';
     protected $fillable = [
