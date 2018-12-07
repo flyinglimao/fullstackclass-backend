@@ -70,14 +70,14 @@
                     </div>
                     <div class="submit-btn-area">
                         <button id="form_submit" type="submit">登入 <i class="ti-arrow-right"></i></button>
-                        <div class="login-other row mt-4">
-                            <div class="col-6">
-                                <a class="fb-login" href="#">以facebook登入 <i class="fa fa-facebook"></i></a>
-                            </div>
-                            <div class="col-6">
-                                <a class="google-login" href="#">以google登入 <i class="fa fa-google"></i></a>
-                            </div>
-                        </div>
+                        {{--<div class="login-other row mt-4">--}}
+                            {{--<div class="col-6">--}}
+                                {{--<a class="fb-login" href="#">以facebook登入 <i class="fa fa-facebook"></i></a>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-6">--}}
+                                {{--<a class="google-login" href="#">以google登入 <i class="fa fa-google"></i></a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="form-footer text-center mt-5">
                         <p class="text-muted">沒有帳戶? 註冊獲得新帳戶! <a href="{{route('register')}}">立即註冊</a></p>
