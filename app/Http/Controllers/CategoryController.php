@@ -15,8 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $categories = Category::where('id','!=','-1');
         $data = [
-            'categories' => Category::paginate(10),
+            'categories' => $categories->paginate(10),
+            'total' => $categories->count()
         ];
         return view('categories.index',$data);
     }

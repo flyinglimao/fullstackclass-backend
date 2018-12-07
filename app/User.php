@@ -16,6 +16,7 @@ class User extends Authenticatable implements JWTSubject,MustVerifyEmail,CanRese
 {
 
     use Notifiable;
+    use Compoships;
     protected $table = 'users';
 
     /**

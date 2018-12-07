@@ -5,7 +5,7 @@
 
 @section('index',route('orders.index'))
 
-@section('type','Order')
+@section('type','Order Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -83,7 +83,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    訂單目錄
+                                    訂單列表: {{$total.'筆資料'}}
                                 @endif
                             </h4>
                         </div>

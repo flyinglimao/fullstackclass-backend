@@ -5,7 +5,7 @@
 
 @section('index',route('tags.index'))
 
-@section('type','Tag')
+@section('type','Tag Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -69,7 +69,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    標籤列表
+                                    標籤列表: {{$total.'筆資料'}}
                                 @endif
 
                             </h4>

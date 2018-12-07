@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Category;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,6 +19,19 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
 //        $this->middleware(['auth', 'verified']);
+    }
+
+    public function search(Request $request)
+    {
+
+        $users = User::where('isAdmin',0);
+        $data = [
+            'users' => $users->paginate(10),
+            'total' => $users->count()
+        ];
+        return view('auth.member',$data);
+
+
     }
 
     /**
@@ -77,6 +90,26 @@ class HomeController extends Controller
             'email'=>$request->input('email'),
             'profile'=>$profile,
         ]);
-        return redirect()->route('products.index');
+        return redirect()->route('home');
+    }
+
+
+    public function show(User $user)
+    {
+        $bonuses = $user->bonuses()->orderBy('created_at','asc')->get();
+        $orders = $user->orders()->orderBy('created_at','asc')->get();
+
+        $total_orders = 0;
+
+        foreach ($orders as $order){
+            $total_orders+=json_decode($order->payment_information)->total;
+        }
+        $data = [
+            'user'=>$user,
+            'bonuses' => $bonuses,
+            'orders' => $orders,
+            'total_orders' => $total_orders
+        ];
+        return view('auth.show',$data);
     }
 }

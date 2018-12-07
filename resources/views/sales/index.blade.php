@@ -5,7 +5,7 @@
 
 @section('index',route('sales.index'))
 
-@section('type','Sale')
+@section('type','Sale Index')
 
 @section('content')
     <div class="main-content-inner">
@@ -97,7 +97,7 @@
                                 @if(Request::url() != Request::fullurl())
                                     搜尋結果: {{$total.'筆資料'}}
                                 @else
-                                    庫存變化目錄
+                                    庫存變化目錄: {{$total.'筆資料'}}
                                 @endif
                             </h4>
                         </div>

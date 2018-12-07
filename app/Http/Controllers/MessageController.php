@@ -18,9 +18,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::OrderBy('updated_at','DEC')->paginate(10);
+        $messages = Message::OrderBy('updated_at','DEC');
         $data = [
-            'messages' =>$messages,
+            'messages' =>$messages->paginate(10),
+            'total' => $messages->count()
         ];
         return view('messages.index',$data);
 

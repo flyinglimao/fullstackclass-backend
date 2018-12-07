@@ -13,9 +13,15 @@
             <div class="card">
 
                 <div class="card-body">
+                    @if(Session('admin_error'))
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">權限不夠</h4>
+                            <p>{{Session('admin_error')}}</p>
 
+                        </div>
+                    @endif
                     <div class="alert alert-primary" role="alert">
-                        <h4 class="alert-heading">Welcome!!</h4>
+                        <h4 class="alert-heading">歡迎!!</h4>
                         <p>
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -23,28 +29,32 @@
                             </div>
                         @endif
 
-                        You are logged in!
+                        您已經登入
                         </p>
                     </div>
                     @if(!(Auth::user()->hasVerifiedEmail()))
-                        <div class="alert alert-primary" role="alert">
-                            <h4 class="alert-heading">{{ __('Verify Your Email Address') }}</h4>
+                        <div class="alert
+                        @if(session('unverified'))
+                            alert-danger
+                        @else
+                            alert-primary
+                        @endif
+                        " role="alert">
+                            <h4 class="alert-heading">認證您的電子郵件信箱</h4>
                             <p>
                             @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
-                                    {{ __('A fresh verification link has been sent to your email address.') }}
+                                    已經寄出認證信了，請去您的電子郵件信箱查看
                                 </div>
                             @endif
 
-                            Before proceeding, please check your email---
+                            在繼續動作以前，請認證您的電子郵件信箱---
                             {{Auth::user()->email}}<br>
-                            for a verification link.<br>
-                            If you did not receive the email,
-                            <a href="{{ route('verification.resend') }}">click here to request another</a>.
+                            點擊下列連結以送出您的認證信<br>
+                            <a href="{{ route('verification.resend') }}">點我送信</a>.
                             </p>
                         </div>
                     @endif
-                    <h4><a href="{{route('verification.resend')}}">email認證測試</a></h4>
                     <input type="hidden" value="{{Auth::user()->id}}">
                     <div class="form-group">
                         <label for="example-text-input" class="col-form-label">使用者名稱</label>
@@ -115,10 +125,11 @@
                                 </div>
                             </div>
                             <hr>
-
+                            {{--內容--}}
                             <div class="card-header">
                                 <a class="card-link" data-toggle="collapse" href="#accordion12">商品購買紀錄</a>
                             </div>
+                            <!-- 跳出來的東西-->
                             <div id="accordion12" class="collapse" data-parent="#accordion2">
                                 <div class="card-body">
                                     <div class="d-sm-flex justify-content-between align-items-center">
