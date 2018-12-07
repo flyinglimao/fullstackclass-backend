@@ -43,7 +43,7 @@ class OrderController extends Controller
             $orders = $orders->orderBy($request->query('item'),$request->query('order'));
         }else
             $orders = $orders->orderBy('id','asc');
-//        dd($orders);
+
 
 
 

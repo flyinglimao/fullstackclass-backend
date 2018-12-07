@@ -122,7 +122,7 @@ Route::middleware('auth','is_admin')->group(function (){
     });
     //MemberSerach
 
-    Route::get('user/index','HomeController@search')->name('user.search');
+    Route::get('user/index','HomeController@search')->name('user.index');
 
     Route::get('user/show/{user}','HomeController@show')->name('user.show');
 
@@ -180,7 +180,17 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 
+Route::get('abc',function (){
+    $order = \App\Order::create([
+        'state' => 1,
+        'message' => '4fgsdfg',
+        'products' => json_encode([3=>3]),
+        'receiver' => 'asdf',
+        'member_id' => 1,
 
+    ]);
+    dd($order->ship_method);
+});
 
 
 

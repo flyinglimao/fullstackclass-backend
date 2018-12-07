@@ -116,7 +116,7 @@
                                             <td class="attachments">{{$order->user->name}} </td>
                                             <td class="attachments">{{$order->receiver}} </td>
                                             <td class="attachments">{{$order->receiver_phone}} </td>
-                                            <td class="attachments">{{json_decode($order->payment_information)->total }} </td>
+                                            <td class="attachments">{{$order->payment_information !==null?json_decode($order->payment_information)->total:null }} </td>
                                             <td class="attachments">{{$order->state}} </td>
                                             <td class="attachments">{{$order->pay_method}} </td>
 
@@ -126,7 +126,7 @@
 
 
 
-                                            <td class="attachments">{{json_decode($order->payment_information)->time->date }} </td>
+                                            <td class="attachments">{{$order->payment_information !==null?json_decode($order->payment_information)->time->date:null }} </td>
 
                                             <td class="attachments">
                                                 <a href="{{route('orders.edit',$order->id)}}" class="btn btn-xs btn-primary" style="width:120px">編輯</a>

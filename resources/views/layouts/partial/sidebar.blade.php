@@ -43,7 +43,7 @@
                         <a href="{{route('tags.index')}}"><i class="ti-receipt"></i> <span>Tag</span></a>
                     </li>
                     <li>
-                        <a href="{{route('mails.index')}}"><i class="ti-receipt"></i> <span>Mail</span></a>
+                        <a href="{{route('user.index')}}"><i class="ti-receipt"></i> <span>Member</span></a>
                     </li>
                 </ul>
             </nav>

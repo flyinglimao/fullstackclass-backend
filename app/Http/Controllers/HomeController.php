@@ -21,8 +21,9 @@ class HomeController extends Controller
 //        $this->middleware(['auth', 'verified']);
     }
 
-    public function search(Request $request)
+    public function search()
     {
+
 
         $users = User::where('isAdmin',0);
         $data = [
