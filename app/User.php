@@ -10,9 +10,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Notifications\CustomEmailVerified;
 use App\Notifications\CustomResetEmail;
+use Awobaz\Compoships\Compoships;
 
 class User extends Authenticatable implements JWTSubject,MustVerifyEmail,CanResetPassword
 {
+
     use Notifiable;
     protected $table = 'users';
 

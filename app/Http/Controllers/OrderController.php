@@ -23,7 +23,7 @@ class OrderController extends Controller
             $orders = $orders->where('receiver','LIKE','%'.$request->query('receiver').'%');
         }
         if ($request->query('receiver_phone') != null){
-            $orders = $orders->where('receiver_phone',$request->query('receiver_phone'));
+            $orders = $orders->where('receiver_phone','LIKE','%'.$request->query('receiver_phone').'%');
         }
         if ($request->query('invoice_number')!=null){
             $orders = $orders->where('invoice_number','LIKE','%'.$request->query('invoice_number').'%');
@@ -36,7 +36,14 @@ class OrderController extends Controller
                 $q->where('name','LIKE','%'.$request->query('user_name').'%');
             });
         }
-
+        if ($request->query('ship_information')!=null){
+            $orders = $orders->orderBy('ship_information','LIKE','%'.$request->query('ship_information').'%');
+        }
+        if ($request->query('item')!=null){
+            $orders = $orders->orderBy($request->query('item'),$request->query('order'));
+        }else
+            $orders = $orders->orderBy('id','asc');
+//        dd($orders);
 
 
 

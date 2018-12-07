@@ -130,24 +130,55 @@
                                         <div class="table-responsive">
                                             <table class="dbkit-table">
                                                 <tr class="heading-td">
-                                                    <td class="attachments">id</td>
-                                                    <td class="attachments">商品名稱</td>
-                                                    <td class="attachments">單價</td>
-                                                    <td class="attachments">數量</td>
+                                                    <td class="attachments">發票號碼</td>
+                                                    <td class="attachments">收件人</td>
                                                     <td class="attachments">總金額</td>
-                                                    <td class="attachments">日期</td>
+                                                    <td class="attachments">購買日期</td>
                                                 </tr>
-                                                @foreach($orders as $order)
-                                                    <tr class="heading-td">
-                                                        <td class="attachments">{{$order->id}}</td>
-                                                        <td class="attachments">{{\App\Product::find(array_keys(json_decode($order->products,true)))[0]->title}}</td>
-                                                        <td class="attachments">{{\App\Product::find(array_keys(json_decode($order->products,true)))[0]->sale_price}}</td>
-                                                        <td class="attachments">{{array_values(json_decode($order->products,true))[0]}}</td>
-                                                        <td class="attachments">{{json_decode($order->payment_information)->total}}</td>
-                                                        <td class="attachments">{{$order->created_at}}</td>
-                                                    </tr>
-                                                @endforeach
                                             </table>
+                                                @foreach($orders as $id=>$order)
+                                                <a class="card-link" data-toggle="collapse" href="#accordion12{{$id}}">
+                                                    <table class="dbkit-table">
+                                                        <tr class="heading-td">
+                                                            <td class="attachments">{{$order->invoice_number}}</td>
+                                                            <td class="attachments">{{$order->receiver}}</td>
+                                                            <td class="attachments">{{json_decode($order->payment_information)->total}}元</td>
+                                                            <td class="attachments">{{$order->created_at}}</td>
+                                                        </tr>
+                                                    </table>
+                                                </a>
+                                                <div id="accordion12{{$id}}" class="collapse" data-parent="#accordion12{{$id}}">
+                                                    <div class="card-body">
+                                                        <div class="d-sm-flex justify-content-between align-items-center">
+                                                            <h4 class="header-title mb-0">
+                                                                 單筆購買商品紀錄
+                                                            </h4>
+                                                        </div>
+                                                        <div class="market-status-table mt-4">
+                                                            <div class="table-responsive">
+                                                                <table class="dbkit-table">
+                                                                    <tr class="heading-td">
+                                                                        <td class="attachments">商品名稱</td>
+                                                                        <td class="attachments">商品單價</td>
+                                                                        <td class="attachments">商品數量</td>
+                                                                        <td class="attachments">總金額</td>
+                                                                    </tr>
+                                                                    @foreach(json_decode($order->products) as $product_id=>$quantity)
+                                                                        <tr class="heading-td">
+                                                                            <td class="attachments">{{\App\Product::find($product_id)->title}}</td>
+                                                                            <td class="attachments">{{\App\Product::find($product_id)->sale_price}}元</td>
+                                                                            <td class="attachments">{{$quantity}}本</td>
+                                                                            <td class="attachments">{{\App\Product::find($product_id)->sale_price*$quantity}}元</td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                @endforeach
+
                                         </div>
                                     </div>
                                 </div>

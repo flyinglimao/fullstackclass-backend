@@ -11,13 +11,32 @@ class BonusController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $bonuses = Bonus::where('id','!=',-1);
+        if ($request->query('id') != null){
+            $bonuses = $bonuses->where('id',$request->query('id'));
+        }
+        if ($request->query('message')!=null){
+            $bonuses = $bonuses->where('message','LIKE','%'.$request->query('message').'%');
+        }
+        if (is_numeric($request->query('upper'))){
+            $bonuses = $bonuses->where('change','<=',$request->query('upper'));
+        }
+        if (is_numeric($request->query('lower'))){
+            $bonuses = $bonuses->where('change','>=',$request->query('lower'));
+        }
+        if ($request->query('item')!=null){
+            $bonuses = $bonuses->orderBy($request->query('item'),$request->query('order'));
+        }else{
+            $bonuses = $bonuses->orderBy('id','asc');
+        }
         $data = [
-            'bonuses' =>Bonus::orderBy('updated_at','DEC')->paginate(10),
+            'bonuses' =>$bonuses->paginate(10),
+            'total' => $bonuses->count()
         ];
         return view('bonuses.index',$data);
     }

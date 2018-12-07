@@ -6,9 +6,14 @@ use Awobaz\Compoships\Database\Eloquent\Model;
 
 class Sale extends Model
 {
+
     protected $table = 'sales';
 
     protected $fillable = ['change','products_id','order_id','message'];
+
+
+
+
 
     public function product()
     {

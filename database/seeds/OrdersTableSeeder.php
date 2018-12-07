@@ -19,24 +19,27 @@ class OrdersTableSeeder extends Seeder
 
     $fake = \Faker\Factory::create('zh_TW');
     foreach (range(1,$total) as $id){
-      $product_id = rand(1,30);
-      $product =  \App\Product::find($product_id);
-      $price = $product->sale_price;
-      $num = rand(1,4);
+      $product_array = [];
+      $total = 0;
+      foreach (range(1,rand(1,4)) as $ii){
+          $product_id = rand(1,60);
+          if (!array_key_exists($product_id,$product_array)){
+              $product_array+=[$product_id=>rand(1,4)];
+              $total += $product_array[$product_id]*\App\Product::find($product_id)->sale_price;
+          }
+      }
       Order::create([
         'state'=>0,
         'pay_method'=>0,
         'payment_information'=>json_encode([
           'time'=>now(),
-          'total'=>$price*$num,
+          'total'=>$total,
         ]),
         'message'=>$fake->realText(rand(10,15)),
         'ship_method'=>0,
         'ship_information'=>'快樂物流',
         'ship_order'=>'FIFO',
-        'products'=>json_encode([
-            $product_id=>$num
-        ]),
+        'products'=>json_encode($product_array),
         'receiver'=>$this->randname(rand(6,10),1),
         'receiver_phone'=>$this->phoneGenerator(),
         'invoice_number'=>$this->randname(10,2),

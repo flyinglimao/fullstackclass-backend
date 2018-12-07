@@ -46,14 +46,16 @@
                                                     <input type="text" name="receiver_phone" class="simple col-sm-3" id="receiver_phone" value="{{request('receiver_phone')}}">
                                                 </div>
                                                 <div>
+                                                    <label for="ship_information" class="col-form-label uniform_label_length">物流公司</label>
+                                                    <input type="text" name="ship_information" class="simple col-sm-3" id="ship_information" value="{{request('ship_information')}}">
+                                                </div>
+                                                <div>
                                                     <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
                                                     <select name="item" id="orderby" class="simple col-sm-3" >
                                                         <option value="">請選擇</option>
-                                                        <option value="sale_price" {{ (request('item') == 'sale_price'?'selected':'') }}>售價</option>
-                                                        <option value="stock"{{ (request('item') == 'stock'?'selected':'') }}>庫存</option>
-                                                        <option value="created_at"{{ (request('item') == 'created_at'?'selected':'') }}>建立時間</option>
-                                                        <option value="isbn"{{ (request('item') == 'isbn'?'selected':'') }}>ISBN</option>
-                                                        <option value="publish_year" {{ (request('item') == 'publish_year'?'selected':'') }}>出版時間</option>
+                                                        <option value="created_at" {{ (request('item') == 'created_at'?'selected':'') }}>購買時間</option>
+                                                        <option value="payment_information->total" {{ (request('item') == 'payment_information->total'?'selected':'') }}>總金額</option>
+
                                                     </select>
                                                     <select name="order" class="simple col-sm-3">
                                                         <option value="">請選擇</option>
@@ -100,7 +102,7 @@
                                         <td class="attachments">訊息</td>
                                         <td class="attachments">運送方式</td>
                                         <td class="attachments">物流公司</td>
-                                        <td class="attachments">商品名稱</td>
+
 
                                         <td class="attachments">付款時間</td>
 
@@ -121,7 +123,7 @@
                                             <td class="attachments">{{$order->message}} </td>
                                             <td class="attachments">{{$order->ship_method}} </td>
                                             <td class="attachments">{{$order->ship_information}} </td>
-                                            <td class="attachments">{{\App\Product::find(array_keys(json_decode($order->products,true)))[0]->title }} </td>
+
 
 
                                             <td class="attachments">{{json_decode($order->payment_information)->time->date }} </td>
@@ -134,7 +136,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div>{{$orders->onEachSide(1)->links()}}</div>
+                        <div>{{$orders->appends(Request::except('page'))->onEachSide(1)->links()}}</div>
                     </div>
                 </div>
             </div>
