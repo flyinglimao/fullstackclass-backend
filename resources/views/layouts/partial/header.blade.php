@@ -103,7 +103,7 @@
         <div class="col-sm-6">
             <div class="breadcrumbs-area clearfix">
                 <h4 class="page-title pull-left">貓咪後台</h4>
-                主選單移到side bar去了
+                <a href="@yield('index')">@yield('type')</a>
             </div>
         </div>
         <div class="col-sm-6 clearfix">

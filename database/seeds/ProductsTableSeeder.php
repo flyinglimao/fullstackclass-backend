@@ -4,6 +4,7 @@ use App\Category;
 use Illuminate\Database\Seeder;
 use App\Product;
 use App\Subcategory;
+use App\ProductTag;
 class ProductsTableSeeder extends Seeder
 {
     /**
@@ -15,10 +16,12 @@ class ProductsTableSeeder extends Seeder
     {
 
         Product::truncate();
+        ProductTag::truncate();
         $total = 60;
         $publisherArray = ['紅樹林出版','九章出版社','天下文化','天下雜誌','雄獅圖書','幼獅文化','卓著出版社'];
         $bookArray = ['唐吉軻德','雙城記','童軍警探','紅樓夢','麥田捕手','黑美人','玫瑰之名','天地一沙鷗','天使與魔鬼','安妮日記'];
-
+        $InterpreterArray = ['呂相儒','林光 (當代翻譯家)','黎烈文','賴明珠','林曙光 (作家)',
+            '劉其偉','劉墉 (作家、畫家)','李昂 (作家)','劉慕沙'];
         $fake = \Faker\Factory::create('zh_TW');
         foreach (range(1,$total) as $id){
             $price = rand(300,1200);
@@ -35,7 +38,8 @@ class ProductsTableSeeder extends Seeder
                 'isbn'=>$this->randISBN(),
                 'category_id' =>$category_id,
                 'subcategory_id'=>$subcategory_id,
-//                'tags' => "null",
+                'author_description' =>$fake->realText(rand(10,15)),
+                'interpreter' => $InterpreterArray[rand(0,8)],
                 'list_price' => $price,
                 'sale_price' => floor($price*rand(60,100)/100),
                 'stock' => rand(0,10),

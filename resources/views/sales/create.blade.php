@@ -2,6 +2,10 @@
 
 @section('title','新增庫存變化')
 
+@section('index',route('sales.index'))
+
+@section('type','Sale')
+
 @section('content')
 
 

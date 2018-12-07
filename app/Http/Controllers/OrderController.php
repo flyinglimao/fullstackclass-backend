@@ -11,13 +11,47 @@ class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $orders = Order::where('id','!=',-1);
+
+        if ($request->query('receiver')!=null){
+            $orders = $orders->where('receiver','LIKE','%'.$request->query('receiver').'%');
+        }
+        if ($request->query('receiver_phone') != null){
+            $orders = $orders->where('receiver_phone','LIKE','%'.$request->query('receiver_phone').'%');
+        }
+        if ($request->query('invoice_number')!=null){
+            $orders = $orders->where('invoice_number','LIKE','%'.$request->query('invoice_number').'%');
+        }
+        if ($request->query('user_id')!=null){
+            $orders = $orders->where('member_id',$request->query('user_id'));
+        }
+        if ($request->query('user_name')!=null){
+            $orders = $orders->whereHas('user',function ($q) use($request){
+                $q->where('name','LIKE','%'.$request->query('user_name').'%');
+            });
+        }
+        if ($request->query('ship_information')!=null){
+            $orders = $orders->orderBy('ship_information','LIKE','%'.$request->query('ship_information').'%');
+        }
+        if ($request->query('item')!=null){
+            $orders = $orders->orderBy($request->query('item'),$request->query('order'));
+        }else
+            $orders = $orders->orderBy('id','asc');
+//        dd($orders);
+
+
+
+
+        $count = $orders->count();
         $data = [
-            'orders' => Order::orderBy('updated_at','DEC')->paginate(10),
+            'orders' => $orders->paginate(10),
+            'total' => $count
         ];
         return view('orders.index',$data);
     }
@@ -97,7 +131,7 @@ class OrderController extends Controller
         $json->time = Carbon::createFromFormat('Y-m-d\TH:i:s',$array['date']);
         $array['payment_information'] =json_encode($json);
 
-//        dd([$array,$order]);
+
         $order->update($array);
 
         return redirect()->route('orders.index');

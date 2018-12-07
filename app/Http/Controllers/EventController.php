@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Carbon\Carbon;
+use Doctrine\DBAL\Query\Expression\ExpressionBuilder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -17,12 +18,11 @@ class EventController extends Controller
      */
     public function index()
     {
-        $statement = DB::select("show table status like 'events'");
-        $next_id =  response()->json(['max_id' => $statement[0]->Auto_increment])->getContent();
-        $next_id = json_decode($next_id)->max_id;
+        $events = Event::where('id','!=',-1);
         $data = [
-            'events'=>Event::paginate(10),
-            'next_id'=>$next_id
+            'events'=>$events->paginate(10),
+            'total'=>$events->count()
+
         ];
         return view('events.index',$data);
     }

@@ -28,8 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $bonuses = Auth::user()->bonuses;
-        $orders = Auth::user()->orders;
+        $bonuses = Auth::user()->bonuses()->orderBy('created_at','asc')->get();
+        $orders = Auth::user()->orders()->orderBy('created_at','asc')->get();
 
         $total_orders = 0;
 

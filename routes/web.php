@@ -20,6 +20,10 @@ Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dy
 
 Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
 
+Route::get('item/destroy/{id}',function(App\Product $abc){
+    dd($abc);
+})->name('item.destroy');
+
 Route::middleware('auth')->group(function (){
 
     // Products CRUD
@@ -118,40 +122,71 @@ Route::middleware('auth')->group(function (){
     Route::patch('categories/subcategories/update/{subcategory}','SubcategoryController@update')->name('subcategories.update');
 
     Route::delete('subcategories/destroy/{subcategory}','SubcategoryController@destroy')->name('subcategories.destroy');
+
+    //Tag
+
+    Route::get('tags','TagController@index')->name('tags.index');
+
+    Route::get('tags/create','TagController@create')->name('tags.create');
+
+    Route::get('tags/edit/{tag}','TagController@edit')->name('tags.edit');
+
+    Route::post('tags/store','TagController@store')->name('tags.store');
+
+    Route::patch('tags/update/{tag}','TagController@update')->name('tags.update');
+
+    Route::delete('tags/destroy/{tag}','TagController@destroy')->name('tags.destroy');
+
+    //Test mail
+
+    Route::get('mail','MailController@index')->name('mails.index');
+
+    Route::get('mail/notify/order2','MailController@index2')->name('mails.index2');
+
+    Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('products','ProductController@index')->name('products.index');
 
-Route::get('mail/sendmail','MailController@sendmail')->name('sendmail');
-
-
-
-
-Route::get('item/destroy/{id}',function(App\Product $abc){
-    dd($abc);
-})->name('item.destroy');
-
-Route::get('json/pay_information',function (){
-   $a = \App\Order::find(1);
-   dd([
-       'pay_information'=>json_decode($a->payment_information),
-       'products'=>json_decode($a->products)
-   ]);
-})->middleware('verified');
 
 Auth::routes();
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+Route::get('json/pay_information',function (){
+    $a = \App\Order::find(1);
+    dd([
+        'pay_information'=>json_decode($a->payment_information),
+        'products'=>json_decode($a->products)
+    ]);
+})->middleware('verified');
 
 Route::get('products/{product}/tags',function (\App\Product $product){
-    dd($product->tags());
+    $array = [];
+    foreach ($product->tags as $id=>$tag){
+        $array[$id] = $tag->name;
+    }
+    dd([$array]);
 });
 
 Route::get('tags/{tag}/products',function (\App\Tag $tag){
     dd($tag->products());
 });
 
+Route::get('123',function (){
+    dd(\App\Tag::where('id',0)->get());
+});
+
+
+Route::get('1',function(){
+    dd(\App\Order::find(1)->user);
+});
 
 

@@ -3,6 +3,10 @@
 
 @section('title','訊息列表')
 
+@section('index',route('messages.index'))
+
+@section('type','Message')
+
 @section('content')
     <div class="main-content-inner">
         <!-- market value area start -->

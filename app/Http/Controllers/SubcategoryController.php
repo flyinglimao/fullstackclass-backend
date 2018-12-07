@@ -124,8 +124,7 @@ class SubcategoryController extends Controller
     {
         $has_any_products = $subcategory->products->count();
         if ($has_any_products){
-            $msg = 'there are'.$has_any_products.'products belongs to the subcategory, 
-                please delete then before delete the subcategory';
+            $msg = '刪除失敗，在刪除此Subcategory前，請先將其所屬的'.$has_any_products.'個商品刪除';
             return redirect()->route('categories.index')
                 ->with('alert',$msg);
         }

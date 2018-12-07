@@ -2,6 +2,10 @@
 
 @section('title','新增商品')
 
+@section('index',route('products.index'))
+
+@section('type','Product')
+
 @section('content')
 
 
@@ -111,10 +115,21 @@
                                         <label for="interpreter" class="col-form-label">譯者</label>
                                         <input class="form-control" type="text" placeholder="請輸入譯者" id="interpreter" name="interpreter" value="{{old('interpreter')}}">
                                     </div>
+                                    <!-- start tags-->
                                     <div class="form-group">
-                                        <label for="example-tel-input" class="col-form-label">tag</label>
-                                        <input class="form-control" type="tel" placeholder="請輸入tag" id="example-tel-input" name="tags" value="{{old('tags')}}">
+                                        <span class="text-muted mb-3 d-block">標籤:</span>
+                                    @foreach($tags as $id => $tag)
+                                        @if($id!=0 && $id%4==0)
+                                                <div class="mb-3"></div>
+                                        @endif
+                                        <div class="custom-control custom-checkbox custom-control-inline">
+                                            <input type="checkbox" name="{{$tag->id}}" value="{{$tag->id}}" class="custom-control-input"
+                                                   {{ (old($tag->id) ==$tag->id)?'checked':''}} id="customCheck{{$id}}">
+                                            <label class="custom-control-label" for="customCheck{{$id}}" style="width:100px">#{{$tag->name}}</label>
+                                        </div>
+                                    @endforeach
                                     </div>
+                                    <!-- end tags-->
                                     <div class="form-group">
                                         <label for="inputPassword" class="">出版商</label>
                                         <input class="form-control" type="text" placeholder="請輸入publisher" id="inputPassword"  name="publisher" value="{{old('publisher')}}">

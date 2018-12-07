@@ -2,6 +2,10 @@
 
 @section('title','次分類編輯')
 
+@section('index',route('categories.index'))
+
+@section('type','Category')
+
 @section('content')
 
 

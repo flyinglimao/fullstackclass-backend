@@ -12,6 +12,7 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
+        Tag::truncate();
         foreach (range(1,10) as $id){
             Tag::create([
                 'name' => 'tag'.$id

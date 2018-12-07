@@ -109,11 +109,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        if ($category->subcategories->count() == 0){
+        $has_any_subcategory = $category->subcategories->count();
+        if ($has_any_subcategory == 0){
             $category->delete();
         }else{
-            return redirect()->route('categories.index')->with('alert', 'there are some subcategory within the category plz delete then all!!!');
+            return redirect()->route('categories.index')
+                ->with('alert', '刪除失敗，在刪除此Category前，請將其所屬的'.$has_any_subcategory.'個Subcateogry刪光');
         }
-        return redirect()->route('categories.index')->with('success','successful delete the category');
+        return redirect()->route('categories.index')
+            ->with('success','刪除成功');
     }
 }

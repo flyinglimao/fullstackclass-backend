@@ -37,12 +37,13 @@ class Product extends Model
             ['category_id','subcategory_id']);
     }
     public function sales(){
-        return $this->hasMany(Sale::class);
+        return $this->hasMany(Sale::class,'id','products_id');
     }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class,'product_tag');
+        return $this->belongsToMany(Tag::class);
     }
+
 
 }

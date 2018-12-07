@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
+@section('title','重設密碼')
+
 @section('content')
-<!-- this is reset password form-->
-<!-- 套樣板了 -->
 
 <!-- start old reset form-->
 {{--<div class="container">--}}
@@ -79,12 +79,12 @@
 
                 <input type="hidden" name="token" value="{{ $token }}">
                 <div class="login-form-head">
-                    <h4>{{ __('Reset Password') }}</h4>
-                    <p>Hey! Reset Your Password and comeback again</p>
+                    <h4>密碼重設</h4>
+                    <p>您好，請完成以下表格以完成密碼重設的動作</p>
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
-                        <label for="email">{{ __('E-Mail Address') }}</label>
+                        <label for="email">電子郵件信箱</label>
                         <input type="email" id="email" name="email" value="{{ $email ?? old('email') }}" required autofocus>
                         <i class="ti-email"></i>
                     </div>
@@ -94,7 +94,7 @@
                         </div>
                     @endif
                     <div class="form-gp">
-                        <label for="exampleInputPassword1">{{ __('Password') }}</label>
+                        <label for="exampleInputPassword1">密碼</label>
                         <input type="password" id="exampleInputPassword1" name="password" required>
                         <i class="ti-lock"></i>
                     </div>
@@ -104,12 +104,12 @@
                         </div>
                     @endif
                     <div class="form-gp">
-                        <label for="exampleInputPassword2">{{ __('Confirm Password') }}</label>
+                        <label for="exampleInputPassword2">確認密碼</label>
                         <input type="password" id="exampleInputPassword2" name="password_confirmation" required>
                         <i class="ti-lock"></i>
                     </div>
                     <div class="submit-btn-area mt-5">
-                        <button id="form_submit" type="submit">{{ __('Reset Password') }} <i class="ti-arrow-right"></i></button>
+                        <button id="form_submit" type="submit">傳送 <i class="ti-arrow-right"></i></button>
                     </div>
                 </div>
             </form>

@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Awobaz\Compoships\Compoships;
 
 class Order extends Model
 {
+    use Compoships;
     protected $table = 'orders';
     protected $fillable = [
         'state',

@@ -2,6 +2,10 @@
 
 @section('title','新增紅利訊息')
 
+@section('index',route('bonuses.index'))
+
+@section('type','Bonus')
+
 @section('content')
 
 

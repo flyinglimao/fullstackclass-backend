@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','貓咪後台註冊')
+
 @section('content')
 <!-- start old register-->
 
@@ -11,12 +13,12 @@
             <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="login-form-head">
-                    <h4>Sign up</h4>
-                    <p>Hello there, Sign up and Join with Us</p>
+                    <h4>註冊</h4>
+                    <p>您好，請註冊以加入我們，獲得更多功能</p>
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
-                        <label for="exampleInputName1">Full Name</label>
+                        <label for="exampleInputName1">名稱</label>
                         <input type="text" id="exampleInputName1" class="{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                name="name" value="{{ old('name') }}" required autofocus>
                         <i class="ti-user"></i>
@@ -27,7 +29,7 @@
                         @endif
                     </div>
                     <div class="form-gp">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="exampleInputEmail1">電子郵件信箱</label>
                         <input type="email" id="exampleInputEmail1" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                name="email" value="{{ old('email') }}" required>
                         <i class="ti-email"></i>
@@ -38,9 +40,9 @@
                         @endif
                     </div>
                     <div class="form-gp" >
-                        <label for="isAdmin">Admin</label><br>
+                        <label for="isAdmin">權限選項</label><br>
 
-                        <select name="isAdmin" id="isAdmin" class="{{ $errors->has('isAdmin') ? ' is-invalid' : '' }}" required>
+                        <select name="isAdmin" id="isAdmin" class="{{ $errors->has('isAdmin') ? ' is-invalid' : '' }} form-control" style="width:90%; height:45px ;" required>
                             <option value="">請選擇</option>
                             <option value="0">一般會員</option>
                             <option value="1">管理員</option>

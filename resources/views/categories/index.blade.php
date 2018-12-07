@@ -3,7 +3,12 @@
 
 @section('title','分類列表')
 
+@section('index',route('categories.index'))
+
+@section('type','Category')
+
 @section('content')
+
     @if (session('alert'))
         <div class="alert alert-danger">
             {{ session('alert') }}
@@ -46,16 +51,12 @@
                                     </tr>
                                 </table>
                                     @foreach($categories as $id=>$category)
-
-
                                         <a class="card-link" data-toggle="collapse" href="#accordion1{{$id}}">
                                             <table class="dbkit-table">
                                                 <tr class="heading-td">
                                                     <td class="coin-name">{{$category->id}}</td>
                                                     <td class="attachments">{{$category->name}}</td>
-                                                    <td class="attachments">
-
-                                                    </td>
+                                                    <td class="attachments"></td>
                                                 </tr>
                                             </table>
                                         </a>
