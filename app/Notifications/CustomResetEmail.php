@@ -28,7 +28,7 @@ class CustomResetEmail extends ResetPassword
         return (new MailMessage)
             ->subject(Lang::getFromJson('貓咪書店重設密碼郵件'))
             ->line(Lang::getFromJson('您獲得這封信是因為有重設密碼的請球來自您的帳戶'))
-            ->action(Lang::getFromJson('重設密碼'), url(config('app.url').route('password.reset', $this->token, false)))
+            ->action(Lang::getFromJson('重設密碼'), url('http://host.limaois.me:1723'.route('password.reset', $this->token, false)))
             ->line(Lang::getFromJson('如果您沒有想重設密碼，那請忽略此郵件'));
     }
 
