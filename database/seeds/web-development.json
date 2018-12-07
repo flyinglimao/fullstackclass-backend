@@ -1,0 +1,747 @@
+[
+  {
+    "name": "Python 網頁程式交易 APP實作：Web + MySQL + Django, 2/e",
+    "author": "林萍珍",
+    "publisher": "博碩文化",
+    "publish_date": "2018-08-01",
+    "list_price": "$690",
+    "sale_price": "$538",
+    "isbn": "9789864343171",
+    "category": [
+      "Django",
+      "MySQL",
+      "SQL",
+      "Trading 程式交易"
+    ]
+  },
+  {
+    "name": "Flask 網頁開發, 2/e (Flask Web Development : Developing Web Applications with Python, 2/e)",
+    "author": "Miguel Grinberg 賴屹民",
+    "publisher": "歐萊禮",
+    "publish_date": "2018-07-24",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864768684",
+    "category": [
+      "Flask"
+    ]
+  },
+  {
+    "name": "PHP 7 與 MySQL 基礎學習教室, 2/e",
+    "author": "葉建榮",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-06-27",
+    "list_price": "$560",
+    "sale_price": "$476",
+    "isbn": "9789865002176",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "企業戰略資源管理系統 : UML3 & XML3 物件導向系統分析與設計",
+    "author": "孫惠民",
+    "publisher": "易習(知城)",
+    "publish_date": "2018-06-01",
+    "list_price": "$580",
+    "sale_price": "$493",
+    "isbn": "9789578755376",
+    "category": [
+      "物件導向",
+      "UML",
+      "XML"
+    ]
+  },
+  {
+    "name": "Laravel 5 for beginner 新手道場：優雅運用框架快速開發 PHP 網站",
+    "author": "洪可郡（KeJyun）",
+    "publisher": "博碩",
+    "publish_date": "2017-12-28",
+    "list_price": "$580",
+    "sale_price": "$452",
+    "isbn": "9789864342693",
+    "category": [
+      "Laravel",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "為你自己學 Ruby on Rails",
+    "author": "高見龍",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-27",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864765836",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "JavaScript+jQuery+Node.js 網頁設計與物聯網應用開發教本",
+    "author": "陳會安",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-03",
+    "list_price": "$540",
+    "sale_price": "$427",
+    "isbn": "9789864765386",
+    "category": [
+      "Node.js",
+      "JavaScript",
+      "網頁設計",
+      "物聯網 IoT",
+      "jQuery"
+    ]
+  },
+  {
+    "name": "Python 架站特訓班 -- Django 最強實戰",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰",
+    "publish_date": "2017-08-29",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789864765690",
+    "category": [
+      "Python 程式語言",
+      "Django"
+    ]
+  },
+  {
+    "name": "Node.js 物聯網裝置開發 (Node.JS for Embedded Systems: Using Web Technologies to Build Connected Devices)",
+    "author": "Patrick Mulder, Kelsey Breseman 著、林季岩 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-08-13",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864764594",
+    "category": [
+      "Node.js",
+      "物聯網 IoT",
+      "嵌入式系統"
+    ]
+  },
+  {
+    "name": "Dreamweaver & PHP 資料庫應用實務 (舊版: Dreamweaver CS5 & PHP 資料庫應用經典)",
+    "author": "蔡國強",
+    "publisher": "易習(知城)",
+    "publish_date": "2017-07-31",
+    "list_price": "$580",
+    "sale_price": "$493",
+    "isbn": "9789869496353",
+    "category": [
+      "Dreamweaver",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "打造 Web 物聯網｜使用 Node.js 與 Raspberry Pi (Building the Web of Things: With examples in Node.js and Raspberry Pi)",
+    "author": "Dominique Guinard、Vlad Trifa 著、李健榮、吳致佑 譯",
+    "publisher": "碁峰",
+    "publish_date": "2017-07-30",
+    "list_price": "$620",
+    "sale_price": "$490",
+    "isbn": "9789864764693",
+    "category": [
+      "Node.js",
+      "物聯網 IoT",
+      "Raspberry Pi"
+    ]
+  },
+  {
+    "name": "實戰聊天機器人Bot開發｜使用Node.js (Building Bots with Node.js)",
+    "author": "Eduardo Freitas, Madan Bhintade 著、創科資訊 譯",
+    "publisher": "碁峰",
+    "publish_date": "2017-07-13",
+    "list_price": "$380",
+    "sale_price": "$300",
+    "isbn": "9789864764716",
+    "category": [
+      "Node.js",
+      "機器人製作"
+    ]
+  },
+  {
+    "name": "實戰家電物聯網｜Webduino 智慧插座 x Node.js x 雲端服務整合",
+    "author": "Webduino開發團隊",
+    "publisher": "碁峰",
+    "publish_date": "2017-05-30",
+    "list_price": "$380",
+    "sale_price": "$300",
+    "isbn": "9789864764174",
+    "category": [
+      "Node.js",
+      "物聯網 IoT",
+      "Webduino"
+    ]
+  },
+  {
+    "name": "漫話PHP : 史上最易懂的PHP手冊",
+    "author": "陳琨和",
+    "publisher": "博碩",
+    "publish_date": "2017-04-27",
+    "list_price": "$320",
+    "sale_price": "$250",
+    "isbn": "9789864342105",
+    "category": [
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "精通 PHP&MySQL 網頁開發, 5/e (PHP and MySQL Web Development, 5/e)",
+    "author": "Luke Welling, Laura Thomson 著、賴屹民 譯",
+    "publisher": "碁峰",
+    "publish_date": "2017-04-27",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789864763429",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "深入淺出 Ruby (Head First Ruby)",
+    "author": "Jay McGavren 著、蔣大偉 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-03-12",
+    "list_price": "$780",
+    "sale_price": "$616",
+    "isbn": "9789864762866",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "Dreamweaver CC 資料庫網頁實例應用 - 零程式基礎輕鬆製作PHP資料庫網頁",
+    "author": "昱得資訊工作室著",
+    "publisher": "旗標",
+    "publish_date": "2017-03-05",
+    "list_price": "$590",
+    "sale_price": "$502",
+    "isbn": "9789863124191",
+    "category": [
+      "Dreamweaver",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "Office 商務電子流程表單結合 XML 設計技術--使用 InfoPath",
+    "author": "孫惠民",
+    "publisher": "易習(知城)",
+    "publish_date": "2017-02-28",
+    "list_price": "$550",
+    "sale_price": "$468",
+    "isbn": "9789869409582",
+    "category": [
+      "XML"
+    ]
+  },
+  {
+    "name": "Node.js 設計模式 (Node.js Design Patterns)",
+    "author": "Mario Casciaro 著，柳百郁 譯",
+    "publisher": "博碩",
+    "publish_date": "2016-12-29",
+    "list_price": "$590",
+    "sale_price": "$460",
+    "isbn": "9789864341467",
+    "category": [
+      "Node.js",
+      "Design Pattern 設計模式"
+    ]
+  },
+  {
+    "name": "PHP 學習手冊 (Learning PHP: A Pain-Free Introduction to Building Interactive Websites)",
+    "author": "David Sklar 著、張靜雯 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-12-19",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864762606",
+    "category": [
+      "PHP 程式語言"
+    ]
+  }
+,
+  {
+    "name": "從 HTML5+CSS3+JavaScript 到 jQuery+Node.js 程式設計",
+    "author": "陳會安 著",
+    "publisher": "旗標",
+    "publish_date": "2016-11-27",
+    "list_price": "$620",
+    "sale_price": "$527",
+    "isbn": "9789863123910",
+    "category": [
+      "Node.js",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "jQuery"
+    ]
+  },
+  {
+    "name": "挑戰 PHP7/MySQL 程式設計與超強專題特訓班, 4/e (適用PHP5~7，MariaDB)",
+    "author": "鄧文淵/總監製、黃信溢、文淵閣工作室/編著",
+    "publisher": "碁峰",
+    "publish_date": "2016-10-27",
+    "list_price": "$550",
+    "sale_price": "$435",
+    "isbn": "9789864762323",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "PHP 網路服務, 2/e (PHP Web Services: APIs for the Modern Web, 2/e)",
+    "author": "Lorna Jane Mitchell",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-10-18",
+    "list_price": "$400",
+    "sale_price": "$316",
+    "isbn": "9789864761760",
+    "category": [
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "Laravel 5 實務專題範例教學",
+    "author": "姜琇森、蕭國倫、王柏皓、李彥良、孫琨霖、吳品勳、張雅晴",
+    "publisher": "佳魁資訊",
+    "publish_date": "2016-10-02",
+    "list_price": "$490",
+    "sale_price": "$417",
+    "isbn": "9789863794073",
+    "category": [
+      "Laravel"
+    ]
+  },
+  {
+    "name": "Node 學習手冊, 2/e (Learning Node: Moving to the Server-Side, 2/e)",
+    "author": "Shelley Powers 著，楊尊一 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-09-28",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864761746",
+    "category": [
+      "Node.js"
+    ]
+  },
+  {
+    "name": "精通 Go 程式設計 (The Go Programming Language)",
+    "author": "Alan A. A. Donovan, Brian W. Kernaghan 著、楊尊一 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-08-30",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864761333",
+    "category": [
+      "Go 程式語言"
+    ]
+  },
+  {
+    "name": "動畫圖解資料庫系統理論－使用 MariaDB、PHP、AppInventor 2 實作 (附範例光碟)",
+    "author": "李春雄",
+    "publisher": "全華",
+    "publish_date": "2016-08-09",
+    "list_price": "$620",
+    "sale_price": "$558",
+    "isbn": "9789864632855",
+    "category": [
+      "MySQL",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "10天學會 Ruby on Rails：Web 2.0 網站架設速成 (暢銷回饋版)",
+    "author": "劉至浩、孫以陶 著",
+    "publisher": "博碩",
+    "publish_date": "2016-07-30",
+    "list_price": "$300",
+    "sale_price": "$234",
+    "isbn": "9789864341351",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "你不能錯過的 Node.js 指南：實用X必用X拿來即用的 300段程式碼+173個範例",
+    "author": "周敏",
+    "publisher": "松崗",
+    "publish_date": "2016-06-15",
+    "list_price": "$520",
+    "sale_price": "$307",
+    "isbn": "9789572245583",
+    "category": [
+      "Node.js"
+    ]
+  },
+  {
+    "name": "超圖解物聯網 IoT 實作入門 － 使用 JavaScript/Node.JS/Arduino/Raspberry",
+    "author": "趙英傑",
+    "publisher": "旗標",
+    "publish_date": "2016-05-30",
+    "list_price": "$699",
+    "sale_price": "$552",
+    "isbn": "9789863123439",
+    "category": [
+      "Node.js",
+      "JavaScript",
+      "物聯網 IoT",
+      "Arduino"
+    ]
+  },
+  {
+    "name": "新觀念 PHP7+MySQL+AJAX 網頁設計範例教本, 5/e",
+    "author": "陳會安 著",
+    "publisher": "旗標",
+    "publish_date": "2016-04-17",
+    "list_price": "$580",
+    "sale_price": "$493",
+    "isbn": "9789863123422",
+    "category": [
+      "MySQL",
+      "Ajax",
+      "網頁設計",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Dreamweaver與PHP+MySQL+jQuery Mobile互動網站程式設計 (適用DW CC與CS6)",
+    "author": "林梓涵、謝雨辰",
+    "publisher": "碁峰",
+    "publish_date": "2015-12-15",
+    "list_price": "$500",
+    "sale_price": "$395",
+    "isbn": "9789863478010",
+    "category": [
+      "MySQL",
+      "Dreamweaver",
+      "jQuery",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Effective Ruby 中文版 | 寫出良好 Ruby 程式的 48 個具體做法(Effective Ruby: 48 Specific Ways to Write Better Ruby)",
+    "author": "Peter J. Jones 著、賴榮樞 譯",
+    "publisher": "碁峰",
+    "publish_date": "2015-09-03",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789863477297",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "當SketchUp遇見Ruby－邁向程式化建模之路",
+    "author": "李正冬",
+    "publisher": "碁峰",
+    "publish_date": "2015-07-23",
+    "list_price": "$320",
+    "sale_price": "$253",
+    "isbn": "9789863476320",
+    "category": [
+      "Ruby",
+      "SketchUp"
+    ]
+  },
+  {
+    "name": "Ruby 物件導向設計實踐－敏捷入門 (Practical Object-Oriented Design in Ruby: An Agile Primer)",
+    "author": "Sandi Mets 著、張雪平、彭曉東 譯",
+    "publisher": "博碩",
+    "publish_date": "2015-05-14",
+    "list_price": "$420",
+    "sale_price": "$328",
+    "isbn": "9789864340101",
+    "category": [
+      "Ruby",
+      "物件導向"
+    ]
+  },
+  {
+    "name": "精通 Dreamweaver CC 與 PHP & MySQL 實例整合應用經典",
+    "author": "李志文",
+    "publisher": "松崗",
+    "publish_date": "2015-04-27",
+    "list_price": "$580",
+    "sale_price": "$342",
+    "isbn": "9789572243978",
+    "category": [
+      "MySQL",
+      "Dreamweaver",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Node.js 模組參考手冊",
+    "author": "錢逢祥、蔡政崇、楊傑文",
+    "publisher": "松崗",
+    "publish_date": "2015-04-14",
+    "list_price": "$580",
+    "sale_price": "$342",
+    "isbn": "9789572243893",
+    "category": [
+      "Node.js"
+    ]
+  },
+  {
+    "name": "PhoneGap + Node.js 整合實作！用 JavaScript 做出跨平台手機 App 和雲端運用",
+    "author": "彭祖乙、巫孟睿",
+    "publisher": "PCuSER電腦人文化",
+    "publish_date": "2015-04-06",
+    "list_price": "$520",
+    "sale_price": "$468",
+    "isbn": "9789861994390",
+    "category": [
+      "Cross-Platform",
+      "Node.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "Ruby on Rails 自習手冊：邁向鐵道工人之路",
+    "author": "簡煒航",
+    "publisher": "博碩",
+    "publish_date": "2015-02-25",
+    "list_price": "$300",
+    "sale_price": "$234",
+    "isbn": "9789862019948",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "PHP 6 與 MySQL 基礎學習教室(增訂版)",
+    "author": "葉建榮",
+    "publisher": "上奇資訊",
+    "publish_date": "2015-01-14",
+    "list_price": "$560",
+    "sale_price": "$420",
+    "isbn": "9789863751779",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "PHP 與 MySQL 網頁資料庫程式設計－使用 WebMatrix 快速開發",
+    "author": "陳會安",
+    "publisher": "松崗",
+    "publish_date": "2014-08-14",
+    "list_price": "$560",
+    "sale_price": "$330",
+    "isbn": "9789572243138",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  }
+,
+  {
+    "name": "最新 PHP + MySQL + AJAX 網頁程式設計, 2/e",
+    "author": "施威銘研究室",
+    "publisher": "旗標",
+    "publish_date": "2014-05-28",
+    "list_price": "$580",
+    "sale_price": "$493",
+    "isbn": "9789863122029",
+    "category": [
+      "MySQL",
+      "Ajax",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Dreamweaver CS6 & PHP 網頁資料庫範例教學 {AJAX + CSS}",
+    "author": "德瑞工作室",
+    "publisher": "松崗",
+    "publish_date": "2014-01-16",
+    "list_price": "$600",
+    "sale_price": "$354",
+    "isbn": "9789572241738",
+    "category": [
+      "Ajax",
+      "CSS",
+      "Dreamweaver",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "PHP + MySQL 網站系統開發講座, 2/e",
+    "author": "陳朝鈞、蔡憲維、辛曼榕、林芝吟、蔡燕如",
+    "publisher": "博碩",
+    "publish_date": "2013-09-29",
+    "list_price": "$390",
+    "sale_price": "$304",
+    "isbn": "9789862018101",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "PHP & MySQL: The Missing Manual 國際中文版 (PHP & MySQL: The Missing Manual)",
+    "author": "Brett McLaughlin 著、翁佳慧 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2012-07-02",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789862764978",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Google 地圖核心開發揭密：Google Earth/Maps/XML",
+    "author": "馬謙",
+    "publisher": "松崗",
+    "publish_date": "2011-04-30",
+    "list_price": "$560",
+    "sale_price": "$330",
+    "isbn": "9789572238820",
+    "category": [
+      "XML"
+    ]
+  },
+  {
+    "name": "PHP 5 資料庫網頁設計速習講座",
+    "author": "王仲麒",
+    "publisher": "碁峰",
+    "publish_date": "2009-11-05",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789861817767",
+    "category": [
+      "網頁設計",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "PHP 與 MySQL 網站開發技術與範例導航",
+    "author": "何曉霞、楊立峰",
+    "publisher": "上奇資訊",
+    "publish_date": "2009-07-27",
+    "list_price": "$560",
+    "sale_price": "$476",
+    "isbn": "9789866587894",
+    "category": [
+      "MySQL",
+      "PHP 程式語言",
+      "SQL"
+    ]
+  },
+  {
+    "name": "Ruby 程式設計 (The Ruby Programming Language)",
+    "author": "David Flanagan, Yukihiro Matsumoto 著、蔣大偉 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2008-01-30",
+    "list_price": "$780",
+    "sale_price": "$616",
+    "isbn": "9789866840227",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "Ruby 學習手冊 (Learning Ruby)",
+    "author": "Michael Fitzgerald 著、莊惠淳 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2007-10-23",
+    "list_price": "$620",
+    "sale_price": "$490",
+    "isbn": "9789866840128",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "Ruby Cookbook 錦囊妙技 (Ruby Cookbook)",
+    "author": "Lucas Carlson, Leonard Richardson 著、楊仁和 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2007-10-12",
+    "list_price": "$1,200",
+    "sale_price": "$948",
+    "isbn": "9789866840104",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "Ruby on Rails 建置與執行 (Ruby on Rails: Up and Running)",
+    "author": "楊仁和",
+    "publisher": "歐萊禮",
+    "publish_date": "2006-10-13",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789867794925",
+    "category": [
+      "Ruby"
+    ]
+  },
+  {
+    "name": "發誓學會 Dreamweaver MX 2004 & PHP 資料庫網站中文版",
+    "author": "小正正",
+    "publisher": "上奇資訊",
+    "publish_date": "2003-11-21",
+    "list_price": "$620",
+    "sale_price": "$527",
+    "isbn": "9789867944979",
+    "category": [
+      "Dreamweaver",
+      "PHP 程式語言"
+    ]
+  },
+  {
+    "name": "XML in a Nutshell 精要總覽 (XML in a Nutshell)",
+    "author": "陳牧群、連春雨",
+    "publisher": "歐萊禮",
+    "publish_date": "2001-12-07",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789578247772",
+    "category": [
+      "XML"
+    ]
+  },
+  {
+    "name": "PHP CNuke 專業網站 DIY",
+    "author": "鄭大慶",
+    "publisher": "學貫(旗標)",
+    "publish_date": "2001-11-09",
+    "list_price": "$480",
+    "sale_price": "$432",
+    "isbn": "9789867961099",
+    "category": [
+      "PHP 程式語言"
+    ]
+  }
+,
+  {
+    "name": "HTML‧XML‧CSS 速查與演練",
+    "author": "張帆",
+    "publisher": "儒林",
+    "publish_date": "2000-07-31",
+    "list_price": "$320",
+    "sale_price": "",
+    "isbn": "9789574992140",
+    "category": [
+      "HTML",
+      "XML",
+      "CSS"
+    ]
+  }
+]

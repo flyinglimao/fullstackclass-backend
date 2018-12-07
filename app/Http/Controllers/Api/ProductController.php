@@ -24,7 +24,7 @@ class ProductController extends Controller
       $search = json_decode(Input::get('search'));
       if (isset($search->category) && is_numeric($search->category)) {
         $products = $products->where('category_id', $search->category);
-        if (isset($search->subcategory) && is_numeric($search->category)) {
+        if (isset($search->subcategory) && is_numeric($search->subcategory)) {
           $products = $products->where('subcategory_id', $search->subcategory);
         }
       }

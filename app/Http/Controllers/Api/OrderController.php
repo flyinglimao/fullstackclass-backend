@@ -12,11 +12,12 @@ use App\Product;
 use App\Bonus;
 use App\User;
 use App\Http\Resources\OrderResource;
+use App\Notifications\NotifyOrder;
 
 class OrderController extends Controller
 {
   public function index (Request $request) {
-    $orders = Order::where('member_id', Auth::id())->paginate(15);
+    $orders = Order::where('member_id', Auth::id())->get();
     return OrderResource::collection($orders);
   }
 
@@ -99,20 +100,23 @@ class OrderController extends Controller
           $user->save();
         }
         $order->save();
+        Auth::user()->notify(new NotifyOrder($order));
         return (new OrderResource($order))->additional(['success' => true, 'bonus' => $bonus]);
       }
     } else { // Just Update
       foreach ($input as $key => $value) {
         $order->$key = $value;
       }
-      $products = json_decode(Input::get('products'));
-      foreach ($products as $product => $count) {
-        if ($item = Product::find($product)) {
-        } else {
-          unset($products->$product);
+      if (Input::get('products')) {
+        $products = json_decode(Input::get('products'));
+        foreach ($products as $product => $count) {
+          if ($item = Product::find($product)) {
+          } else {
+            unset($products->$product);
+          }
         }
+        $order->products = json_encode($products);
       }
-      $order->products = json_encode($products);
       $order->save();
     }
 

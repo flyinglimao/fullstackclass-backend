@@ -1,0 +1,2321 @@
+[
+  {
+    "name": "Raspberry Pi x Python x Prolog｜虛實整合的 AI人工智慧專案開發實戰",
+    "author": "Donald J. Norris CAVEDU教育團隊 曾吉弘",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-10-17",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864769384",
+    "category": [
+      "Python 程式語言",
+      "人工智慧",
+      "Raspberry Pi"
+    ]
+  },
+  {
+    "name": "Designing with Data｜善用數據幫你打造好設計 (Designing with Data: Improving the User Experience with A/B Testing)",
+    "author": "Rochelle King 曾之拓",
+    "publisher": "歐萊禮",
+    "publish_date": "2018-10-16",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864769247",
+    "category": [
+      "資料科學",
+      "UI/UX",
+      "使用者經驗"
+    ]
+  },
+  {
+    "name": "Python 超零基礎最快樂學習之路 -- 王者歸來",
+    "author": "洪錦魁",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-10-15",
+    "list_price": "$400",
+    "sale_price": "$316",
+    "isbn": "9789865002879",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 網路爬蟲與資料分析入門實戰",
+    "author": "林俊瑋、林修博",
+    "publisher": "博碩文化",
+    "publish_date": "2018-10-04",
+    "list_price": "$450",
+    "sale_price": "$351",
+    "isbn": "9789864343386",
+    "category": [
+      "Python 程式語言",
+      "資料科學",
+      "網路爬蟲"
+    ]
+  },
+  {
+    "name": "Python 資料分析, 2/e (Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython, 2/e)",
+    "author": "Wes McKinney 張靜雯",
+    "publisher": "歐萊禮",
+    "publish_date": "2018-10-03",
+    "list_price": "$880",
+    "sale_price": "$695",
+    "isbn": "9789864769254",
+    "category": [
+      "Python 程式語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "多變量統計之線性代數基礎：應用 SPSS 分析 (附光碟)",
+    "author": "張紹勳、林秀娟 著",
+    "publisher": "五南",
+    "publish_date": "2018-09-25",
+    "list_price": "$890",
+    "sale_price": "$801",
+    "isbn": "9789571198439",
+    "category": [
+      "SPSS",
+      "機率統計學",
+      "線性代數"
+    ]
+  },
+  {
+    "name": "Excel VBA最強權威〈國際中文版〉：Power Programming全方位實作範例聖經",
+    "author": "Michael Alexander、Dick Kusleika 姚瑤、王戰紅",
+    "publisher": "電腦人",
+    "publish_date": "2018-09-22",
+    "list_price": "$660",
+    "sale_price": "$521",
+    "isbn": "9789572049044",
+    "category": [
+      "R 語言",
+      "Excel"
+    ]
+  },
+  {
+    "name": "多層次模型(HLM)及重複測量：使用 SPSS 分析 (附光碟)",
+    "author": "張紹勳、林秀娟 著",
+    "publisher": "五南",
+    "publish_date": "2018-09-12",
+    "list_price": "$490",
+    "sale_price": "$441",
+    "isbn": "9789571198897",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "高等統計：應用SPSS分析 (附光碟)",
+    "author": "張紹勳、林秀娟 著",
+    "publisher": "五南",
+    "publish_date": "2018-09-12",
+    "list_price": "$680",
+    "sale_price": "$612",
+    "isbn": "9789571198880",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "結構方程模型分析實務：SPSS 與 SmartPLS 的運用",
+    "author": "陳寬裕 著",
+    "publisher": "五南",
+    "publish_date": "2018-09-06",
+    "list_price": "$650",
+    "sale_price": "$585",
+    "isbn": "9789571198866",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "超躍巔峰 -- Python:The hard way",
+    "author": "Zed A. Shaw",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-08-23",
+    "list_price": "$520",
+    "sale_price": "$442",
+    "isbn": "9789865002466",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 程式設計學習經典 -- 工程分析x資料處理x專案開發",
+    "author": "吳翌禎、黃立政",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-08-23",
+    "list_price": "$560",
+    "sale_price": "$442",
+    "isbn": "9789864768837",
+    "category": [
+      "Python 程式語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Python GUI 設計活用 tkinter 之路 王者歸來",
+    "author": "洪錦魁",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-08-15",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789865002527",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "民意調查資料分析的 R實戰手冊",
+    "author": "劉正山",
+    "publisher": "五南",
+    "publish_date": "2018-08-01",
+    "list_price": "$480",
+    "sale_price": "$432",
+    "isbn": "9789571196879",
+    "category": [
+      "R 語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "達人必學 Python 3.x 程式設計",
+    "author": "勁樺科技",
+    "publisher": "台科大圖書出版社",
+    "publish_date": "2018-07-16",
+    "list_price": "$550",
+    "sale_price": "$495",
+    "isbn": "9789864556809",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 零基礎入門班 (含MTA Python國際認證模擬試題)",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-07-13",
+    "list_price": "$420",
+    "sale_price": "$332",
+    "isbn": "9789864768677",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 程式設計：從入門到進階應用 (附範例光碟)",
+    "author": "黃建庭",
+    "publisher": "全華圖書",
+    "publish_date": "2018-07-04",
+    "list_price": "$420",
+    "sale_price": "$378",
+    "isbn": "9789864638734",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "用 Python 學程式設計運算思維 (收錄 MTA Python 微軟國際認證模擬試題)",
+    "author": "李啟龍",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-06-26",
+    "list_price": "$420",
+    "sale_price": "$332",
+    "isbn": "9789864768288",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 資料科學與人工智慧應用實務",
+    "author": "陳允傑",
+    "publisher": "旗標出版",
+    "publish_date": "2018-06-15",
+    "list_price": "$650",
+    "sale_price": "$553",
+    "isbn": "9789863125297",
+    "category": [
+      "Python 程式語言",
+      "人工智慧",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Java 資料科學｜科學與工程實務方法 (Data Science with Java: Practical Methods for Scientists and Engineers)",
+    "author": "Michael Brzustowicz 著 楊尊一 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2018-06-08",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864768172",
+    "category": [
+      "Java 程式語言",
+      "資料科學"
+    ]
+  }
+,
+  {
+    "name": "大數據時代一定要會的 SQL 商業資料分析術",
+    "author": "加嵜 長門、田宮 直人 朱浚賢",
+    "publisher": "旗標出版",
+    "publish_date": "2018-05-14",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789863125150",
+    "category": [
+      "資料科學",
+      "大數據",
+      "SQL"
+    ]
+  },
+  {
+    "name": "超圖解 Python 物聯網實作入門 -- 使用 ESP8266 與 MicroPython",
+    "author": "趙英傑",
+    "publisher": "旗標出版",
+    "publish_date": "2018-05-10",
+    "list_price": "$699",
+    "sale_price": "$552",
+    "isbn": "9789863125235",
+    "category": [
+      "Python 程式語言",
+      "物聯網 IoT"
+    ]
+  },
+  {
+    "name": "SPSS 問卷統計分析快速上手祕笈",
+    "author": "吳明隆、張毓仁 合著",
+    "publisher": "五南",
+    "publish_date": "2018-05-09",
+    "list_price": "$680",
+    "sale_price": "$612",
+    "isbn": "9789571196169",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "文科生也看得懂的資料科學",
+    "author": "Annalyn Ng & Kenneth Soo 沈佩誼",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-04-30",
+    "list_price": "$380",
+    "sale_price": "$300",
+    "isbn": "9789864767939",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Python 3.x 程式語言特訓教材",
+    "author": "蔡明志 編著．財團法人中華民國電腦技能基金會 總策劃",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-04-23",
+    "list_price": "$490",
+    "sale_price": "$387",
+    "isbn": "9789864767809",
+    "category": [
+      "Python 程式語言",
+      "程式語言"
+    ]
+  },
+  {
+    "name": "R語言：量表編製、統計分析與試題反應理論",
+    "author": "陳新豐 著",
+    "publisher": "五南",
+    "publish_date": "2018-04-13",
+    "list_price": "$580",
+    "sale_price": "$522",
+    "isbn": "9789571196138",
+    "category": [
+      "R 語言",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "問卷資料分析 -- 破解 SPSS 的六類分析思路",
+    "author": "周俊 著 蕭培元 審校",
+    "publisher": "博碩文化",
+    "publish_date": "2018-03-31",
+    "list_price": "$500",
+    "sale_price": "$390",
+    "isbn": "9789864342891",
+    "category": [
+      "SPSS",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "精通大數據！R 語言資料分析與應用, 2/e",
+    "author": "Jared P. Lander 鍾振蔚",
+    "publisher": "旗標出版",
+    "publish_date": "2018-03-27",
+    "list_price": "$720",
+    "sale_price": "$612",
+    "isbn": "9789863125075",
+    "category": [
+      "資料科學",
+      "大數據"
+    ]
+  },
+  {
+    "name": "BBC micro:bit 程式設計入門：MicroPython 快速上手指南 Programming the BBC micro:bit: Getting Started with MicroPython",
+    "author": "西蒙‧孟克(Simon Monk) 屠建明、鄭宇晴、劉允中、顏妤安、謝明珊 譯",
+    "publisher": "馥林文化",
+    "publish_date": "2018-03-21",
+    "list_price": "$300",
+    "sale_price": "$237",
+    "isbn": "9789863413868",
+    "category": [
+      "Python 程式語言",
+      "Micro:bit"
+    ]
+  },
+  {
+    "name": "大數據資料處理利器 : Storm 技術內幕與應用",
+    "author": "陳敏敏、王新春、黃奉線",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-03-05",
+    "list_price": "$450",
+    "sale_price": "$383",
+    "isbn": "9789865001131",
+    "category": [
+      "資料科學",
+      "大數據",
+      "Storm"
+    ]
+  },
+  {
+    "name": "Python 程式設計的樂趣｜範例實作與專題研究的 20堂程式設計課",
+    "author": "Eric Matthes H&C",
+    "publisher": "碁峰資訊",
+    "publish_date": "2018-02-08",
+    "list_price": "$550",
+    "sale_price": "$435",
+    "isbn": "9789864766987",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "特洛伊木馬病毒程式設計：使用 Python",
+    "author": "北極星",
+    "publisher": "博碩文化",
+    "publish_date": "2018-02-07",
+    "list_price": "$520",
+    "sale_price": "$406",
+    "isbn": "9789864342808",
+    "category": [
+      "Python 程式語言",
+      "資訊安全"
+    ]
+  },
+  {
+    "name": "Python 資料運算與分析實戰：一次搞懂 NumPy, SciPy, Matplotlib, Pandas 最強套件",
+    "author": "中久喜 健司 莊永裕",
+    "publisher": "旗標出版",
+    "publish_date": "2018-02-05",
+    "list_price": "$590",
+    "sale_price": "$466",
+    "isbn": "9789863124962",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "輕課程 遇見樹莓派：使用 Python 入門趣玩 GPIO",
+    "author": "陳致中 乾龍工作室",
+    "publisher": "台科大圖書出版社",
+    "publish_date": "2018-02-02",
+    "list_price": "$150",
+    "sale_price": "$135",
+    "isbn": "9789864555529",
+    "category": [
+      "Python 程式語言",
+      "Raspberry Pi"
+    ]
+  },
+  {
+    "name": "訊號與系統：利用轉換方法與 Matlab 分析, 3/e (Roberts) (授權經銷版)",
+    "author": "郝樹聲 譯",
+    "publisher": "東華",
+    "publish_date": "2018-02-01",
+    "list_price": "$750",
+    "sale_price": "",
+    "isbn": "9789863413820",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "Python 技術手冊, 3/e (Python in a Nutshell: A Desktop Quick Reference, 3/e)",
+    "author": "Alex Martelli 著、黃銘偉 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2018-01-12",
+    "list_price": "$880",
+    "sale_price": "$695",
+    "isbn": "9789864766819",
+    "category": [
+      "Python 程式語言"
+    ]
+  }
+,
+  {
+    "name": "大數據分析 Excel Power BI 全方位應用, 2/e",
+    "author": "謝邦昌/鄭宇庭/宋龍華/陳妙華",
+    "publisher": "碁峰",
+    "publish_date": "2018-01-08",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864766888",
+    "category": [
+      "大數據",
+      "Power BI",
+      "Excel"
+    ]
+  },
+  {
+    "name": "統計分析入門與應用--SPSS中文版+SmartPLS 3(PLS-SEM)第二版",
+    "author": "蕭文龍",
+    "publisher": "碁峰",
+    "publish_date": "2018-01-07",
+    "list_price": "$760",
+    "sale_price": "$600",
+    "isbn": "9789864766390",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "Python 深度學習 (Python Deep Learning)",
+    "author": "Valentino Zocca, Gianmario Spacagna, Daniel Slater, Peter Roelants 著、劉立民、吳建華、陳開煇 譯",
+    "publisher": "博碩",
+    "publish_date": "2018-01-04",
+    "list_price": "$620",
+    "sale_price": "$484",
+    "isbn": "9789864342723",
+    "category": [
+      "Python 程式語言",
+      "DeepLearning 深度學習"
+    ]
+  },
+  {
+    "name": "高普特考 2018 試題大補帖【資料處理】(100～106年試題) (適用三等、四等考試)",
+    "author": "鼎茂研究室",
+    "publisher": "鼎茂",
+    "publish_date": "2018-01-03",
+    "list_price": "$450",
+    "sale_price": "$428",
+    "isbn": "9503107219012",
+    "category": [
+      "資料科學",
+      "高普特考"
+    ]
+  },
+  {
+    "name": "資料分析輕鬆學: SAS Knowledge Today使用手冊",
+    "author": "Big Data編輯委員會",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-01-03",
+    "list_price": "$420",
+    "sale_price": "$357",
+    "isbn": "9789865001032",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "資料分析輕鬆學: Data Power Today使用手冊",
+    "author": "Data Analyst編輯委員會",
+    "publisher": "上奇資訊",
+    "publish_date": "2018-01-03",
+    "list_price": "$420",
+    "sale_price": "$357",
+    "isbn": "9789865001049",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Python 資料科學學習手冊 (Python Data Science Handbook: Essential Tools for Working with Data)",
+    "author": "Jake VanderPlas 著、何敏煌 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-12-27",
+    "list_price": "$780",
+    "sale_price": "$616",
+    "isbn": "9789864766857",
+    "category": [
+      "Python 程式語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "輕鬆學 Python 3 零基礎彩色圖解、專業入門 (全彩印刷)",
+    "author": "孫宏明",
+    "publisher": "碁峰",
+    "publish_date": "2017-12-27",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864766024",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 入門邁向高手之路王者歸來",
+    "author": "洪錦魁",
+    "publisher": "上奇資訊",
+    "publish_date": "2017-12-15",
+    "list_price": "$699",
+    "sale_price": "$552",
+    "isbn": "9789865000592",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "實戰 R語言預測分析",
+    "author": "游皓麟",
+    "publisher": "松崗",
+    "publish_date": "2017-11-13",
+    "list_price": "$520",
+    "sale_price": "$307",
+    "isbn": "9789572246511",
+    "category": [
+      "R 語言",
+      "Machine Learning 機器學習"
+    ]
+  },
+  {
+    "name": "大數據時代必學的超吸睛視覺化工具與技術：Excel+Tableau成功晉升資料分析師",
+    "author": "彭其捷 著",
+    "publisher": "博碩",
+    "publish_date": "2017-11-09",
+    "list_price": "$520",
+    "sale_price": "$406",
+    "isbn": "9789864342563",
+    "category": [
+      "資料視覺化",
+      "資料科學",
+      "大數據",
+      "Excel"
+    ]
+  },
+  {
+    "name": "輕課程 micro:bit 微型電腦帶著走：使用 Python 輕鬆玩",
+    "author": "陳致中、乾龍工作室",
+    "publisher": "台科大圖書出版社",
+    "publish_date": "2017-10-31",
+    "list_price": "$150",
+    "sale_price": "$135",
+    "isbn": "9789864555246",
+    "category": [
+      "Python 程式語言",
+      "Micro:bit"
+    ]
+  },
+  {
+    "name": "Python 也可以這樣學",
+    "author": "董付國 著、廖信彥 審校",
+    "publisher": "博碩",
+    "publish_date": "2017-10-30",
+    "list_price": "$580",
+    "sale_price": "$452",
+    "isbn": "9789864342587",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "用 Python 開發經典遊戲 (Python Game Programming By Example)",
+    "author": "Alejandro Rodas de Paz , Joseph Howse 著、朱宗安 譯",
+    "publisher": "博碩",
+    "publish_date": "2017-10-30",
+    "list_price": "$420",
+    "sale_price": "$328",
+    "isbn": "9789864342594",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 程式設計實例入門",
+    "author": "李馨",
+    "publisher": "博碩",
+    "publish_date": "2017-10-29",
+    "list_price": "$360",
+    "sale_price": "$281",
+    "isbn": "9789864342549",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 零基礎入門班：一次打好程式設計與邏輯訓練基本功！(附120分鐘影音教學/範例程式)",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰",
+    "publish_date": "2017-10-24",
+    "list_price": "$390",
+    "sale_price": "$308",
+    "isbn": "9789864766222",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "基礎程式設計 - 看 Python 學邏輯，用 App Inventor 寫程式",
+    "author": "蔡宜坦、陳會安",
+    "publisher": "旗標",
+    "publish_date": "2017-10-19",
+    "list_price": "$480",
+    "sale_price": "$408",
+    "isbn": "9789863124634",
+    "category": [
+      "Python 程式語言",
+      "Android"
+    ]
+  },
+  {
+    "name": "R語言：期貨演算法交易實務120個關鍵技巧詳解",
+    "author": "酆士昌、劉承彥 著",
+    "publisher": "博碩",
+    "publish_date": "2017-10-05",
+    "list_price": "$500",
+    "sale_price": "$390",
+    "isbn": "9789864342501",
+    "category": [
+      "R 語言",
+      "資料結構與演算法",
+      "投資理財"
+    ]
+  }
+,
+  {
+    "name": "論文統計分析實務：SPSS與AMOS的運用, 3/e",
+    "author": "陳寬裕、王正華",
+    "publisher": "五南",
+    "publish_date": "2017-09-30",
+    "list_price": "$920",
+    "sale_price": "$828",
+    "isbn": "9789571194011",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "應用統計分析：SPSS的運用",
+    "author": "陳寬裕",
+    "publisher": "五南",
+    "publish_date": "2017-09-30",
+    "list_price": "$560",
+    "sale_price": "$504",
+    "isbn": "9789571194080",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "R 資料科學 (R for Data Science)",
+    "author": "Hadley Wickham, Garrett Grolemund 著、黃銘偉 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-09-29",
+    "list_price": "$780",
+    "sale_price": "$616",
+    "isbn": "9789864764808",
+    "category": [
+      "R 語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "大數據分析 SQL Server 2016 與 R 全方位應用",
+    "author": "謝邦昌/宋龍華/李紹綸",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-26",
+    "list_price": "$500",
+    "sale_price": "$395",
+    "isbn": "9789864765768",
+    "category": [
+      "大數據",
+      "SQL",
+      "R 語言",
+      "MSSQL"
+    ]
+  },
+  {
+    "name": "SQL Server 與 R 開發實戰講堂",
+    "author": "楊志強",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-26",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789864766031",
+    "category": [
+      "SQL",
+      "R 語言",
+      "MSSQL"
+    ]
+  },
+  {
+    "name": "初探機器學習｜使用 Python (Thoughtful Machine Learning with Python)",
+    "author": "Matthew Kirk 著；陳仁和 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-09-14",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864765829",
+    "category": [
+      "Python 程式語言",
+      "Machine Learning 機器學習"
+    ]
+  },
+  {
+    "name": "SPSS 與統計分析, 2/e",
+    "author": "陳正昌",
+    "publisher": "五南",
+    "publish_date": "2017-09-12",
+    "list_price": "$850",
+    "sale_price": "$765",
+    "isbn": "9789571192475",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "Excel資料分析工作術｜提升業績、改善獲利，就靠這幾招",
+    "author": "日花弘子 著、許郁文 譯",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-10",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789864764709",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "輕鬆學習 R 語言-從基礎到應用，掌握資料科學的關鍵能力",
+    "author": "郭耀仁",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-10",
+    "list_price": "$400",
+    "sale_price": "$316",
+    "isbn": "9789864764822",
+    "category": [
+      "R 語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Excel 2016商業智慧分析｜資料處理x樞紐分析x Big data分析工具PowerPivot及PowerView",
+    "author": "王仲麒",
+    "publisher": "碁峰",
+    "publish_date": "2017-09-07",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864765614",
+    "category": [
+      "資料科學",
+      "大數據",
+      "Excel"
+    ]
+  },
+  {
+    "name": "多層次模式與縱貫資料分析：Mplus 8 解析應用",
+    "author": "邱皓政",
+    "publisher": "五南",
+    "publish_date": "2017-09-06",
+    "list_price": "$680",
+    "sale_price": "$612",
+    "isbn": "9789571193045",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "入門首選 Python程式設計附範例檔 - 最新版",
+    "author": "勁樺科技",
+    "publisher": "台科大圖書出版社",
+    "publish_date": "2017-09-04",
+    "list_price": "$280",
+    "sale_price": "$252",
+    "isbn": "9789864555031",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 架站特訓班 -- Django 最強實戰",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰",
+    "publish_date": "2017-08-29",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789864765690",
+    "category": [
+      "Python 程式語言",
+      "Django"
+    ]
+  },
+  {
+    "name": "R語言 : 數學計算、統計模型與金融大數據分析, 2/e",
+    "author": "酆士昌 著",
+    "publisher": "博碩",
+    "publish_date": "2017-08-28",
+    "list_price": "$560",
+    "sale_price": "$437",
+    "isbn": "9789864342396",
+    "category": [
+      "R 語言",
+      "大數據",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "Python 網路爬蟲實戰",
+    "author": "胡松濤",
+    "publisher": "松崗",
+    "publish_date": "2017-08-21",
+    "list_price": "$490",
+    "sale_price": "$289",
+    "isbn": "9789572246450",
+    "category": [
+      "Python 程式語言",
+      "網路爬蟲"
+    ]
+  },
+  {
+    "name": "翻倍效率工作術 - 不會就太可惜的Excel+Power BI 大數據視覺圖表設計與分析",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰",
+    "publish_date": "2017-08-09",
+    "list_price": "$320",
+    "sale_price": "$253",
+    "isbn": "9789864765379",
+    "category": [
+      "大數據",
+      "Power BI",
+      "Excel"
+    ]
+  },
+  {
+    "name": "7天學會大數據資料處理—NoSQL：MongoDB入門與活用, 2/e",
+    "author": "黃士嘉、吳佩儒 著",
+    "publisher": "博碩",
+    "publish_date": "2017-08-07",
+    "list_price": "$400",
+    "sale_price": "$312",
+    "isbn": "9789864342334",
+    "category": [
+      "資料科學",
+      "大數據",
+      "NoSQL",
+      "SQL"
+    ]
+  },
+  {
+    "name": "金融科技實戰：R語言與量化投資",
+    "author": "蔡立耑",
+    "publisher": "博碩",
+    "publish_date": "2017-08-06",
+    "list_price": "$650",
+    "sale_price": "$507",
+    "isbn": "9789864342358",
+    "category": [
+      "R 語言",
+      "Fintech",
+      "投資理財"
+    ]
+  },
+  {
+    "name": "資料探勘：程序與模式 使用 Excel 實作",
+    "author": "葉怡成",
+    "publisher": "五南",
+    "publish_date": "2017-07-31",
+    "list_price": "$650",
+    "sale_price": "$585",
+    "isbn": "9789571191966",
+    "category": [
+      "資料探勘",
+      "Excel"
+    ]
+  },
+  {
+    "name": "醫護研究與資料分析－SPSS的應用",
+    "author": "楊秋月、陳耀茂",
+    "publisher": "五南",
+    "publish_date": "2017-07-31",
+    "list_price": "$1,000",
+    "sale_price": "$900",
+    "isbn": "9789571192246",
+    "category": [
+      "SPSS",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "秋聲教你玩 Python：邊玩邊學更易上手",
+    "author": "秋聲",
+    "publisher": "博碩",
+    "publish_date": "2017-07-30",
+    "list_price": "$390",
+    "sale_price": "$273",
+    "isbn": "9789864342303",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 初學特訓班 (增訂版) (附250分鐘影音教學/範例程式)",
+    "author": "鄧文淵 總監製/文淵閣工作室 編著",
+    "publisher": "碁峰",
+    "publish_date": "2017-07-10",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864764907",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "認識資料科學的第一本書 (Data Analytics Made Accessible)",
+    "author": "Anil Maheshwari 著、徐瑞珠 譯",
+    "publisher": "碁峰",
+    "publish_date": "2017-07-06",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789864764556",
+    "category": [
+      "資料科學"
+    ]
+  }
+,
+  {
+    "name": "R語言：金融演算法與台指期貨程式交易實務",
+    "author": "酆士昌 著",
+    "publisher": "博碩",
+    "publish_date": "2017-07-04",
+    "list_price": "$500",
+    "sale_price": "$390",
+    "isbn": "9789864342259",
+    "category": [
+      "R 語言",
+      "資料結構與演算法",
+      "Trading 程式交易",
+      "投資理財"
+    ]
+  },
+  {
+    "name": "只要3秒鐘輕鬆搞定Excel--資料處理→函數→VBA一次OK(附贈影音教學及範例光碟)",
+    "author": "林文恭",
+    "publisher": "碁峰",
+    "publish_date": "2017-06-21",
+    "list_price": "$420",
+    "sale_price": "$332",
+    "isbn": "9789864764020",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "寫程式前就該懂的演算法 ─ 資料分析與程式設計人員必學的邏輯思考術 (Grokking Algorithms: An illustrated guide for programmers and other curious people)",
+    "author": "Aditya Y.Bhargava 著、張書華 譯",
+    "publisher": "松崗",
+    "publish_date": "2017-06-19",
+    "list_price": "$390",
+    "sale_price": "$230",
+    "isbn": "9789572246399",
+    "category": [
+      "資料科學",
+      "資料結構與演算法"
+    ]
+  },
+  {
+    "name": "R語言--邁向 Big Data之路 (最新版)",
+    "author": "洪錦魁, 蔡桂宏",
+    "publisher": "上奇資訊",
+    "publish_date": "2017-06-18",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789869488471",
+    "category": [
+      "R 語言",
+      "大數據"
+    ]
+  },
+  {
+    "name": "R 語言資料分析：從機器學習、資料探勘、文字探勘到巨量資料分析, 2/e",
+    "author": "李仁鐘、李秋緣",
+    "publisher": "博碩",
+    "publish_date": "2017-06-06",
+    "list_price": "$520",
+    "sale_price": "$406",
+    "isbn": "9789864342129",
+    "category": [
+      "R 語言",
+      "資料探勘",
+      "Machine Learning 機器學習",
+      "資料科學",
+      "文字探勘"
+    ]
+  },
+  {
+    "name": "Excel 樞鈕分析和商業邏輯：Power Pivot & Power BI, 2/e (Power Pivot and Power BI: The Excel User's Guide to DAX, Power Query, Power BI & Power Pivot in Excel 2010-2016, 2/e)",
+    "author": "Rob Collie & Avichal Singh 著、博碩文化 譯",
+    "publisher": "博碩",
+    "publish_date": "2017-05-30",
+    "list_price": "$500",
+    "sale_price": "$390",
+    "isbn": "9789864342075",
+    "category": [
+      "Power BI",
+      "Excel"
+    ]
+  },
+  {
+    "name": "第一次學 Python 就上手！",
+    "author": "陳惠貞",
+    "publisher": "旗標",
+    "publish_date": "2017-05-04",
+    "list_price": "$480",
+    "sale_price": "$408",
+    "isbn": "9789863124375",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "學會 Python - 從不懂，到玩上手！",
+    "author": "陳會安",
+    "publisher": "旗標",
+    "publish_date": "2017-04-20",
+    "list_price": "$550",
+    "sale_price": "$435",
+    "isbn": "9789863124245",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "資料視覺化｜使用 Python 與 JavaScript (Data Visualization with Python and JavaScript: Scrape, Clean, Explore & Transform Your Data)",
+    "author": "Kyran Dale 著、林季岩 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-04-17",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789864763269",
+    "category": [
+      "Python 程式語言",
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "R語言：深入淺出財經計量",
+    "author": "何宗武",
+    "publisher": "博碩",
+    "publish_date": "2017-03-29",
+    "list_price": "$580",
+    "sale_price": "$452",
+    "isbn": "9789864341948",
+    "category": [
+      "R 語言"
+    ]
+  },
+  {
+    "name": "Python 專家實踐指南｜搭乘專業開發者的學習便車 (The Hitchhiker's Guide to Python: Best Practices for Development)",
+    "author": "Kenneth Reitz, Tanya Schlusser 著、楊尊一 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2017-02-12",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864762859",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "數據、謊言與真相：Google資料分析師用大數據揭露人們的真面目 (Everybody Lies: Big Data, New Data, and What the Internet Can Tell Us About Who We Really Are)",
+    "author": "賽斯‧史蒂芬斯—大衛德維茲(Seth Stephens-Davidowitz) 著、 陳琇玲 譯",
+    "publisher": "商周出版",
+    "publish_date": "2017-02-06",
+    "list_price": "$420",
+    "sale_price": "$378",
+    "isbn": "9789864773558",
+    "category": [
+      "資料科學",
+      "大數據"
+    ]
+  },
+  {
+    "name": "SQL Server 資料採礦與商業智慧－適用 SQL Server 2016/2014, 2/e",
+    "author": "謝邦昌",
+    "publisher": "碁峰",
+    "publish_date": "2017-01-22",
+    "list_price": "$560",
+    "sale_price": "$442",
+    "isbn": "9789864762873",
+    "category": [
+      "資料探勘",
+      "SQL",
+      "MSSQL"
+    ]
+  },
+  {
+    "name": "大師級 Excel 取巧工作術：一秒搞定搬、找、換、改、抄，資料分析一鍵結果就出來，對方秒懂、服你專業。",
+    "author": "望月實、花房幸範 著、邱惠悠 譯",
+    "publisher": "大是文化",
+    "publish_date": "2017-01-22",
+    "list_price": "$330",
+    "sale_price": "$297",
+    "isbn": "9789865612917",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "一舉兩得功力大精進：學 Python+Web 賺一個未來",
+    "author": "董偉明",
+    "publisher": "佳魁資訊",
+    "publish_date": "2017-01-18",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789863794615",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 自動化的樂趣｜搞定重複瑣碎 & 單調無聊的工作 (中文版) (Automate the Boring Stuff with Python: Practical Programming for Total Beginners)",
+    "author": "Al Sweigart 著、H&C 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-12-28",
+    "list_price": "$500",
+    "sale_price": "$395",
+    "isbn": "9789864762729",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "從零開始學 Python 程式設計 (適用 Python 3.5以上)",
+    "author": "李馨",
+    "publisher": "博碩",
+    "publish_date": "2016-12-27",
+    "list_price": "$590",
+    "sale_price": "$460",
+    "isbn": "9789864341665",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "大數據起步從 Python 開始：算法及設計基礎",
+    "author": "吳萍",
+    "publisher": "佳魁資訊",
+    "publish_date": "2016-12-26",
+    "list_price": "$490",
+    "sale_price": "$387",
+    "isbn": "9789863794561",
+    "category": [
+      "Python 程式語言",
+      "大數據"
+    ]
+  },
+  {
+    "name": "高效率資料分析｜使用Python (Foundations for Analytics with Python)",
+    "author": "Clinton W. Brownley 著、賴屹民 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-12-19",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864762613",
+    "category": [
+      "Python 程式語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Python 輕鬆學：遊戲設計初體驗 (Adventures in Python)",
+    "author": "Craig Richardson 著",
+    "publisher": "博碩",
+    "publish_date": "2016-12-01",
+    "list_price": "$420",
+    "sale_price": "$328",
+    "isbn": "9789864341641",
+    "category": [
+      "遊戲設計",
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "今天不學機器學習，明天就被機器取代：從 Python入手+演算法",
+    "author": "鄭捷",
+    "publisher": "佳魁資訊",
+    "publish_date": "2016-11-29",
+    "list_price": "$590",
+    "sale_price": "$466",
+    "isbn": "9789863794325",
+    "category": [
+      "Machine Learning 機器學習",
+      "資料結構與演算法",
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "醫護統計與 SPSS 分析方法與應用",
+    "author": "楊秋月、陳耀茂",
+    "publisher": "五南",
+    "publish_date": "2016-11-22",
+    "list_price": "$1,050",
+    "sale_price": "$945",
+    "isbn": "9789571188591",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  }
+,
+  {
+    "name": "Spark 大數據分析新利器─資料科學家與數據分析師非用不可的入門指南書 (Big Data Analytics with Spark: A Practitioner's Guide to Using Spark for Large Scale Data Analysis)",
+    "author": "Mohammed Gulle 著",
+    "publisher": "松崗",
+    "publish_date": "2016-11-17",
+    "list_price": "$520",
+    "sale_price": "$307",
+    "isbn": "9789572245941",
+    "category": [
+      "資料科學",
+      "大數據",
+      "Spark"
+    ]
+  },
+  {
+    "name": "Python 程式設計「超入門」",
+    "author": "鎌田正浩 著、陳禹豪、林子政 譯",
+    "publisher": "旗標",
+    "publish_date": "2016-11-01",
+    "list_price": "$420",
+    "sale_price": "$357",
+    "isbn": "9789863123798",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "王者歸來：Python在大數據科學計算上的最佳實作",
+    "author": "張若愚",
+    "publisher": "佳魁資訊",
+    "publish_date": "2016-10-30",
+    "list_price": "$860",
+    "sale_price": "$679",
+    "isbn": "9789863794264",
+    "category": [
+      "大數據",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "Data Science from Scratch｜用Python學資料科學 (中文版)(Data Science from Scratch: First Principles with Python)",
+    "author": "Joel Grus 著、藍子軒 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-10-30",
+    "list_price": "$580",
+    "sale_price": "$458",
+    "isbn": "9789864761982",
+    "category": [
+      "Scratch",
+      "Python 程式語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "不止是測試：Python 網路爬蟲王者 Selenium",
+    "author": "蟲師",
+    "publisher": "佳魁資訊",
+    "publish_date": "2016-10-24",
+    "list_price": "$560",
+    "sale_price": "$442",
+    "isbn": "9789863794127",
+    "category": [
+      "Python 程式語言",
+      "selenium",
+      "網路爬蟲"
+    ]
+  },
+  {
+    "name": "Python 程式設計實用經典",
+    "author": "許清賢",
+    "publisher": "松崗",
+    "publish_date": "2016-10-20",
+    "list_price": "$420",
+    "sale_price": "$248",
+    "isbn": "9789572246023",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "財金統計學：使用 R 語言",
+    "author": "林進益",
+    "publisher": "五南",
+    "publish_date": "2016-10-06",
+    "list_price": "$850",
+    "sale_price": "$765",
+    "isbn": "9789571188454",
+    "category": [
+      "機率統計學",
+      "R 語言"
+    ]
+  },
+  {
+    "name": "R資料採礦與數據分析--以 GUI 套件 Rattle 結合程式語言實作",
+    "author": "何宗武",
+    "publisher": "碁峰",
+    "publish_date": "2016-09-29",
+    "list_price": "$500",
+    "sale_price": "$395",
+    "isbn": "9789864760572",
+    "category": [
+      "資料探勘",
+      "程式語言",
+      "使用者介面"
+    ]
+  },
+  {
+    "name": "資料智慧化：利用資料科學，將資訊化為創見",
+    "author": "John W. Foreman 著，胡為君 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-09-12",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789864761807",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "R 軟體統計進階分析實務",
+    "author": "吳明隆、張毓仁",
+    "publisher": "五南",
+    "publish_date": "2016-09-11",
+    "list_price": "$980",
+    "sale_price": "$882",
+    "isbn": "9789571186788",
+    "category": [
+      "R 語言",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "Python 函式庫語法範例字典",
+    "author": "池内孝啓, 鈴木たかのり, 石本敦夫, 小坂健二郎, 真嘉比愛 著、林子政 譯",
+    "publisher": "旗標",
+    "publish_date": "2016-08-25",
+    "list_price": "$450",
+    "sale_price": "$356",
+    "isbn": "9789863123675",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Think Python｜學習程式設計的思考概念, 2/e (Think Python: How to Think Like a Computer Scientist, 2/e)",
+    "author": "Allen B. Downey 著、黃銘偉 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-08-24",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864761357",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python 3.5 技術手冊",
+    "author": "林信良",
+    "publisher": "碁峰",
+    "publish_date": "2016-07-28",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864761265",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Python x Arduino 物聯網整合開發實戰",
+    "author": "Pratik Desai 著、CAVEDU團隊 曾吉弘 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-06-29",
+    "list_price": "$490",
+    "sale_price": "$387",
+    "isbn": "9789864760183",
+    "category": [
+      "Python 程式語言",
+      "物聯網 IoT",
+      "Arduino"
+    ]
+  },
+  {
+    "name": "Python 程式設計入門指南",
+    "author": "Y. Daniel Liang 著、蔡明志 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-06-29",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789864760527",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "大數據的另一章！資料分析3.0時代，靠分析讀懂你的客戶，讓企業贏得競爭優勢 (The Analytics Revolution: How to Improve Your Business by Making Analytics Operational in The Big Data Era)",
+    "author": "比爾．法蘭克斯(Bill Franks) 著、張建輝、車皓陽、劉靜如、范歡動 譯",
+    "publisher": "博碩",
+    "publish_date": "2016-06-01",
+    "list_price": "$360",
+    "sale_price": "$281",
+    "isbn": "9789862101582",
+    "category": [
+      "資料科學",
+      "大數據"
+    ]
+  },
+  {
+    "name": "Python 3 物件導向程式設計, 2/e",
+    "author": "Dusty Phillips 著、楊尊一 譯",
+    "publisher": "碁峰",
+    "publish_date": "2016-05-25",
+    "list_price": "$480",
+    "sale_price": "$379",
+    "isbn": "9789863479819",
+    "category": [
+      "Python 程式語言",
+      "物件導向"
+    ]
+  },
+  {
+    "name": "資料科學的商業運用 (Data science for business)",
+    "author": "Foster Provost, Tom Fawcett 著、陳亦苓 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-05-15",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789864760268",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "測試驅動開發：使用 Python (Test-Driven Development with Python)",
+    "author": "Harry J.W. Percival 著、賴屹民 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-05-15",
+    "list_price": "$880",
+    "sale_price": "$695",
+    "isbn": "9789864760244",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "MATLAB 程式設計－入門篇, 4/e",
+    "author": "張智星",
+    "publisher": "碁峰",
+    "publish_date": "2016-04-26",
+    "list_price": "$560",
+    "sale_price": "$442",
+    "isbn": "9789863478775",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "菲絲恩教你學會 Python, 2/e",
+    "author": "健康資訊工程實驗室",
+    "publisher": "博碩",
+    "publish_date": "2016-04-24",
+    "list_price": "$320",
+    "sale_price": "$250",
+    "isbn": "9789864341047",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Make: AVR程式設計(Make: AVR Programming: Learning to Write Software for Hardware)",
+    "author": "Elliot Williams 著、莊啟晃/黃藤毅/莊雯琇/林可凡 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2016-04-15",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789863479697",
+    "category": [
+      "R 語言"
+    ]
+  },
+  {
+    "name": "Excel 2013 在資料處理與分析上的應用",
+    "author": "林佳生",
+    "publisher": "易習(知城)",
+    "publish_date": "2016-03-31",
+    "list_price": "$550",
+    "sale_price": "$468",
+    "isbn": "9789869291231",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  }
+,
+  {
+    "name": "MATLAB 程式設計與應用 (MATLAB Programming for Engineers, 5/e)",
+    "author": "沈志忠",
+    "publisher": "全華",
+    "publish_date": "2016-02-29",
+    "list_price": "$780",
+    "sale_price": "",
+    "isbn": "9789865632670",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "科學運算 : Python程式理論與應用",
+    "author": "楊珮璐、宋強 著、胡嘉璽 審閱.",
+    "publisher": "上奇資訊",
+    "publish_date": "2016-02-20",
+    "list_price": "$860",
+    "sale_price": "$679",
+    "isbn": "9789863756262",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "Excel 2016 統計分析實務 -- 市場調查與資料分析 ( 範例適用Excel 2016~2010，附光碟)",
+    "author": "楊世瑩",
+    "publisher": "碁峰",
+    "publish_date": "2016-01-07",
+    "list_price": "$540",
+    "sale_price": "$427",
+    "isbn": "9789863478676",
+    "category": [
+      "資料科學",
+      "Excel",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "R 語言資料分析活用範例詳解",
+    "author": "方匡南/朱建平/姜葉飛 著、H&C 譯",
+    "publisher": "碁峰",
+    "publish_date": "2015-11-05",
+    "list_price": "$520",
+    "sale_price": "$411",
+    "isbn": "9789863478157",
+    "category": [
+      "R 語言",
+      "資料科學"
+    ]
+  },
+  {
+    "name": "黑帽 Python | 給駭客與滲透測試者的 Python 開發指南",
+    "author": "Justin Seitz 著、Studio Tib. 譯",
+    "publisher": "碁峰",
+    "publish_date": "2015-10-13",
+    "list_price": "$400",
+    "sale_price": "$316",
+    "isbn": "9789863477808",
+    "category": [
+      "Python 程式語言",
+      "滲透測試",
+      "駭客"
+    ]
+  },
+  {
+    "name": "R 軟體統計應用分析實務",
+    "author": "吳明隆",
+    "publisher": "五南",
+    "publish_date": "2015-10-04",
+    "list_price": "$1,200",
+    "sale_price": "$1,080",
+    "isbn": "9789571183053",
+    "category": [
+      "R 語言",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "精通 Python｜運用簡單的套件進行現代運算 (Introducing Python: Modern Computing in Simple Packages)",
+    "author": "Bill Lubanovic 著、賴屹民 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2015-09-21",
+    "list_price": "$780",
+    "sale_price": "$616",
+    "isbn": "9789863477310",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "D30，設計大師都在用的發想技巧：從克服資源限制到說個漂亮故事，讓創造力源源不絕的遊戲練習 (D30 - Exercises fr Designers)",
+    "author": "吉姆．克洛斯 (Jim Krause) 著、賴婷婷 譯",
+    "publisher": "大是文化",
+    "publish_date": "2015-08-03",
+    "list_price": "$320",
+    "sale_price": "$288",
+    "isbn": "9789865770969",
+    "category": [
+      "資料視覺化"
+    ]
+  },
+  {
+    "name": "社會及行為科學研究法 : 資料分析",
+    "author": "瞿海源、畢恆達、劉長萱、楊國樞",
+    "publisher": "東華",
+    "publish_date": "2015-06-03",
+    "list_price": "$600",
+    "sale_price": "",
+    "isbn": "9789574838141",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "雲端網頁程式設計－Google App Engine 使用 Python",
+    "author": "Massimiliano Pippi 著、江良志 譯",
+    "publisher": "博碩",
+    "publish_date": "2015-05-28",
+    "list_price": "$290",
+    "sale_price": "$226",
+    "isbn": "9789864340149",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "量化資料分析 : SPSS 與 EXCEL",
+    "author": "陳新豐",
+    "publisher": "五南",
+    "publish_date": "2015-05-19",
+    "list_price": "$580",
+    "sale_price": "$522",
+    "isbn": "9789571180526",
+    "category": [
+      "SPSS",
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "結構方程模式：IBM SPSS 與 AMOS 的應用",
+    "author": "Niels J. Blunch",
+    "publisher": "高等教育",
+    "publish_date": "2015-04-30",
+    "list_price": "$550",
+    "sale_price": "",
+    "isbn": "9789862661109",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "Python 程式設計入門 (適用於 2.x 與 3.x 版)",
+    "author": "葉難",
+    "publisher": "博碩",
+    "publish_date": "2015-04-01",
+    "list_price": "$620",
+    "sale_price": "$484",
+    "isbn": "9789864340057",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "SPSS 與應用統計學, 2/e",
+    "author": "謝廣全、謝佳懿",
+    "publisher": "巨流",
+    "publish_date": "2014-09-29",
+    "list_price": "$580",
+    "sale_price": "",
+    "isbn": "9789577324894",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  }
+,
+  {
+    "name": "數值方法－使用MATLAB程式語言(第三版)",
+    "author": "黃俊銘",
+    "publisher": "全華",
+    "publish_date": "2014-02-14",
+    "list_price": "$600",
+    "sale_price": "$540",
+    "isbn": "9789572193426",
+    "category": [
+      "Matlab",
+      "程式語言"
+    ]
+  },
+  {
+    "name": "R 錦囊妙計 (R Cookbook)",
+    "author": "Paul Teetor 著、張夏菁 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2014-01-23",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789862769829",
+    "category": [
+      "R 語言"
+    ]
+  },
+  {
+    "name": "Excel 2013 資料分析與市場調查",
+    "author": "林宏諭",
+    "publisher": "博碩",
+    "publish_date": "2014-01-21",
+    "list_price": "$520",
+    "sale_price": "$406",
+    "isbn": "9789862018620",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "SPSS 統計應用學習實務--問卷分析與應用統計",
+    "author": "吳明隆",
+    "publisher": "易習(知城)",
+    "publish_date": "2013-12-14",
+    "list_price": "$650",
+    "sale_price": "$553",
+    "isbn": "9789865835583",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "MATLAB 程式設計－進階篇, 2/e",
+    "author": "張智星",
+    "publisher": "碁峰",
+    "publish_date": "2013-09-09",
+    "list_price": "$560",
+    "sale_price": "$442",
+    "isbn": "9789862768686",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "統計學: SPSS之應用, 3/e",
+    "author": "林曉芳",
+    "publisher": "鼎茂",
+    "publish_date": "2013-06-29",
+    "list_price": "$500",
+    "sale_price": "",
+    "isbn": "9789862269114",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS 統計分析與應用學習實務, 2/e",
+    "author": "楊維忠、張甜",
+    "publisher": "上奇資訊",
+    "publish_date": "2013-06-25",
+    "list_price": "$520",
+    "sale_price": "$442",
+    "isbn": "9789862577424",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "MATLAB 機率與數理統計",
+    "author": "張德豐 等編著、溫坤禮 校訂",
+    "publisher": "五南",
+    "publish_date": "2013-05-31",
+    "list_price": "$580",
+    "sale_price": "$522",
+    "isbn": "9789571170749",
+    "category": [
+      "Matlab",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS 與研究方法, 3/e",
+    "author": "榮泰生 著",
+    "publisher": "五南",
+    "publish_date": "2013-02-03",
+    "list_price": "$650",
+    "sale_price": "$585",
+    "isbn": "9789571165097",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "MATLAB 數值分析",
+    "author": "周品、何正風 著、溫坤禮 譯",
+    "publisher": "五南",
+    "publish_date": "2012-07-31",
+    "list_price": "$520",
+    "sale_price": "$468",
+    "isbn": "9789571167411",
+    "category": [
+      "Matlab",
+      "數值分析"
+    ]
+  }
+,
+  {
+    "name": "MATLAB 通訊工程模擬",
+    "author": "張德豐",
+    "publisher": "五南",
+    "publish_date": "2012-07-09",
+    "list_price": "$620",
+    "sale_price": "$558",
+    "isbn": "9789571167107",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "3 秒鐘搞定 Excel ─資料處理→函數→ VBA",
+    "author": "林文恭研究室",
+    "publisher": "碁峰",
+    "publish_date": "2012-06-18",
+    "list_price": "$420",
+    "sale_price": "$332",
+    "isbn": "9789862764510",
+    "category": [
+      "資料科學",
+      "Excel"
+    ]
+  },
+  {
+    "name": "MATLAB 程式設計實務入門",
+    "author": "丁毓峰",
+    "publisher": "五南",
+    "publish_date": "2012-05-31",
+    "list_price": "$520",
+    "sale_price": "$468",
+    "isbn": "9789571166971",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "SPSS (PASW) 與統計應用分析 II",
+    "author": "吳明隆、張毓仁",
+    "publisher": "五南",
+    "publish_date": "2011-11-22",
+    "list_price": "$760",
+    "sale_price": "$684",
+    "isbn": "9789571164472",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS (PASW) 與統計應用分析 I",
+    "author": "吳明隆、張毓仁",
+    "publisher": "五南",
+    "publish_date": "2011-09-30",
+    "list_price": "$850",
+    "sale_price": "$765",
+    "isbn": "9789571163772",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "深入淺出程式設計－奠基於 Python 語言的編程學習指南 (Head First Programming: A Learner's Guide to Programming Using the Python Language)",
+    "author": "David Griffiths, Paul Barry 著、楊仁和 譯",
+    "publisher": "歐萊禮",
+    "publish_date": "2011-08-29",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789862762691",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "SPSS 在社會科學的應用, 2/e (SPSS for Social Scientists, 2/e)",
+    "author": "Ciaran Acton、Robert Miller，John Maltby、Deirdre Fullerton 著、莊文忠 譯",
+    "publisher": "五南",
+    "publish_date": "2011-07-31",
+    "list_price": "$550",
+    "sale_price": "$495",
+    "isbn": "9789571163314",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "MATLAB 程式設計－基礎篇, 4/e",
+    "author": "葉倍宏",
+    "publisher": "全華",
+    "publish_date": "2011-04-27",
+    "list_price": "$350",
+    "sale_price": "$315",
+    "isbn": "9789572180624",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "從範例學 SPSS 統計分析與應用",
+    "author": "孫艷玲、何源、李陽旭",
+    "publisher": "博碩",
+    "publish_date": "2011-02-08",
+    "list_price": "$450",
+    "sale_price": "$351",
+    "isbn": "9789862014240",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "實用統計學：SPSS 動態操作展示與應用",
+    "author": "林志娟、張慶暉",
+    "publisher": "東華",
+    "publish_date": "2011-01-31",
+    "list_price": "$450",
+    "sale_price": "",
+    "isbn": "9789574836185",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "精通 Python 3 程式設計, 2/e (Programming in Python 3: A Complete Introduction to the Python Language, 2/e)",
+    "author": "Mark Summerfield 著、蔣大偉 譯",
+    "publisher": "碁峰",
+    "publish_date": "2010-11-24",
+    "list_price": "$680",
+    "sale_price": "$537",
+    "isbn": "9789862760703",
+    "category": [
+      "Python 程式語言"
+    ]
+  },
+  {
+    "name": "SPSS 操作與應用－變異數分析實務, 2/e",
+    "author": "吳明隆",
+    "publisher": "五南",
+    "publish_date": "2010-06-30",
+    "list_price": "$880",
+    "sale_price": "$792",
+    "isbn": "9789571159966",
+    "category": [
+      "SPSS"
+    ]
+  }
+,
+  {
+    "name": "SPSS 與量化研究",
+    "author": "&#20931;金堂",
+    "publisher": "五南",
+    "publish_date": "2010-04-01",
+    "list_price": "$450",
+    "sale_price": "$405",
+    "isbn": "9789571159041",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "易學易用 SPSS PASW 統計分析實務, 2/e",
+    "author": "李金泉",
+    "publisher": "全華",
+    "publish_date": "2010-03-05",
+    "list_price": "$750",
+    "sale_price": "$675",
+    "isbn": "9789572174265",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS 統計應用分析, 2/e",
+    "author": "吳明隆、涂金堂",
+    "publisher": "五南",
+    "publish_date": "2009-03-12",
+    "list_price": "$1,000",
+    "sale_price": "$900",
+    "isbn": "9789571141732",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS 操作與應用 : 問卷統計分析實務, 2/e",
+    "author": "吳明隆",
+    "publisher": "五南",
+    "publish_date": "2009-03-11",
+    "list_price": "$850",
+    "sale_price": "$765",
+    "isbn": "9789571155371",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "自動控制－使用 MATLAB/SIMULINK",
+    "author": "張啟勛",
+    "publisher": "儒林",
+    "publish_date": "2008-10-30",
+    "list_price": "$460",
+    "sale_price": "",
+    "isbn": "9789574998531",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "SPSS 統計分析 (14.0 中文版)",
+    "author": "王春和、唐麗英",
+    "publisher": "儒林",
+    "publish_date": "2008-10-13",
+    "list_price": "$520",
+    "sale_price": "",
+    "isbn": "9789574998432",
+    "category": [
+      "SPSS",
+      "機率統計學"
+    ]
+  },
+  {
+    "name": "SPSS 操作與應用 : 多變量分析實務",
+    "author": "吳明隆",
+    "publisher": "五南",
+    "publish_date": "2008-09-29",
+    "list_price": "$980",
+    "sale_price": "$882",
+    "isbn": "9789571153414",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "電力電子概論─使用 MATLAB (Fundamentals of Power Electronics with Matlab)",
+    "author": "Randall Shaffer 著、何子儀‧李尚懿‧陳宏良‧蔡志輝 譯",
+    "publisher": "GL高立",
+    "publish_date": "2008-09-29",
+    "list_price": "$680",
+    "sale_price": "",
+    "isbn": "9789866637117",
+    "category": [
+      "Matlab",
+      "電力電子"
+    ]
+  },
+  {
+    "name": "質性資料分析：文本、影像與聲音 (Qualitative Researching with Text, Image and Sound：A Practical Handbook)",
+    "author": "Martin W. Bauer ＆ George Gaskell 著、羅世宏、蔡欣怡、薛丹琦 譯",
+    "publisher": "五南",
+    "publish_date": "2008-05-31",
+    "list_price": "$550",
+    "sale_price": "$495",
+    "isbn": "9789571152097",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "數位影像處理 MATLAB, 4/e",
+    "author": "連國珍",
+    "publisher": "儒林",
+    "publish_date": "2007-09-29",
+    "list_price": "$400",
+    "sale_price": "",
+    "isbn": "9789574998265",
+    "category": [
+      "Matlab",
+      "數位影像處理"
+    ]
+  }
+,
+  {
+    "name": "Matlab 入門與精進, 2/e",
+    "author": "蒙以正",
+    "publisher": "儒林",
+    "publish_date": "2007-05-14",
+    "list_price": "$450",
+    "sale_price": "",
+    "isbn": "9789574998159",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "數位化資料處理（含實習）Ⅰ",
+    "author": "夢想家資訊工場",
+    "publisher": "碁峰",
+    "publish_date": "2007-04-19",
+    "list_price": "$280",
+    "sale_price": "$221",
+    "isbn": "9789861811512",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "資料探勘原理與技術",
+    "author": "張云濤、龔玲",
+    "publisher": "五南",
+    "publish_date": "2007-03-31",
+    "list_price": "$390",
+    "sale_price": "$351",
+    "isbn": "9789571146768",
+    "category": [
+      "資料探勘"
+    ]
+  },
+  {
+    "name": "通訊系統設計與模擬─使用 MATLAB/Simulink",
+    "author": "鈦思科技",
+    "publisher": "鈦思",
+    "publish_date": "2007-03-27",
+    "list_price": "$650",
+    "sale_price": "$618",
+    "isbn": "9789573011118",
+    "category": [
+      "Matlab",
+      "通訊系統"
+    ]
+  },
+  {
+    "name": "數位訊號處理─使用 Matlab, 2/e",
+    "author": "具再熙",
+    "publisher": "儒林",
+    "publish_date": "2007-03-14",
+    "list_price": "$530",
+    "sale_price": "",
+    "isbn": "9789574998043",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "資料處理突破暨總整理, 6/e",
+    "author": "廖平",
+    "publisher": "儒林",
+    "publish_date": "2005-11-29",
+    "list_price": "$600",
+    "sale_price": "",
+    "isbn": "9789574997565",
+    "category": [
+      "資料科學"
+    ]
+  },
+  {
+    "name": "資料探勘 (Data Mining)",
+    "author": "曾憲雄、蔡秀滿、蘇東興、曾秋蓉、王慶堯",
+    "publisher": "旗標",
+    "publish_date": "2005-05-23",
+    "list_price": "$620",
+    "sale_price": "$589",
+    "isbn": "9789574422364",
+    "category": [
+      "資料探勘"
+    ]
+  },
+  {
+    "name": "MATLAB 在工程上的應用 (適用MATLAB 6.0 & 7.0)",
+    "author": "歐崇明",
+    "publisher": "GL高立",
+    "publish_date": "2005-04-30",
+    "list_price": "$440",
+    "sale_price": "",
+    "isbn": "9789864122455",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "Matlab 之使用與應用, 11/e",
+    "author": "林傳生",
+    "publisher": "儒林",
+    "publish_date": "2004-11-29",
+    "list_price": "$470",
+    "sale_price": "",
+    "isbn": "9789574997091",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "SPSS 在心理學的應用－SPSS 視窗",
+    "author": "高琝邦",
+    "publisher": "五南",
+    "publish_date": "2003-03-28",
+    "list_price": "$450",
+    "sale_price": "$405",
+    "isbn": "9789571129785",
+    "category": [
+      "SPSS"
+    ]
+  },
+  {
+    "name": "Matlab 6.X 使用入門",
+    "author": "余建政、俞克維、林義隆、白能勝",
+    "publisher": "文京",
+    "publish_date": "2003-01-14",
+    "list_price": "$570",
+    "sale_price": "",
+    "isbn": "9789575125738",
+    "category": [
+      "Matlab"
+    ]
+  },
+  {
+    "name": "MATLAB 輔助通信系統 (Contemporary Communication Systems using MATLAB)",
+    "author": "曹士林",
+    "publisher": "CS滄海",
+    "publish_date": "2001-09-11",
+    "list_price": "$560",
+    "sale_price": "$504",
+    "isbn": "9789812403315",
+    "category": [
+      "Matlab",
+      "通訊系統"
+    ]
+  },
+  {
+    "name": "資料處理導論",
+    "author": "汪志堅",
+    "publisher": "五南",
+    "publish_date": "2001-02-27",
+    "list_price": "$330",
+    "sale_price": "$297",
+    "isbn": "9789571123691",
+    "category": [
+      "資料科學"
+    ]
+  }
+]
