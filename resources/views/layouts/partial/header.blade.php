@@ -27,12 +27,12 @@
                     </i>
                     <div class="dropdown-menu bell-notify-box notify-box">
 
-                        <span class="notify-title">You have
+                        <span class="notify-title">目前送出
                             @auth
                             {{Auth::user()->im_sender->count()}}
                             @else 0
                             @endauth
-                            sent to others  <a href="#">view all</a></span>
+                            個訊息  <a href="#">view all</a></span>
                         <div class="nofity-list">
                             @auth
                             @foreach(Auth::user()->im_sender as $message)
@@ -58,7 +58,7 @@
                             @endauth
                         </span></i>
                     <div class="dropdown-menu notify-box nt-enveloper-box">
-                        <span class="notify-title">目前有
+                        <span class="notify-title">目前收到
                             @auth
                                 {{Auth::user()->im_receiver->count()}}
                             @else 0
@@ -83,9 +83,6 @@
                         </div>
                     </div>
                 </li>
-                {{--<li class="settings-btn">--}}
-                    {{--<i class="ti-settings"></i>--}}
-                {{--</li>--}}
             </ul>
         </div>
     </div>

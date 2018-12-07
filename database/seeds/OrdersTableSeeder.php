@@ -1,5 +1,7 @@
 <?php
 
+use App\Product;
+use App\User;
 use Illuminate\Database\Seeder;
 use App\Order;
 use Faker\Factory as Faker;
@@ -22,10 +24,10 @@ class OrdersTableSeeder extends Seeder
       $product_array = [];
       $total = 0;
       foreach (range(1,rand(1,4)) as $ii){
-          $product_id = rand(1,60);
+          $product_id = Product::inRandomOrder()->first()->id;
           if (!array_key_exists($product_id,$product_array)){
               $product_array+=[$product_id=>rand(1,4)];
-              $total += $product_array[$product_id]*\App\Product::find($product_id)->sale_price;
+              $total += $product_array[$product_id]*(Product::find($product_id)->sale_price);
           }
       }
       Order::create([
@@ -43,10 +45,26 @@ class OrdersTableSeeder extends Seeder
         'receiver'=>$this->randname(rand(6,10),1),
         'receiver_phone'=>$this->phoneGenerator(),
         'invoice_number'=>$this->randname(10,2),
-        'member_id'=>\App\User::inRandomOrder()->first()->id,
+        'member_id'=>User::inRandomOrder()->first()->id,
       ]);
     }
+    foreach (range(1,rand(10,15)) as $id){
+        Order::create([
+            'state' => 1,
+           'pay_method' => 0,
+           'message' =>'adsfas',
+            'receiver' => 'asdfasfd',
+            'member_id' => User::inRandomOrder()->first()->id,
+
+        ]);
+    }
   }
+
+
+
+
+
+
   private function randname($len,$type){
     $charset="abcdefghijaklmopqrstuvwxyz1234567890";
     $result ="";

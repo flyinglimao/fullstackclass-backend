@@ -6,6 +6,7 @@ use App\Category;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 
 class HomeController extends Controller
@@ -42,12 +43,14 @@ class HomeController extends Controller
     public function index()
     {
         $bonuses = Auth::user()->bonuses()->orderBy('created_at','asc')->get();
-        $orders = Auth::user()->orders()->orderBy('created_at','asc')->get();
+        $orders = Auth::user()->orders()->where('state',1)->orderBy('created_at','asc')->get();
 
         $total_orders = 0;
 
         foreach ($orders as $order){
-            $total_orders+=json_decode($order->payment_information)->total;
+            if ($order->payment_information != null){
+                $total_orders+=json_decode($order->payment_information)->total;
+            }
         }
         $data = [
             'bonuses' => $bonuses,
@@ -66,11 +69,19 @@ class HomeController extends Controller
 
     public function update(User $user,Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'name'=>'required|string',
             'email'=>'required|email',
             'profile'=>'image'
         ]);
+        $validator->after(function ($validator) use ($request){
+            $is_duplicated = User::where('email',$request->input('email'))->count();
+            if ($is_duplicated){
+                $validator->errors()->add('email','這個email已經有人使用了，請換別的');
+            }
+        })->validate();
+
+
         if (isset($request['profile'])){
             $file = $request['profile'];
             $filepath = 'public/user/';
@@ -97,12 +108,15 @@ class HomeController extends Controller
     public function show(User $user)
     {
         $bonuses = $user->bonuses()->orderBy('created_at','asc')->get();
-        $orders = $user->orders()->orderBy('created_at','asc')->get();
+        $orders = $user->orders()->where('state',1)->orderBy('created_at','asc')->get();
 
         $total_orders = 0;
 
         foreach ($orders as $order){
-            $total_orders+=json_decode($order->payment_information)->total;
+            if ($order->payment_information!=null){
+                $total_orders+=json_decode($order->payment_information)->total;
+            }
+
         }
         $data = [
             'user'=>$user,

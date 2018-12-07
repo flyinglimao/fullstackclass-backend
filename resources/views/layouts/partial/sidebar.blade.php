@@ -25,12 +25,6 @@
                         <a href="{{route('messages.index')}}" aria-expanded="true"><i class="ti-palette"></i><span>Message</span></a>
                     </li>
                     <li>
-                        <a href="{{route('events.index')}}" aria-expanded="true"><i class="ti-slice"></i><span>Event</span></a>
-                    </li>
-                    <li>
-                        <a href="{{route('bonuses.index')}}" aria-expanded="true"><i class="fa fa-table"></i><span>Bonus</span></a>
-                    </li>
-                    <li>
                         <a href="{{route('sales.index')}}"><i class="ti-map-alt"></i> <span>Sale</span></a>
                     </li>
                     <li>

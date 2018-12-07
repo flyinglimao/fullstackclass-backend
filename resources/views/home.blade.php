@@ -153,7 +153,7 @@
                                                         <tr class="heading-td">
                                                             <td class="attachments">{{$order->invoice_number}}</td>
                                                             <td class="attachments">{{$order->receiver}}</td>
-                                                            <td class="attachments">{{json_decode($order->payment_information)->total}}元</td>
+                                                            <td class="attachments">{{$order->payment_information!=null?json_decode($order->payment_information)->total:null}}元</td>
                                                             <td class="attachments">{{$order->created_at}}</td>
                                                         </tr>
                                                     </table>
@@ -174,6 +174,7 @@
                                                                         <td class="attachments">商品數量</td>
                                                                         <td class="attachments">總金額</td>
                                                                     </tr>
+                                                                    @if($order->products != null)
                                                                     @foreach(json_decode($order->products) as $product_id=>$quantity)
                                                                         <tr class="heading-td">
                                                                             <td class="attachments">{{\App\Product::find($product_id)->title}}</td>
@@ -182,6 +183,7 @@
                                                                             <td class="attachments">{{\App\Product::find($product_id)->sale_price*$quantity}}元</td>
                                                                         </tr>
                                                                     @endforeach
+                                                                    @endif
                                                                 </table>
                                                             </div>
                                                         </div>

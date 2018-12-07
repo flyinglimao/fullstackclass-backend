@@ -26,6 +26,8 @@ Route::middleware('auth','is_admin')->group(function (){
 
   Route::middleware('verified')->group(function (){
 
+    Route::get('/home','HomeController@index')->name('home');
+
     Route::get('/', 'ProductController@index')->name('dashboard.index');
 
     // Products CUD
@@ -182,3 +184,5 @@ Route::middleware('auth','is_admin')->group(function (){
 
   Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
 });
+
+Auth::routes();

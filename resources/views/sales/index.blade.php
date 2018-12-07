@@ -108,10 +108,12 @@
                                         {{--<td class="mv-icon">ID</td>--}}
                                         <td class="attachments">編號</td>
                                         <td class="attachments">變化量</td>
-
                                         <td class="attachments">商品編號</td>
+                                        <td class="attachments">商品名稱</td>
                                         <td class="attachments">訂單編號</td>
                                         <td class="attachments">訊息</td>
+                                        <td class="attachments">日期</td>
+
                                         <td class="attachments">
                                             <a href="{{route('sales.create')}}" class="btn btn-xs btn-success" style="width: 120px">新增庫存變化</a>
                                         </td>
@@ -128,11 +130,12 @@
                                                 @endif
                                             </td>
                                             <td class="attachments">{{$sale->products_id}}</td>
+                                            <td class="attachments">{{$sale->product->title}}</td>
                                             <td class="attachments">{{$sale->order_id}} </td>
                                             <td class="attachments">{{$sale->message}} </td>
-                                            <td class="attachments">
+                                            <td class="attachments">{{$sale->created_at}}</td>
+                                            <td class="attachments"></td>
 
-                                            </td>
                                         </tr>
                                     @endforeach
                                 </table>
