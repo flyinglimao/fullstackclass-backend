@@ -18,14 +18,6 @@ class TagController extends Controller
         //取出全部的Tag，不要用all()
         $tags =Tag::where('id','!=',-1);
 
-
-        //        dd([
-//            $request->query('id'),
-//            Tag::where('id',$request->input('id'))->get(),
-//            Tag::where('id',$request->query('id'))->get()
-//        ]);
-
-
         //search by name
         if ($request->query('name')!=null){
             $tags = $tags->where('name','LIKE','%'.$request->input('name').'%');

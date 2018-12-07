@@ -6,12 +6,6 @@
             <div class="nav-btn pull-left">
                 <button type="button" class="btn btn-rounded btn-primary">主選單</button>
             </div>
-            <div class="search-box pull-left">
-                <form action="#">
-                    <input type="text" name="search" placeholder="Search..." required>
-                    <i class="ti-search"></i>
-                </form>
-            </div>
         </div>
         <!-- profile info & task notification -->
         <div class="col-md-6 col-sm-4 clearfix">

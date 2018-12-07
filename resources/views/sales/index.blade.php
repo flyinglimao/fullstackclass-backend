@@ -64,7 +64,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <span class="text-muted mb-3 d-block">標籤:</span>
+                                                    <span class="text-muted mb-3 d-block">商品標籤:</span>
                                                     @foreach($tags as $id => $tag)
                                                         @if($id!=0 && $id%4==0)
                                                             <div class="mb-3"></div>
@@ -131,7 +131,7 @@
                                             <td class="attachments">{{$sale->order_id}} </td>
                                             <td class="attachments">{{$sale->message}} </td>
                                             <td class="attachments">
-                                                <a href="#" class="btn btn-xs btn-primary" style="width: 120px">編輯</a>
+
                                             </td>
                                         </tr>
                                     @endforeach

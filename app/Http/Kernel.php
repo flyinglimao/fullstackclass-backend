@@ -66,7 +66,6 @@ class Kernel extends HttpKernel
     'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     'admin' => \App\Http\Middleware\CheckAdmin::class,
     'putapitag' => \App\Http\Middleware\PutApiTag::class,
-
     'is_admin' => \App\Http\Middleware\CheckIsAdmin::class
   ];
 

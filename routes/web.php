@@ -122,7 +122,7 @@ Route::middleware('auth','is_admin')->group(function (){
     });
     //MemberSerach
 
-    Route::get('user/index','HomeController@search')->name('user.search');
+    Route::get('user/index','HomeController@search')->name('user.index');
 
     Route::get('user/show/{user}','HomeController@show')->name('user.show');
 
@@ -164,24 +164,33 @@ Route::middleware('auth','is_admin')->group(function (){
 
     Route::get('tags','TagController@index')->name('tags.index');
 
-    //Test mail
+    Route::get('messages','MessageController@index')->name('messages.index');
 
-    Route::get('mail','MailController@index')->name('mails.index');
+    //Event R
 
-    Route::get('mail/notify/order2','MailController@index2')->name('mails.index2');
+    Route::get('events','EventController@index')->name('events.index');
 
-    Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
-});
+    //Bonus R
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('bonuses','BonusController@index')->name('bonuses.index');
 
 Auth::routes();
 
-Auth::routes(['verify' => true]);
+    Route::get('orders','OrderController@index')->name('orders.index');
 
+    //Category R
 
+    Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
 
+Route::get('abc',function (){
+    $order = \App\Order::create([
+        'state' => 1,
+        'message' => '4fgsdfg',
+        'products' => json_encode([3=>3]),
+        'receiver' => 'asdf',
+        'member_id' => 1,
 
-
-
+    ]);
+    dd($order->ship_method);
+});
 
