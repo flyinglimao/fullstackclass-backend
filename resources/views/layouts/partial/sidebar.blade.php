@@ -5,7 +5,7 @@
 <div class="sidebar-menu">
     <div class="sidebar-header">
         <div class="logo">
-            <a href="{{route('products.index')}}"><img src="{{asset('images/icon/logo.png')}}" alt="logo"></a>
+            <a href="{{route('products.index')}}" style="font-size: 30px;color: white">貓咪後台</a>
         </div>
     </div>
     <div class="main-menu">
