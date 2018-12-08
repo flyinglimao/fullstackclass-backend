@@ -135,8 +135,8 @@
                                     <td class="coin-name">{{$product->id}} </td>
                                     <td class="attachments">{{$product->title}} </td>
 
-                                    <td class="attachments">{{$product->category->name}} </td>
-                                    <td class="attachments">{{$product->subcategory->name}} </td>
+                                    <td class="attachments">{{$product->category ? $product->category->name : 'bug'}} </td>
+                                    <td class="attachments">{{$product->subcategory ? $product->subcategory->name : 'bug'}} </td>
                                     <td class="attachments">{{$product->publish_year}}</td>
                                     <td class="attachments">{{$product->sale_price}} <img src="{{asset('images/icon/market-value/triangle-down.png')}}" alt="icon"></td>
                                     <td class="buy">{{$product->stock}} </td>
