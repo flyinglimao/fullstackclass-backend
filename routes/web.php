@@ -186,3 +186,5 @@ Route::middleware('auth','is_admin')->group(function (){
 });
 
 Auth::routes();
+
+Auth::routes(['verify'=>true]);
