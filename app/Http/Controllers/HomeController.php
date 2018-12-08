@@ -74,8 +74,8 @@ class HomeController extends Controller
             'email'=>'required|email',
             'profile'=>'image'
         ]);
-        $validator->after(function ($validator) use ($request){
-            $is_duplicated = User::where('email',$request->input('email'))->count();
+        $validator->after(function ($validator) use ($request,$user){
+            $is_duplicated = User::where('id','!=',$user->id)->where('email',$request->input('email'))->count();
             if ($is_duplicated){
                 $validator->errors()->add('email','這個email已經有人使用了，請換別的');
             }
