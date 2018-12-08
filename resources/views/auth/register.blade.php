@@ -90,7 +90,7 @@
                     </div>
 
 
-
+                    {{csrf_field()}}
                     <div class="submit-btn-area">
                         <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
                         <div class="login-other row mt-4">

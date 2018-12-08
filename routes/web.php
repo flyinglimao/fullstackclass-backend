@@ -22,11 +22,19 @@ Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->na
 
 Route::get('item/destroy/{id}',function(){})->name('item.destroy');
 
+Route::get('/home','HomeController@index')->name('home');
+
+//User RU
+
+Route::get('user/edit','HomeController@edit')->name('user.edit');
+
+Route::post('user/update/{user}','HomeController@update')->name('user.update');
+
 Route::middleware('auth','is_admin')->group(function (){
 
   Route::middleware('verified')->group(function (){
 
-    Route::get('/home','HomeController@index')->name('home');
+
 
     Route::get('/', 'ProductController@index')->name('dashboard.index');
 
@@ -128,11 +136,7 @@ Route::middleware('auth','is_admin')->group(function (){
 
   Route::get('user/show/{user}','HomeController@show')->name('user.show');
 
-  //User RU
 
-  Route::get('user/edit','HomeController@edit')->name('user.edit');
-
-  Route::post('user/update/{user}','HomeController@update')->name('user.update');
 
   //Product R
 
@@ -185,6 +189,6 @@ Route::middleware('auth','is_admin')->group(function (){
   Route::get('mail/notify/order3','MailController@index3')->name('mails.index3');
 });
 
-Auth::routes();
-
 Auth::routes(['verify'=>true]);
+
+
