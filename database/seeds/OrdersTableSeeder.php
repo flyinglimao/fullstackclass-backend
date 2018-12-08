@@ -31,7 +31,7 @@ class OrdersTableSeeder extends Seeder
           }
       }
       Order::create([
-        'state'=>0,
+        'state'=>rand(0,1),
         'pay_method'=>0,
         'payment_information'=>json_encode([
           'time'=>now(),

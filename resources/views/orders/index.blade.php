@@ -111,12 +111,12 @@
                                         </td>
                                     </tr>
                                     @foreach($orders as $order)
-                                        <tr>
+                                        {{--<tr>$order->payment_information !==null?json_decode($order->payment_information)->total:null--}}
                                             <td class="attachments">{{$order->invoice_number}} </td>
                                             <td class="attachments">{{$order->user->name}} </td>
                                             <td class="attachments">{{$order->receiver}} </td>
                                             <td class="attachments">{{$order->receiver_phone}} </td>
-                                            <td class="attachments">{{$order->payment_information !==null?json_decode($order->payment_information)->total:null }} </td>
+                                            <td class="attachments">{{isset(json_decode($order->payment_information,true)['total'])?json_decode($order->payment_information,true)['total']:null }} </td>
                                             <td class="attachments">{{$order->state}} </td>
                                             <td class="attachments">{{$order->pay_method}} </td>
 
@@ -125,8 +125,9 @@
                                             <td class="attachments">{{$order->ship_information}} </td>
 
 
-
-                                            <td class="attachments">{{$order->payment_information !==null?json_decode($order->payment_information)->time->date:null }} </td>
+{{--{{isset(json_decode($order->payment_information,true)['time'])?json_decode($order->payment_information,true)['time']['date']:null }}--}}
+                                            <td class="attachments">{{isset(json_decode($order->payment_information,true)['time'])?json_decode($order->payment_information,true)['time']['date']:null }}
+                                            </td>
 
                                             <td class="attachments">
                                                 <a href="{{route('orders.edit',$order->id)}}" class="btn btn-xs btn-primary" style="width:120px">編輯</a>
