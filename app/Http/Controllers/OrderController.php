@@ -97,10 +97,14 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
+        $date = null;
+        if ($order->payment_information != null){
+            $date = Carbon::createFromFormat('Y-m-d H:i:s.u',
+                json_decode($order->payment_information)->time->date)->format('Y-m-d\TH:i:s');
+        }
         $data = [
             'order' => $order,
-            'pay_date' =>Carbon::createFromFormat('Y-m-d H:i:s.u',
-                json_decode($order->payment_information)->time->date)->format('Y-m-d\TH:i:s'),
+            'pay_date' =>$date,
         ];
 //        dd($data);
         return view('orders.edit',$data);
