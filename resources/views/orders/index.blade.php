@@ -53,8 +53,8 @@
                                                     <label for="orderby" class="col-form-label uniform_label_length">排序方式</label>
                                                     <select name="item" id="orderby" class="simple col-sm-3" >
                                                         <option value="">請選擇</option>
-                                                        <option value="created_at" {{ (request('item') == 'created_at'?'selected':'') }}>購買時間</option>
-                                                        <option value="payment_information->total" {{ (request('item') == 'payment_information->total'?'selected':'') }}>總金額</option>
+                                                        <option value="updated_at" {{ (request('item') == 'updated_at'?'selected':'') }}>購買時間</option>
+                                                        <option value="id" {{ (request('item') == 'id'?'selected':'') }}>id</option>
 
                                                     </select>
                                                     <select name="order" class="simple col-sm-3">

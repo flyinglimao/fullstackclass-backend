@@ -40,6 +40,7 @@ class OrderController extends Controller
             $orders = $orders->orderBy('ship_information','LIKE','%'.$request->query('ship_information').'%');
         }
         if ($request->query('item')!=null){
+            $orders = $orders->where('state',1);
             $orders = $orders->orderBy($request->query('item'),$request->query('order'));
         }else
             $orders = $orders->orderBy('id','asc');

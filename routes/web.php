@@ -191,4 +191,6 @@ Route::middleware('auth','is_admin')->group(function (){
 
 Auth::routes(['verify'=>true]);
 
-
+Route::get('asd',function(){
+    dd(\App\Order::where('state',1)->where('payment_information->total','asc')->get());
+});
