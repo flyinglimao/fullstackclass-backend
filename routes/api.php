@@ -13,6 +13,8 @@ use Illuminate\Http\Response;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+// thirdparty
+Route::get('fblogin', 'Api\ThirdpartyController@facebook');
 
 //product
 Route::get('products','Api\ProductController@index');
