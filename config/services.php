@@ -42,7 +42,7 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),         // Your FB Client ID
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'), // Your FB Client Secret
-        'redirect' => 'http://localhost:8000/login/facebook/callback',
+        'redirect' => 'https://host.limaois.me:1723/login/facebook/callback',
     ]
 
 ];
