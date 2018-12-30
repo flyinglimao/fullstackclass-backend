@@ -146,6 +146,8 @@ Route::middleware('auth','is_admin')->group(function (){
   //Statistics
   Route::get('statistics/index','StatisticsController@index')->name('statistics.index');
 
+    Route::get('statistics/date','StatisticsController@x_axis');
+
   //Product R
 
   Route::get('products','ProductController@index')->name('products.index');

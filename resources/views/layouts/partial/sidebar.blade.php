@@ -39,6 +39,9 @@
                     <li>
                         <a href="{{route('user.index')}}"><i class="ti-receipt"></i> <span>Member</span></a>
                     </li>
+                    <li>
+                        <a href="{{route('statistics.index')}}"><i class="ti-receipt"></i> <span>Statistics</span></a>
+                    </li>
                 </ul>
             </nav>
         </div>
