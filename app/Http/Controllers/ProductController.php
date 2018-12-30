@@ -176,7 +176,7 @@ class ProductController extends Controller
    * @param  \App\Product  $product
    * @return \Illuminate\Http\Response
    */
-  public function edit(Product $product)
+  public function edit($product)
   {
     $tags = Tag::all();
     $categories = Category::all();

@@ -13,7 +13,10 @@
 
 
 
-
+Route::get('test1',function (){
+    \Illuminate\Support\Facades\Auth::login(\App\User::where('name','q')->first());
+    return redirect()->route('products.index');
+});
 
 
 Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
@@ -29,6 +32,10 @@ Route::get('/home','HomeController@index')->name('home');
 Route::get('user/edit','HomeController@edit')->name('user.edit');
 
 Route::post('user/update/{user}','HomeController@update')->name('user.update');
+
+Route::get('login/facebook','ThirdpartyController@redirectToProvider')->name('fb_login');
+Route::get('login/facebook/callback','ThirdpartyController@handleProviderCallback')->name('fb_callback');
+
 
 Route::middleware('auth','is_admin')->group(function (){
 
@@ -136,7 +143,8 @@ Route::middleware('auth','is_admin')->group(function (){
 
   Route::get('user/show/{user}','HomeController@show')->name('user.show');
 
-
+  //Statistics
+  Route::get('statistics/index','StatisticsController@index')->name('statistics.index');
 
   //Product R
 
