@@ -55,10 +55,11 @@ class DynamicSelectController extends Controller
 
     public function axis(Request $request)
     {
+        $x_axis = [];
         if ($request->input('type') == 'day'){
             $last_number_hour = 24;
             $start = Carbon::now()->subHour($last_number_hour);
-            $x_axis = [];
+
             foreach (range(1,$last_number_hour/2) as $id) {
                 $start = $start->addHour(2);
                 array_push($x_axis, $start->format("m-d H"));
@@ -66,10 +67,18 @@ class DynamicSelectController extends Controller
         }else if ($request->input('type') == 'week'){
             $last_number_date = 7;
             $start = Carbon::now()->subDay($last_number_date);
-            $x_axis = [];
+
             foreach (range(1,$last_number_date) as $id) {
                 $start = $start->addDay(1);
                 array_push($x_axis, $start->format("m-d"));
+            }
+        }else if ($request->input('type') == 'month'){
+            $last_number_month = 6;
+            $start = Carbon::now()->subMonth($last_number_month);
+
+            foreach (range(1,$last_number_month) as $id){
+                $start = $start->addMonth(1);
+                array_push($x_axis,$start->format('Y-m'));
             }
         }
         echo json_encode($x_axis);
@@ -98,7 +107,19 @@ class DynamicSelectController extends Controller
                 }else {
                     $end = Carbon::createFromFormat('m-d H',$array[$id])->addHour(1);
                 }
-                $sales = Sale::whereBetween('created_at',[$startㄍ,$end])->get();
+                $sales = Sale::whereBetween('created_at',[$start,$end])->get();
+                $val = 0;
+                foreach ($sales as $sale){
+                    if ($sale->change < 0){
+                        $val -= $sale->change;
+                    }
+                }
+                array_push($saleValue,$val);
+            }
+        }else if ($request->input('type')=='month'){
+            foreach($array as $key){
+                $start = Carbon::createFromFormat('Y-m',$key);
+                $sales = Sale::whereMonth('created_at',$start);
                 $val = 0;
                 foreach ($sales as $sale){
                     if ($sale->change < 0){
