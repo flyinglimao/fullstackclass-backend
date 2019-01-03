@@ -98,7 +98,7 @@ class DynamicSelectController extends Controller
                 }else {
                     $end = Carbon::createFromFormat('m-d H',$array[$id])->addHour(1);
                 }
-                $sales = Sale::whereBetween('created_at',[$start,$end])->get();
+                $sales = Sale::whereBetween('created_at',[$startㄍ,$end])->get();
                 $val = 0;
                 foreach ($sales as $sale){
                     if ($sale->change < 0){
