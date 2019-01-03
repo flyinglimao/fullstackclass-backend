@@ -14,14 +14,17 @@
 
 
 Route::get('test1',function (){
-    \Illuminate\Support\Facades\Auth::login(\App\User::where('name','q')->first());
-    return redirect()->route('products.index');
+    dd(\Carbon\Carbon::createFromFormat('m-d h','12-30 6'));
 });
 
 
 Route::post('dynamic_dependent/fetch','DynamicSelectController@fetch')->name('dynamicdependent.fetch');
 
 Route::post('dynamic_dependent/prefetch','DynamicSelectController@prefetch')->name('dynamicdependent.prefetch');
+
+Route::post('ajax/labels','DynamicSelectController@axis')->name('ajax.label');
+
+Route::post('ajax/dataset','DynamicSelectController@dataset')->name('ajax.dataset');
 
 Route::get('item/destroy/{id}',function(){})->name('item.destroy');
 

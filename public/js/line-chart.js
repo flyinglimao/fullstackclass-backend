@@ -190,7 +190,7 @@ if ($('#verview-shart').length) {
         },
         "plot": { "aspect": "spline" },
         "series": [{
-                "values": [20, 25, 30, 35, 45, 40, 40, 35, 25, 17, 40, 1],
+                "values": [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
                 "line-color": "#F0B41A",
                 /* "dotted" | "dashed" */
                 "line-width": 5 /* in pixels */ ,

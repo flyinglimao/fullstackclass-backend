@@ -27,7 +27,14 @@
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     <!-- modernizr css -->
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
-
+    <!-- start zingchart js -->
+    <script src={{asset('js/zingchart.min.js')}}></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation 放在最前面要讓他被蓋掉-->
+    <script src="{{asset('js/line-chart.js')}}"></script>
 </head>
 
 <body>
@@ -79,18 +86,8 @@
 <script src={{asset('js/Chart.min.js')}}></script>
 <!-- start highcharts js -->
 <script src={{asset('js/highcharts.js')}}></script>
-<!-- start zingchart js -->
-<script src={{asset('js/zingchart.min.js')}}></script>
-<script>
-    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
-</script>
 
-
-<!-- all line chart activation -->
-<script src="{{asset('js/line-chart.js')}}"></script>
-
-
+<!-- all line chart activation is on the head element-->
 
 <!-- all pie chart -->
 <script src="{{asset('js/pie-chart.js')}}"></script>

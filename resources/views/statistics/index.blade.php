@@ -15,11 +15,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="header-title mb-0">Overview</h4>
-                        <select class="custome-select border-0 pr-3">
-                            <option selected>Last 24 Hours</option>
-                            <option value="0">01 July 2018</option>
+                        <h4 class="header-title mb-0">銷售狀況</h4>
+                        <select name="type" class="custome-select border-0 pr-3" id="myselect">
+                            <option value="day" >Recent day</option>
+                            <option value="week" selected>Recent week</option>
+                            <option value="month">Recent month</option>
                         </select>
+                        {{csrf_field()}}
                     </div>
                     <div id="verview-shart"></div>
                 </div>
@@ -35,70 +37,103 @@
         {{--</div>--}}
     </div>
     <!-- overview area end -->
+    <button id="click1">click me</button>
 </div>
 
-{{--<script>--}}
-    {{--/*--------------  overview-chart start ------------*/--}}
-    {{--if ($('#verview-shart').length) {--}}
-        {{--var myConfig = {--}}
-            {{--"type": "line",--}}
+{{--/*--------------  overview-chart start ------------*/--}}
+<script>
+    $(document).ready(function () {
+        let axis = '{{$x_axis}}';
+        let dataset = '{{$dataset}}';
+        axis = axis.replace(/&quot;/g,'"');
+        dataset = dataset.replace(/&quot;/g,'"');
+        var myConfig = {
+            "type": "line",
 
-            {{--"scale-x": { //X-Axis--}}
-                {{--"labels": ["1", "11", "21", "31", "41", "51", "61", "71", "81", "91", "101"],--}}
-                {{--"label": {--}}
-                    {{--"font-size": 14,--}}
-                    {{--"offset-x": 0,--}}
-                {{--},--}}
-                {{--"item": { //Scale Items (scale values or labels)--}}
-                    {{--"font-size": 10,--}}
-                {{--},--}}
-                {{--"guide": { //Guides--}}
-                    {{--"visible": false,--}}
-                    {{--"line-style": "solid", //"solid", "dotted", "dashed", "dashdot"--}}
-                    {{--"alpha": 1--}}
-                {{--}--}}
-            {{--},--}}
-            {{--"plot": { "aspect": "spline" },--}}
-            {{--"series": [{--}}
-                {{--"values": [20, 25, 30, 35, 45, 40, 40, 35, 25, 57, 40, 50],--}}
-                {{--"line-color": "#F0B41A",--}}
-                {{--/* "dotted" | "dashed" */--}}
-                {{--"line-width": 5 /* in pixels */ ,--}}
-                {{--"marker": { /* Marker object */--}}
-                    {{--"background-color": "#D79D3B",--}}
-                    {{--/* hexadecimal or RGB value */--}}
-                    {{--"size": 5,--}}
-                    {{--/* in pixels */--}}
-                    {{--"border-color": "#D79D3B",--}}
-                    {{--/* hexadecimal or RBG value */--}}
-                {{--}--}}
-            {{--},--}}
-                {{--{--}}
-                    {{--"values": [40, 45, 30, 20, 30, 35, 45, 55, 40, 30, 55, 30],--}}
-                    {{--"line-color": "#0884D9",--}}
-                    {{--/* "dotted" | "dashed" */--}}
-                    {{--"line-width": 5 /* in pixels */ ,--}}
-                    {{--"marker": { /* Marker object */--}}
-                        {{--"background-color": "#067dce",--}}
-                        {{--/* hexadecimal or RGB value */--}}
-                        {{--"size": 5,--}}
-                        {{--/* in pixels */--}}
-                        {{--"border-color": "#067dce",--}}
-                        {{--/* hexadecimal or RBG value */--}}
-                    {{--}--}}
-                {{--}--}}
-            {{--]--}}
-        {{--};--}}
+            "scale-x": { //X-Axis
+                "labels": JSON.parse(axis),
+                "label": {
+                    "font-size": 14,
+                    "offset-x": 0,
+                },
+                "item": { //Scale Items (scale values or labels)
+                    "font-size": 10,
+                },
+                "guide": { //Guides
+                    "visible": false,
+                    "line-style": "solid", //"solid", "dotted", "dashed", "dashdot"
+                    "alpha": 1
+                }
+            },
+            "plot": { "aspect": "spline" },
+            "series": [{
+                "values": JSON.parse(dataset),
+                "line-color": "#0884D9",
+                /* "dotted" | "dashed" */
+                "line-width": 5 /* in pixels */ ,
+                "marker": { /* Marker object */
+                    "background-color": "#067dce",
+                    /* hexadecimal or RGB value */
+                    "size": 5,
+                    /* in pixels */
+                    "border-color": "#067dce",
+                    /* hexadecimal or RBG value */
+                }
+            }]
+        };
+        zingchart.render({
+            id: 'verview-shart',
+            data: myConfig,
+            height: "100%",
+            width: "100%"
+        });
 
-        {{--zingchart.render({--}}
-            {{--id: 'verview-shart',--}}
-            {{--data: myConfig,--}}
-            {{--height: "100%",--}}
-            {{--width: "100%"--}}
-        {{--});--}}
-    {{--}--}}
 
-    {{--/*--------------  overview-chart END ------------*/--}}
-{{--</script>--}}
+        $('#myselect').change(function () {
+            let _token=$('input[name="_token"]').val();
+            $.ajax({
+                url:"{{route('ajax.label')}}",
+                method:"POST",
+                data:{
+                    type:$('#myselect').val(),
+                    _token:_token
+                },
+                success:function (labels) {
+                    console.log(labels);
+                    // labels = labels.replace(/&quot;/g,'"');
+                    console.log(labels);
+                    myConfig['scale-x']['labels'] = JSON.parse(labels);
+                    $.ajax({
+                        url:"{{route('ajax.dataset')}}",
+                        method:"POST",
+                        data:{
+                            type:$('#myselect').val(),
+                            array:labels,
+                            _token:_token
+                        },
+                        success:function (dataval) {
+                            console.log(dataval);
+                            dataval = dataval.replace(/&quot;/g,'"');
+                            console.log(dataval);
+                            myConfig['series'][0]['values'] = JSON.parse(dataval);
+                            zingchart.render({
+                                id: 'verview-shart',
+                                data: myConfig,
+                                height: "100%",
+                                width: "100%"
+                            });
+
+                        }
+                    });
+
+                }
+            })
+
+        })
+    });
+
+
+</script>
+{{--/*--------------  overview-chart END ------------*/--}}
 
 @endsection
