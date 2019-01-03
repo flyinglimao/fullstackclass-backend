@@ -47,7 +47,7 @@
         let dataset = '{{$dataset}}';
         axis = axis.replace(/&quot;/g,'"');
         dataset = dataset.replace(/&quot;/g,'"');
-        var myConfig = {
+        let myConfig = {
             "type": "line",
 
             "scale-x": { //X-Axis
@@ -87,7 +87,6 @@
             height: "100%",
             width: "100%"
         });
-
 
         $('#myselect').change(function () {
             let _token=$('input[name="_token"]').val();
